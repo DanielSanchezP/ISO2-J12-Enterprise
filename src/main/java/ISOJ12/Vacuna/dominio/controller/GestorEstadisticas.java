@@ -9,6 +9,9 @@ public class GestorEstadisticas {
 		throw new UnsupportedOperationException();
 	}
 
+	
+	fgnsdfgbnsfg
+	
 	/**
 	 * 
 	 * @param region
