@@ -10,7 +10,7 @@ public class GestorEstadisticas {
 	}
 
 	
-	fgnsdfgbnsfg
+	
 	
 	/**
 	 * 
