@@ -32,4 +32,5 @@ public class GestorEstadisticas {
 		throw new UnsupportedOperationException();
 	}
         
+        
 }
