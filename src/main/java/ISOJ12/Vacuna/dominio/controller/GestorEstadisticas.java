@@ -31,5 +31,5 @@ public class GestorEstadisticas {
 		// TODO - implement GestorEstadisticas.consultarPorcentajeVacunadosSobreRecibidasEnRegion
 		throw new UnsupportedOperationException();
 	}
-//aaaaa
+        
 }
