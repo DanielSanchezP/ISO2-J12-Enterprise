@@ -82,11 +82,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Alta Vacunas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAltaVacunasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonRegistro">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar Vacunaci&#xf3;n"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="TextoVacunaTotal">
     </Component>

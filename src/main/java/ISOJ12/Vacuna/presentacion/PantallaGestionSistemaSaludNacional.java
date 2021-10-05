@@ -48,6 +48,11 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         });
 
         BotonCalculo.setText("Cálculo");
+        BotonCalculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCalculoActionPerformed(evt);
+            }
+        });
 
         ComboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", " " }));
         ComboBoxListaSitios.setToolTipText("");
@@ -57,14 +62,14 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setEditable(false);
 
         jLabel1.setText("Total de Vacunados:");
 
@@ -122,12 +127,17 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaLoteActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        AltaLote.mostrarAL();
     }//GEN-LAST:event_BotonAltaLoteActionPerformed
 
     private void ComboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxListaSitiosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxListaSitiosActionPerformed
+
+    private void BotonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonCalculoActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -166,6 +176,10 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 new PantallaGestionSistemaSaludNacional().setVisible(true);
             }
         });
+    }
+    
+    public static void mostrarGestionNacional(){
+        new PantallaGestionSistemaSaludNacional().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -28,42 +28,55 @@ public class AltaLote extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        TextoNumVacunas = new javax.swing.JFormattedTextField<>();
+        TextoNumVacunas = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
-        TextoProveedor = new javax.swing.JFormattedTextField<>();
         LabelFecha = new javax.swing.JLabel();
-        TextoFecha = new javax.swing.JFormattedTextField<>();
+        TextoFecha = new javax.swing.JFormattedTextField();
         BotonAltaLote = new javax.swing.JButton();
+        proveedortext = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Vacunas Recibidas: ");
 
+        TextoNumVacunas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
         jLabel2.setText("Proveedor: ");
 
         LabelFecha.setText("Fecha de Recepcion: ");
 
+        TextoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+
         BotonAltaLote.setText("ALTA");
+        BotonAltaLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAltaLoteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LabelFecha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextoFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TextoNumVacunas, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(TextoProveedor))))
+                            .addComponent(proveedortext)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(LabelFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextoFecha)))
                 .addContainerGap(144, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -80,7 +93,7 @@ public class AltaLote extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(TextoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(proveedortext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelFecha)
@@ -92,6 +105,10 @@ public class AltaLote extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaLoteActionPerformed
+        
+    }//GEN-LAST:event_BotonAltaLoteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,14 +144,18 @@ public class AltaLote extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public static void mostrarAL(){
+        new AltaLote().setVisible(true);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAltaLote;
     private javax.swing.JLabel LabelFecha;
-    private javax.swing.JFormattedTextField<Date> TextoFecha;
-    private javax.swing.JFormattedTextField<Integer> TextoNumVacunas;
-    private javax.swing.JFormattedTextField<String> TextoProveedor;
+    private javax.swing.JFormattedTextField TextoFecha;
+    private javax.swing.JFormattedTextField TextoNumVacunas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField proveedortext;
     // End of variables declaration//GEN-END:variables
 }

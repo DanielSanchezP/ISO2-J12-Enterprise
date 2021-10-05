@@ -40,8 +40,18 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BotonAltaVacunas.setText("Alta Vacunas");
+        BotonAltaVacunas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAltaVacunasActionPerformed(evt);
+            }
+        });
 
         BotonRegistro.setText("Registrar Vacunación");
+        BotonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistroActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Total de Vacunas inoculadas:");
 
@@ -99,6 +109,16 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotonAltaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaVacunasActionPerformed
+        this.dispose();
+        AltaVacunas.mostrarAV();
+    }//GEN-LAST:event_BotonAltaVacunasActionPerformed
+
+    private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
+        this.dispose();
+        RegistrarVacunacion.mostrarRV();
+    }//GEN-LAST:event_BotonRegistroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,12 +153,14 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
             }
         });
     }
+    
+    public static void mostrarGestionRegional(){
+        new PantallaGestionSistemaRegionalSalud().setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAltaVacunas;
     private javax.swing.JButton BotonRegistro;
-    private javax.swing.JComboBox<String> ComboBoxListaSitios;
-    private javax.swing.JComboBox<String> ComboBoxListaSitios1;
     private javax.swing.JTextField TextoPrimeraDosis;
     private javax.swing.JTextField TextoSegundaDosis;
     private javax.swing.JTextField TextoVacunaTotal;

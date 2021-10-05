@@ -36,9 +36,9 @@ public class Registro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         TextoNombre = new javax.swing.JTextField();
         TextoApellidos = new javax.swing.JTextField();
-        TextoDNI = new javax.swing.JTextField();
         TextoContrasenia = new javax.swing.JPasswordField();
         BotonRegistro = new javax.swing.JButton();
+        dnitext = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +55,17 @@ public class Registro extends javax.swing.JFrame {
         jLabel5.setText("Tipo de Usuario:");
 
         BotonRegistro.setText("Registrarse");
+        BotonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistroActionPerformed(evt);
+            }
+        });
+
+        try {
+            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########-#")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,14 +80,13 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(TextoApellidos, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TextoDNI, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TextoNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ComboBoxTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, 136, Short.MAX_VALUE)
-                        .addComponent(TextoContrasenia, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BotonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(TextoApellidos)
+                    .addComponent(TextoNombre)
+                    .addComponent(ComboBoxTipo, 0, 136, Short.MAX_VALUE)
+                    .addComponent(TextoContrasenia)
+                    .addComponent(dnitext))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,10 +101,10 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(TextoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(TextoDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(TextoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -104,11 +114,16 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(BotonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
+        this.dispose();
+        Login.mostrarLogin();
+    }//GEN-LAST:event_BotonRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,15 +159,19 @@ public class Registro extends javax.swing.JFrame {
             }
         });
     }
+    
+    public static void mostrarRegistro(){
+        new Registro().setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonRegistro;
     private javax.swing.JComboBox<String> ComboBoxTipo;
     private javax.swing.JTextField TextoApellidos;
     private javax.swing.JPasswordField TextoContrasenia;
-    private javax.swing.JTextField TextoDNI;
     private javax.swing.JTextField TextoNombre;
     private javax.swing.JTextField TextoNombre3;
+    private javax.swing.JFormattedTextField dnitext;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

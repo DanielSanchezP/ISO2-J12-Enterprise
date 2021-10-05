@@ -28,11 +28,11 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        TextoNombre = new javax.swing.JTextField();
         TextoContrasenia = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         BotonLogin = new javax.swing.JButton();
         BotonRegistro = new javax.swing.JButton();
+        dnitext = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,8 +41,24 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Contraseña:");
 
         BotonLogin.setText("Iniciar Sesión");
+        BotonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonLoginActionPerformed(evt);
+            }
+        });
 
         BotonRegistro.setText("Registrarse");
+        BotonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistroActionPerformed(evt);
+            }
+        });
+
+        try {
+            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########-#")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,9 +75,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TextoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextoContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(dnitext))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -70,7 +86,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -84,6 +100,27 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
+        this.dispose();
+        Registro.mostrarRegistro();
+    }//GEN-LAST:event_BotonRegistroActionPerformed
+
+    private void BotonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLoginActionPerformed
+        this.dispose(); 
+        /**
+         * if(){ 
+            /*Si el que se logea es trabajador regional, se abre PantallaRegional
+            PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
+        }
+        
+        if(){
+            Si el que se logea es trabajador nacional se abre PantallaNacional
+            PantallaGestionSistemaSaludNacional.mostrarGestionNacional();
+        } 
+        */
+        
+    }//GEN-LAST:event_BotonLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,12 +156,17 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public static void mostrarLogin(){
+        new Login().setVisible(true);
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonLogin;
     private javax.swing.JButton BotonRegistro;
     private javax.swing.JPasswordField TextoContrasenia;
-    private javax.swing.JTextField TextoNombre;
+    private javax.swing.JFormattedTextField dnitext;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
