@@ -6,11 +6,11 @@ import ISOJ12.Vacuna.persistencia.*;
 public class LoteVacunas {
 
 	Collection<EntregaVacunas> entregas;
-	TipoVacuna tipo;
+	public TipoVacuna tipo;
 	LoteVacunasDAO loteVacunasDao;
-	private String id;
-	private Date fecha;
-	private int cantidad;
-	private String farmaceutica;
+	public String id;
+	public Date fecha;
+	public int cantidad;
+	public String farmaceutica;
 
 }

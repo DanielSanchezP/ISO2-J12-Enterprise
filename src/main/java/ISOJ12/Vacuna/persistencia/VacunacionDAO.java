@@ -3,7 +3,7 @@ package ISOJ12.Vacuna.persistencia;
 import ISOJ12.Vacuna.dominio.entitymodel.*;
 import java.util.*;
 
-public class VacunacionDAO extends AbstractEntityDAO {
+public class VacunacionDAO extends AgenteBD {
 
 	/**
 	 * 
