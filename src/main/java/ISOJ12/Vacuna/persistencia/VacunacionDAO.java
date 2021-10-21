@@ -13,39 +13,27 @@ public class VacunacionDAO extends AgenteBD {
 	 * @param paciente
 	 * @param vacunacion
 	 */
-	public void insertarVacunacion(Vacunacion vacunacion) {
-		try {
-			AgenteBD BD = AgenteBD.getAgente();
-			BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","+vacunacion.fecha+","+vacunacion.vacuna.nombre+","+vacunacion.vacuna.farmaceutica+","+vacunacion.vacuna.fechaAprobacion+","+vacunacion.isSegundaDosis+")");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void insertarVacunacion(Vacunacion vacunacion) throws SQLException {
+		AgenteBD BD = AgenteBD.getAgente();
+		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","
+				+ ""+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","+vacunacion.fecha+","
+				+ ""+vacunacion.vacuna.nombre+","+vacunacion.vacuna.farmaceutica+","+vacunacion.vacuna.fechaAprobacion+","
+				+ ""+vacunacion.isSegundaDosis+")");
 		
 	}
 
-	public void seleccionarVacunaciones() {
-		try {
-			AgenteBD BD = AgenteBD.getAgente();
-			BD.select("SELECT vacunacion *");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void seleccionarVacunaciones() throws SQLException {
+		AgenteBD BD = AgenteBD.getAgente();
+		BD.select("SELECT vacunacion *");
 	}
 
 	/**
 	 * 
 	 * @param region
 	 */
-	public void seleccionarVacunaciones(RegionEnum region) {
-		try {
-			AgenteBD BD = AgenteBD.getAgente();
-			//BD.select("SELECT vacunacion * WHERE "+region.entregas+" = "+ +" ");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void seleccionarVacunaciones(RegionEnum region) throws SQLException {
+		AgenteBD BD = AgenteBD.getAgente();
+		//BD.select("SELECT vacunacion * WHERE "+region.entregas+" = "+ +" ");
 	}
 
 }
