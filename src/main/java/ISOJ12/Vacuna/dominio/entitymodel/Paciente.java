@@ -4,8 +4,8 @@ public class Paciente {
 
 	RegionEnum region;
 	GrupoPrioridad grupo;
-	private String dni;
-	private String nombre;
-	private String apellidos;
+	public String dni;
+	public String nombre;
+	public String apellidos;
 
 }

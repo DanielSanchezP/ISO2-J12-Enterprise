@@ -5,6 +5,6 @@ import java.util.*;
 public enum RegionEnum {
 	;
 
-	Collection<EntregaVacunas> entregas;
+	public Collection<EntregaVacunas> entregas;
 
 }

@@ -5,10 +5,10 @@ import java.util.*;
 
 public class Vacunacion {
 
-	TipoVacuna vacuna;
-	Paciente paciente;
+	public TipoVacuna vacuna;
+	public Paciente paciente;
 	VacunacionDAO vacunacionDao;
-	private Date fecha;
-	private boolean isSegundaDosis;
+	public Date fecha;
+	public boolean isSegundaDosis;
 
 }

@@ -6,7 +6,7 @@ import java.util.*;
 public class EntregaVacunas {
 
 	TipoVacuna tipo;
-	RegionEnum region;
+	public RegionEnum region;
 	GrupoPrioridad grupoPrioridad;
 	LoteVacunas lote;
 	EntregaDAO entregaDao;
