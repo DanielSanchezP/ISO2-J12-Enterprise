@@ -25,7 +25,7 @@ public class AgenteBD {
 		crearBaseDatos();
 	}
 	
-	public static AgenteBD getAgente() throws SQLException {
+	public static AgenteBD getAgente(){
         if (Instancia == null) {
             Instancia = new AgenteBD();
         }

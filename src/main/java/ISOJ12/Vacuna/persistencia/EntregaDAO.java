@@ -1,17 +1,20 @@
 package ISOJ12.Vacuna.persistencia;
 
 import ISOJ12.Vacuna.dominio.entitymodel.*;
+import ISOJ12.Vacuna.persistencia.AgenteBD;
+
 import java.util.*;
 
 public class EntregaDAO extends AgenteBD {
-
+	AgenteBD agente=AgenteBD.getAgente();;
+	
 	/**
 	 * 
 	 * @param entrega
 	 */
 	public void insertarEntrega(EntregaVacunas entrega) {
-		// TODO - implement EntregaDAO.insertarEntrega
-		throw new UnsupportedOperationException();
+		String str="Insert into vacunas values("+ entrega.lote +","+ entrega.tipo +","+ entrega.cantidad +","+ entrega.fecha +")";
+		agente.insert(str);
 	}
 
 	/**
@@ -22,5 +25,4 @@ public class EntregaDAO extends AgenteBD {
 		// TODO - implement EntregaDAO.seleccionarEntregas
 		throw new UnsupportedOperationException();
 	}
-
 }

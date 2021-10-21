@@ -5,12 +5,12 @@ import java.util.*;
 
 public class EntregaVacunas {
 
-	TipoVacuna tipo;
+	public TipoVacuna tipo;
 	public RegionEnum region;
-	GrupoPrioridad grupoPrioridad;
-	LoteVacunas lote;
+	public GrupoPrioridad grupoPrioridad;
+	public LoteVacunas lote;
 	EntregaDAO entregaDao;
-	private Date fecha;
-	private int cantidad;
+	public Date fecha;
+	public int cantidad;
 
 }
