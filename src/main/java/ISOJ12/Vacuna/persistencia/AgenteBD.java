@@ -38,7 +38,6 @@ public class AgenteBD {
 			DriverManager.registerDriver(derbyEmbeddedDriver);
 			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=false", "admin", "admin");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -48,15 +47,9 @@ public class AgenteBD {
 			stmt.close();
 			mBD.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-	/**
-	 * 
-	 * @param sql
-	 */
 	public ResultSet select(String sql) {
 		ResultSet res = null;
 		try {
@@ -65,16 +58,11 @@ public class AgenteBD {
 			res = stmt.executeQuery(sql);
 			desconectarBD();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return res;
 	}
 
-	/**
-	 * 
-	 * @param sql
-	 */
 	public int insert(String sql) {
 		int res = 0;
 		try {
@@ -83,17 +71,12 @@ public class AgenteBD {
 			res = pstmt.executeUpdate();
 			desconectarBD();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
 		}
 		return res;
 	}
-
-	/**
-	 * 
-	 * @param sql
-	 */
+	
 	public int update(String sql) {
 		int res = 0;
 		try {
@@ -108,10 +91,6 @@ public class AgenteBD {
 		return res;
 	}
 
-	/**
-	 * 
-	 * @param sql
-	 */
 	public int delete(String sql) {
 		int res = 0;
 		try {
@@ -129,7 +108,7 @@ public class AgenteBD {
 	public static void crearBaseDatos() {
 		Statement stmt;
 		String createSQL = "create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null)";
-		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, telefono varchar(30))";
+		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null)";
 		String createSQL3 = "create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)";
 		String createSQL4 = "create table vacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)";
 		try {
