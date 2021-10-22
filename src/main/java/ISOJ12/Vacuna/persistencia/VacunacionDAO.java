@@ -14,18 +14,29 @@ public class VacunacionDAO extends AgenteBD {
 	 * @param paciente
 	 * @param vacunacion
 	 */
-	public void insertarVacunacion(Vacunacion vacunacion){
+	public void insertarVacunacion(Vacunacion vacunacion, String region){
 		
 		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","
 				+ ""+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","
 				+ ""+vacunacion.nombrevacuna+", "+vacunacion.fecha+","
-				+ ""+vacunacion.isSegundaDosis+")");
+				+ ""+vacunacion.isSegundaDosis+", "+region+")");
 		
 	}
 
-	public void seleccionarVacunaciones(){
-		
-		BD.select("SELECT vacunacion *");
+	public List<Vacunacion> seleccionarVacunaciones() throws SQLException{
+		List<Vacunacion> listavacunacion = null;
+		ResultSet res = BD.select("SELECT vacunacion *");
+		while (res.next()) {
+			 Vacunacion vacunacion = new Vacunacion();
+			 vacunacion.paciente.dni = res.getObject(1).toString();
+			 vacunacion.paciente.nombre = res.getObject(2).toString();
+			 vacunacion.paciente.apellidos = res.getObject(3).toString();
+			 vacunacion.nombrevacuna = res.getObject(4).toString();
+			 vacunacion.fecha = (Date) res.getObject(5);
+			 vacunacion.isSegundaDosis = (Boolean) res.getObject(6);
+            listavacunacion.add(vacunacion);
+        }
+		 return listavacunacion;
 	}
 
 	/**
