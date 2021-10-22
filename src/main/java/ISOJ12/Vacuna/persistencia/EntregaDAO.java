@@ -21,8 +21,8 @@ public class EntregaDAO extends AgenteBD {
 	 * 
 	 * @param region
 	 */
-	public List<EntregaVacunas> seleccionarEntregas(RegionEnum region) {
-		// TODO - implement EntregaDAO.seleccionarEntregas
-		throw new UnsupportedOperationException();
+	public List<EntregaVacunas> seleccionarEntregas(String region) {
+		agente.select("SELECT vacunas * WHERE nombreregion = "+region);
+		
 	}
 }
