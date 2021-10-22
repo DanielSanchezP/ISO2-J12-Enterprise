@@ -15,8 +15,7 @@ public class VacunacionDAO extends AgenteBD {
 	 */
 	public void insertarVacunacion(Vacunacion vacunacion) throws SQLException {
 		AgenteBD BD = AgenteBD.getAgente();
-		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","
-				+ ""+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","+vacunacion.fecha+","
+		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","+vacunacion.fecha+","
 				+ ""+vacunacion.vacuna.nombre+","+vacunacion.vacuna.farmaceutica+","+vacunacion.vacuna.fechaAprobacion+","
 				+ ""+vacunacion.isSegundaDosis+")");
 		
