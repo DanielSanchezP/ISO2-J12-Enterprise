@@ -8,13 +8,13 @@ import java.util.*;
 
 
 public class VacunacionDAO extends AgenteBD {
-
+	AgenteBD BD = AgenteBD.getAgente();
 	/**
 	 * @param paciente
 	 * @param vacunacion
 	 */
-	public void insertarVacunacion(Vacunacion vacunacion) throws SQLException {
-		AgenteBD BD = AgenteBD.getAgente();
+	public void insertarVacunacion(Vacunacion vacunacion){
+		
 		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","
 				+ ""+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","+vacunacion.fecha+","
 				+ ""+vacunacion.vacuna.nombre+","+vacunacion.vacuna.farmaceutica+","+vacunacion.vacuna.fechaAprobacion+","
@@ -22,8 +22,8 @@ public class VacunacionDAO extends AgenteBD {
 		
 	}
 
-	public void seleccionarVacunaciones() throws SQLException {
-		AgenteBD BD = AgenteBD.getAgente();
+	public void seleccionarVacunaciones(){
+		
 		BD.select("SELECT vacunacion *");
 	}
 
@@ -31,8 +31,8 @@ public class VacunacionDAO extends AgenteBD {
 	 * 
 	 * @param region
 	 */
-	public void seleccionarVacunaciones(RegionEnum region) throws SQLException {
-		AgenteBD BD = AgenteBD.getAgente();
+	public void seleccionarVacunaciones(RegionEnum region){
+		
 		//BD.select("SELECT vacunacion * WHERE "+region.entregas+" = "+ +" ");
 	}
 
