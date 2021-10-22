@@ -23,6 +23,7 @@ public class VacunacionDAO extends AgenteBD {
 		
 	}
 
+	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones() throws SQLException{
 		List<Vacunacion> listavacunacion = null;
 		ResultSet res = BD.select("SELECT vacunacion *");
