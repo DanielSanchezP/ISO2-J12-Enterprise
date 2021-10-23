@@ -7,7 +7,7 @@ public enum GrupoPrioridad {
 
 	Collection<Paciente> pacientes;
 	Collection<EntregaVacunas> entregas;
-	private String nombre;
-	private int prioridad;
+	public String nombre;
+	public int prioridad;
 
 }
