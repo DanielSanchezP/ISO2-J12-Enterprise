@@ -16,7 +16,8 @@ public class EntregaDAO extends AgenteBD {
 	 */
 	public void insertarEntrega(EntregaVacunas entrega) {
 		
-		String str="Insert into vacunas values("+ entrega.lote.id +","+ entrega.tipo.nombre +","+ entrega.tipo.farmaceutica +","+ entrega.grupoPrioridad.nombre +","+ entrega.fecha +","+ entrega.cantidad +","+ entrega.lote.region +")";
+		String str="Insert into vacunas values('"+ entrega.lote.id +"','"+ entrega.tipo.nombre +"','"+ entrega.tipo.farmaceutica +"'"
+				+ ",'"+ entrega.grupoPrioridad.nombre +"','"+ entrega.fecha +"',"+ entrega.cantidad +",'"+ entrega.lote.region +"')";
 		agente.insert(str);
 	}
 
@@ -28,7 +29,7 @@ public class EntregaDAO extends AgenteBD {
 	@SuppressWarnings("null")
 	public List<EntregaVacunas> seleccionarEntregas(String region) throws SQLException {
 		List<EntregaVacunas> listaentrega = null;
-		ResultSet res = agente.select("SELECT vacunas * WHERE nombreregion = "+region);
+		ResultSet res = agente.select("SELECT vacunas * WHERE nombreregion = '"+region);
 		while (res.next()) {
 			 EntregaVacunas entrega = new EntregaVacunas();
 			 entrega.lote.id = res.getObject(1).toString();
