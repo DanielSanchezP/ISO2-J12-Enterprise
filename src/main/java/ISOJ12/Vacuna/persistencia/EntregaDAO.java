@@ -23,6 +23,7 @@ public class EntregaDAO extends AgenteBD {
 	 */
 	public List<EntregaVacunas> seleccionarEntregas(String region) {
 		agente.select("SELECT vacunas * WHERE nombreregion = "+region);
+            return null;
 		
 	}
 }

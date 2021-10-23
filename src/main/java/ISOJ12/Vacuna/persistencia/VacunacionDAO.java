@@ -4,6 +4,7 @@ import ISOJ12.Vacuna.dominio.entitymodel.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -15,11 +16,9 @@ public class VacunacionDAO extends AgenteBD {
 	 * @param vacunacion
 	 */
 	public void insertarVacunacion(Vacunacion vacunacion){
-		
-		BD.insert("INSERT INTO vacunacion VALUES ("+vacunacion.paciente.dni+","
-				+ ""+ vacunacion.paciente.nombre +", "+vacunacion.paciente.apellidos+","
-				+ ""+vacunacion.nombrevacuna+", "+vacunacion.fecha+","
-				+ ""+vacunacion.isSegundaDosis+")");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                
+		BD.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"','"+vacunacion.isSegundaDosis+"','asdfecy')");
 		
 	}
 
