@@ -5,6 +5,7 @@ import ISOJ12.Vacuna.persistencia.AgenteBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class EntregaDAO extends AgenteBD {
@@ -15,9 +16,9 @@ public class EntregaDAO extends AgenteBD {
 	 * @param entrega
 	 */
 	public void insertarEntrega(EntregaVacunas entrega) {
-		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		String str="Insert into vacunas values('"+ entrega.lote.id +"','"+ entrega.tipo.nombre +"','"+ entrega.tipo.farmaceutica +"',"
-				+ "'"+ entrega.grupoPrioridad.nombre +"','"+ entrega.fecha +"',"+ entrega.cantidad +",'"+ entrega.lote.region +"')";
+				+ "'"+ entrega.grupoPrioridad.nombre +"','"+formatter.format(entrega.fecha)+"',"+ entrega.cantidad +",'"+ entrega.lote.region +"')";
 		agente.insert(str);
 	}
 
