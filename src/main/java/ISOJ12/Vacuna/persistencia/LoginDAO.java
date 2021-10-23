@@ -17,14 +17,14 @@ public class LoginDAO extends AgenteBD {
 	 */
 	public void insertarTrabajador(String dni, String nombre, String apellido, String contraseña){
 		
-		BD.insert("INSERT INTO trabajadores VALUES ('"+dni+"',"
-				+ "'"+nombre +"', '"+apellido+"', '"+contraseña+"')");
+		BD.insert("INSERT INTO trabajadores VALUES ("+dni+","
+				+ ""+nombre +", "+apellido+", "+contraseña+")");
 		
 	}
 	
 	public boolean comprobarLogin(String nombre, String contrasena) {
         String[] trabajador=new String[2];
-        ResultSet res = BD.select("SELECT nombre, contraseña FROM trabajadores * WHERE nombre ='"+nombre+"'AND contrasena ='"+contrasena+"' ");
+        ResultSet res = BD.select("SELECT nombre, contraseña FROM trabajadores * WHERE nombre ='"+nombre+"'AND contrasena ='"+contrasena+" ");
         try {
             while (res.next()) {
             	trabajador[0]=res.getObject(1).toString();

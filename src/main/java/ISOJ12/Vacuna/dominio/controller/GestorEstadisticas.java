@@ -14,7 +14,7 @@ public class GestorEstadisticas {
 	 * 
 	 * @param region
 	 */
-	public void consultarTotalVacunadosPorRegion(RegionEnum region) {
+	public void consultarTotalVacunadosPorRegion(String region) {
 		// TODO - implement GestorEstadisticas.consultarTotalVacunadosPorRegion
 		throw new UnsupportedOperationException();
 	}
@@ -28,7 +28,7 @@ public class GestorEstadisticas {
 	 * 
 	 * @param region
 	 */
-	public void consultarPorcentajeVacunadosSobreRecibidasEnRegion(RegionEnum region) {
+	public void consultarPorcentajeVacunadosSobreRecibidasEnRegion(String region) {
 		// TODO - implement GestorEstadisticas.consultarPorcentajeVacunadosSobreRecibidasEnRegion
 		throw new UnsupportedOperationException();
 	}

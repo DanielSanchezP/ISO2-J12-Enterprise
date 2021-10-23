@@ -150,9 +150,6 @@ public class AltaLote extends javax.swing.JFrame {
     }
     
     public static void mostrarAL(){
-        
-        
-        
         new AltaLote().setVisible(true);
     }
     

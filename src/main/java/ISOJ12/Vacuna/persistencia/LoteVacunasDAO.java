@@ -11,7 +11,7 @@ public class LoteVacunasDAO extends AgenteBD {
 	 * @param lote
 	 */
 	public void insertarLoteVacunas(LoteVacunas lote){
-		BD.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.tipo.nombre +"', "+lote.cantidad+",'"+lote.fecha+"')");
+		BD.insert("INSERT INTO lotevacunas VALUES ("+lote.id+","+ lote.tipo.nombre +", "+lote.cantidad+","+lote.fecha+")");
 		
 	}
 
