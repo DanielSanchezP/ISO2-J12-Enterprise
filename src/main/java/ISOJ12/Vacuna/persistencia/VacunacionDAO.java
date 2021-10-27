@@ -24,17 +24,21 @@ public class VacunacionDAO extends AgenteBD {
 
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones() throws SQLException{
-		List<Vacunacion> listavacunacion = null;
-		ResultSet res = BD.select("SELECT vacunacion *");
+		List<Vacunacion> listavacunacion = new ArrayList<Vacunacion>();
+                
+		ResultSet res = BD.select("SELECT * FROM vacunacion");
+                
 		while (res.next()) {
-			 Vacunacion vacunacion = new Vacunacion();
-			 vacunacion.paciente.dni = res.getObject(1).toString();
-			 vacunacion.paciente.nombre = res.getObject(2).toString();
-			 vacunacion.paciente.apellidos = res.getObject(3).toString();
+                         Vacunacion vacunacion = new Vacunacion();
+                         Paciente paciente = new Paciente();
+			 paciente.dni = res.getObject(1).toString();
+			 paciente.nombre = res.getObject(2).toString();
+			 paciente.apellidos = res.getObject(3).toString();
+                         vacunacion.paciente = paciente;
 			 vacunacion.nombrevacuna = res.getObject(4).toString();
 			 vacunacion.fecha = (Date) res.getObject(5);
-			 vacunacion.isSegundaDosis = (Boolean) res.getObject(6);
-            listavacunacion.add(vacunacion);
+			 vacunacion.isSegundaDosis = Boolean.parseBoolean(res.getObject(6).toString());
+                         listavacunacion.add(vacunacion);    
         }
 		 return listavacunacion;
 	}
@@ -47,7 +51,7 @@ public class VacunacionDAO extends AgenteBD {
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones(String region) throws SQLException{
 		List<Vacunacion> listavacunacion = null;
-		ResultSet res = BD.select("SELECT vacunacion * WHERE nombreregion = "+region+" ");
+		ResultSet res = BD.select("SELECT vacunacion * WHERE nombreregion = asdfecy ");
 		 while (res.next()) {
 			 Vacunacion vacunacion = new Vacunacion();
 			 vacunacion.paciente.dni = res.getObject(1).toString();

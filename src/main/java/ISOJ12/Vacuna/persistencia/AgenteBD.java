@@ -57,8 +57,8 @@ public class AgenteBD {
 			conectarBD();
 			stmt = mBD.createStatement();
 			res = stmt.executeQuery(sql);
-                        stmt.close();
-			desconectarBD();
+                        //stmt.close();
+			//desconectarBD();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -74,7 +74,6 @@ public class AgenteBD {
 			desconectarBD();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			
 		}
 		return res;
 	}
