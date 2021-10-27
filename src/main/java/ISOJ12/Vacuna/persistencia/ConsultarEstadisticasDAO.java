@@ -13,7 +13,7 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
 	public String[] comprobarEstadisticasNacional(String region) throws SQLException {
 		String[] estadisticas=new String[3];
 		ResultSet res = null;
-		if(region.equals("")) {
+		if(region.equals("Todas")) {
 			res = BD.select("SELECT nombreregion, vacunados, porcentajesVacunados FROM estadisticas");
 		}
 		else {
@@ -26,6 +26,7 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
         }
         return estadisticas;
     }
+	
 	
 	public String[] comprobarEstadisticasRegional(String region) throws SQLException {
 		String[] estadisticas=new String[3];
