@@ -15,11 +15,8 @@ public class LoginDAO extends AgenteBD {
 	 * @param apellido
 	 * @param contraseña
 	 */
-	public void insertarTrabajador(String dni, String nombre, String apellido, String contraseña){
-		
-		BD.insert("INSERT INTO trabajadores VALUES ("+dni+","
-				+ ""+nombre +", "+apellido+", "+contraseña+")");
-		
+	public void insertarTrabajador(String dni, String nombre, String apellido, char[] contrasena, String tipoUsuario){
+		BD.insert("INSERT INTO trabajadores VALUES ('"+dni+"','"+nombre +"', '"+apellido+"', '"+contrasena+"', '"+tipoUsuario+"')");
 	}
 	
 	public boolean comprobarLogin(String nombre, String contrasena) {

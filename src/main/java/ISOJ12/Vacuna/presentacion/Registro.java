@@ -5,6 +5,8 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.persistencia.LoginDAO;
+
 /**
  *
  * @author Daniel
@@ -64,17 +66,20 @@ public class Registro extends javax.swing.JFrame {
         });
 
         try {
-            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########-#")));
+            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        dnitext.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        dnitext.setText("");
+        dnitext.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel1)
@@ -83,13 +88,13 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(BotonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextoApellidos)
                     .addComponent(TextoNombre)
-                    .addComponent(ComboBoxTipo, 0, 136, Short.MAX_VALUE)
+                    .addComponent(ComboBoxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextoContrasenia)
-                    .addComponent(dnitext))
-                .addContainerGap(111, Short.MAX_VALUE))
+                    .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +121,7 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(BotonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -124,6 +129,15 @@ public class Registro extends javax.swing.JFrame {
     //No modificar
     
     private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
+        String nombre=TextoNombre.getText();
+        String apellidos=TextoApellidos.getText();
+        String DNI=dnitext.getText();
+        char[] contrasena=TextoContrasenia.getPassword();
+        String tipo=ComboBoxTipo.getSelectedItem().toString();
+        
+        LoginDAO log=new LoginDAO();
+        log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo);
+        
         this.dispose();
         Login.mostrarLogin();
     }//GEN-LAST:event_BotonRegistroActionPerformed
