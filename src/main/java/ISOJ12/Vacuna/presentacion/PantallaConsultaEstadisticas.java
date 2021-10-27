@@ -142,14 +142,13 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
             listaPaciente.setModel(modelo);
             List<Vacunacion> listavacunacion = vacunacion.seleccionarVacunaciones();
             
-            //String nombre = vac.paciente.nombre;
-            //String apellidos = vac.paciente.apellidos;
+          
             
             for(int i = 0; i < listavacunacion.size();i++){
                 vac = listavacunacion.get(i);
-                modelo.addElement(vac.paciente.nombre);
+                modelo.addElement(vac.paciente.nombre+" "+vac.paciente.apellidos);
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
         }
