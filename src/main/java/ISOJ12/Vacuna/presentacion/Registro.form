@@ -28,7 +28,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -38,14 +38,14 @@
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="BotonRegistro" pref="136" max="32767" attributes="0"/>
+                  <Component id="BotonRegistro" max="32767" attributes="0"/>
                   <Component id="TextoApellidos" alignment="0" max="32767" attributes="0"/>
                   <Component id="TextoNombre" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ComboBoxTipo" alignment="0" pref="136" max="32767" attributes="0"/>
+                  <Component id="ComboBoxTipo" alignment="0" max="32767" attributes="0"/>
                   <Component id="TextoContrasenia" alignment="0" max="32767" attributes="0"/>
-                  <Component id="dnitext" alignment="0" max="32767" attributes="0"/>
+                  <Component id="dnitext" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="111" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,7 +79,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="BotonRegistro" min="-2" pref="61" max="-2" attributes="0"/>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,8 +140,11 @@
     <Component class="javax.swing.JFormattedTextField" name="dnitext">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="########-#" subtype="-1" type="5"/>
+          <Format format="########U" subtype="-1" type="5"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="text" type="java.lang.String" value=""/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
   </SubComponents>
