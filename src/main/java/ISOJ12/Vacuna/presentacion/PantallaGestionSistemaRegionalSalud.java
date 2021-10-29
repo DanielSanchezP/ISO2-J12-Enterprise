@@ -139,7 +139,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
 
     private void ButtonestvacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonestvacunadosActionPerformed
         
-        PantallaConsultaEstadisticas est=new PantallaConsultaEstadisticas();
+        PantallaConsultaEstadisticas est = new PantallaConsultaEstadisticas();
         est.mostrarVentanaEstadisticas();
         this.dispose();
     }//GEN-LAST:event_ButtonestvacunadosActionPerformed

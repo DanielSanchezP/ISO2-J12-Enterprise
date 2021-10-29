@@ -157,7 +157,7 @@ public class Registro extends javax.swing.JFrame {
         String nombre=TextoNombre.getText();
         String apellidos=TextoApellidos.getText();
         String DNI=dnitext.getText();
-        char[] contrasena=TextoContrasenia.getPassword();
+        String contrasena = new String(TextoContrasenia.getPassword());
         String tipo=ComboBoxTipo.getSelectedItem().toString();
         
         LoginDAO log=new LoginDAO();

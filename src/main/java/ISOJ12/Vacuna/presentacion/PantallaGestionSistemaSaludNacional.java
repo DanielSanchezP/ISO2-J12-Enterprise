@@ -183,8 +183,6 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
     
     public static void mostrarGestionNacional(){
-        
-        
         new PantallaGestionSistemaSaludNacional().setVisible(true);
     }
 

@@ -158,7 +158,7 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     
     public void mostrarVentanaEstadisticas(){
         mostrarEstadisticas();
-        new AltaVacunas().setVisible(true);
+        new PantallaConsultaEstadisticas().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
