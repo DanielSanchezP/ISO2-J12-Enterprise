@@ -45,7 +45,7 @@ public class Registro extends javax.swing.JFrame {
         dnitext = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        ButtonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,10 +81,10 @@ public class Registro extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton1.setText("Atrás");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonAtras.setText("Atrás");
+        ButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonAtrasActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)))
-                    .addComponent(jButton1))
+                    .addComponent(ButtonAtras))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -145,7 +145,7 @@ public class Registro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonRegistro)
-                    .addComponent(jButton1))
+                    .addComponent(ButtonAtras))
                 .addContainerGap())
         );
 
@@ -163,13 +163,14 @@ public class Registro extends javax.swing.JFrame {
         LoginDAO log=new LoginDAO();
         log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo);
         
-        this.dispose();
         Login.mostrarLogin();
+        this.dispose(); 
     }//GEN-LAST:event_BotonRegistroActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAtrasActionPerformed
+        Login.mostrarLogin();
+        this.dispose();
+    }//GEN-LAST:event_ButtonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,13 +215,13 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonRegistro;
+    private javax.swing.JButton ButtonAtras;
     private javax.swing.JComboBox<String> ComboBoxTipo;
     private javax.swing.JTextField TextoApellidos;
     private javax.swing.JPasswordField TextoContrasenia;
     private javax.swing.JTextField TextoNombre;
     private javax.swing.JTextField TextoNombre3;
     private javax.swing.JFormattedTextField dnitext;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

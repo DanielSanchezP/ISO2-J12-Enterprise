@@ -38,7 +38,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Buttonestvacunados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,10 +62,10 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
 
         jLabel3.setText("Porcentaje de Segunda Dosis:");
 
-        jButton1.setText("Consultar Pacientes Vacunados");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Buttonestvacunados.setText("Consultar Pacientes Vacunados");
+        Buttonestvacunados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonestvacunadosActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Buttonestvacunados)
                 .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
@@ -120,7 +120,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextoSegundaDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Buttonestvacunados)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -128,21 +128,21 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //No modificar
     private void BotonAltaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaVacunasActionPerformed
-        this.dispose();
         AltaVacunas.mostrarAV();
+        this.dispose();
     }//GEN-LAST:event_BotonAltaVacunasActionPerformed
 
     private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
-        this.dispose();
         RegistrarVacunacion.mostrarRV();
+        this.dispose();
     }//GEN-LAST:event_BotonRegistroActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PantallaConsultaEstadisticas estadisticas = new PantallaConsultaEstadisticas();
-        estadisticas.mostrarEstadisticas();
-        estadisticas.show();
+    private void ButtonestvacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonestvacunadosActionPerformed
+        
+        PantallaConsultaEstadisticas est=new PantallaConsultaEstadisticas();
+        est.mostrarVentanaEstadisticas();
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ButtonestvacunadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,18 +180,16 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }
     
     public static void mostrarGestionRegional(){
-        
-        
         new PantallaGestionSistemaRegionalSalud().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAltaVacunas;
     private javax.swing.JButton BotonRegistro;
+    private javax.swing.JButton Buttonestvacunados;
     private javax.swing.JTextField TextoPrimeraDosis;
     private javax.swing.JTextField TextoSegundaDosis;
     private javax.swing.JTextField TextoVacunaTotal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

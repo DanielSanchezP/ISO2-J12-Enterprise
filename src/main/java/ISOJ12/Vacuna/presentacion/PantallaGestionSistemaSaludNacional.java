@@ -131,8 +131,8 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     
     
     private void BotonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaLoteActionPerformed
-        this.dispose();
         AltaLote.mostrarAL();
+        this.dispose();
     }//GEN-LAST:event_BotonAltaLoteActionPerformed
 
     private void ComboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxListaSitiosActionPerformed
