@@ -5,12 +5,23 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+import ISOJ12.Vacuna.dominio.entitymodel.TipoVacuna;
+import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Daniel
  */
 public class AltaLote extends javax.swing.JFrame {
-
+    LoteVacunasDAO lotevacunas = new LoteVacunasDAO();
     /**
      * Creates new form AltaLote
      */
@@ -48,7 +59,7 @@ public class AltaLote extends javax.swing.JFrame {
 
         LabelFecha.setText("Fecha de Recepcion: ");
 
-        TextoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        TextoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yyyy"))));
 
         BotonAltaLote.setText("ALTA");
         BotonAltaLote.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +137,25 @@ public class AltaLote extends javax.swing.JFrame {
     
     
     private void BotonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaLoteActionPerformed
+        LoteVacunas lote = new LoteVacunas();
+        TipoVacuna tipo = new TipoVacuna();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         
+        System.out.println("1111111111");
+        int numero = (int)(Math.random()*1000000);
+        lote.id = Integer.toString(numero);
+        lote.cantidad = Integer.parseInt(TextoNumVacunas.getText());
+        tipo.farmaceutica = proveedortext.getText();
+        lote.tipo = tipo;
+       
+        
+        try {
+            lote.fecha = formatter.parse(TextoFecha.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        lotevacunas.insertarLoteVacunas(lote);
     }//GEN-LAST:event_BotonAltaLoteActionPerformed
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
