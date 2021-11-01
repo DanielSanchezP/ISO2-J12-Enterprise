@@ -20,7 +20,11 @@ Una vez creado el esqueleto, lo transformamos en un proyecto Maven con el objeti
 
 A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. El proyecto se realizará en codigo Java, usando Eclipse y Apache Netbeans.
 
-La primera tarea que se realizó fue diseñar una presentación provisional, a partir de los requisitos y el diseño. A parte de 
+La primera tarea que se realizó fue diseñar una presentación provisional, a partir de los requisitos y el diseño. Tras un primer contacto con el cliente, llegamos a la conclusión de que el esquema que nos daba no había que seguirlo totalmente, dándonos un margen de libertad, con lo cual empezamos a añadir ventanas y un sistema de login para los trabajadores, debido a los requisitos pedidos. 
+
+La primera ventana que se mostrará al ejecutar la aplicación es "Login", donde el trabajador podrá iniciar sesión aportando su identificación y contraseña, o en su defecto, registrarse, donde deberá introducir sus datos personales y donde trabaja. Una vez que el trabajador inicia sesión, dependiendo de donde trabaje, se abrirá un menú de gestión nacional o regional. Ambos menús contendrán las estadísticas que nos piden en los requisitos, además de las funcionalidades para cada tipo de trabajador. En el caso del SNS, podremos tanto dar de alta un lote de vacunas, como repartir las vacunas entre las diferentes comunidades. Por otro lado, en el caso del SRS, se podrá dar de alta las vacunas que lleguen a dicha comunidad y realizar las respectivas vacunaciones a los pacientes que haya registrados.
+
+
 
 
 
