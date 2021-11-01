@@ -31,14 +31,15 @@ public class LoteVacunasDAO extends AgenteBD {
 		ResultSet res = BD.select("SELECT * FROM lotevacunas");
                 
 		while (res.next()) {
-             LoteVacunas lote = new LoteVacunas();
-             TipoVacuna tipo = new TipoVacuna();
-			 lote.id = res.getObject(1).toString();
-			 tipo.farmaceutica = res.getObject(2).toString();
-             lote.tipo = tipo;
-             lote.cantidad = (int) res.getObject(3);
-			 lote.fecha = (Date) res.getObject(4);
-             listalote.add(lote);    
+                    
+                        LoteVacunas lote = new LoteVacunas();
+                        TipoVacuna tipo = new TipoVacuna();
+			lote.id = res.getObject(1).toString();
+			tipo.farmaceutica = res.getObject(2).toString();
+                        lote.tipo = tipo;
+                        lote.cantidad = (int) res.getObject(3);
+			lote.fecha = (Date) res.getObject(4);
+                        listalote.add(lote);    
              }
                return listalote;
         }

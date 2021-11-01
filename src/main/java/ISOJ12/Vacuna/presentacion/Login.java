@@ -126,7 +126,8 @@ public class Login extends javax.swing.JFrame {
         
         if(comp[0].equals("true") && comp[1].equals("SNS")){
             //Si el que se logea es trabajador nacional se abre PantallaNacional
-            PantallaGestionSistemaSaludNacional.mostrarGestionNacional();
+           PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
+           pantalla.mostrarGestionNacional();
             this.dispose();
         }
         else{

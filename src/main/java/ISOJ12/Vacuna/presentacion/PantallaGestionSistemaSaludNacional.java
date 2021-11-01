@@ -5,12 +5,22 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
+import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Daniel
  */
 public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
-
+    DefaultListModel modelo = new DefaultListModel();
 	
     /**
      * Creates new form PantallaGestionSistemaSaludNacional
@@ -38,6 +48,9 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lotelist = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +62,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             }
         });
 
-        BotonCalculo.setText("Cálculo");
+        BotonCalculo.setText("Repartir");
         BotonCalculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCalculoActionPerformed(evt);
@@ -77,6 +90,10 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
 
         jLabel2.setText("Porcentaje de Vacunados:");
 
+        jLabel3.setText("IDLote/Marca/Vacunas:");
+
+        jScrollPane2.setViewportView(lotelist);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,12 +112,13 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
-                        .addComponent(jTextField2)))
+                    .addComponent(jTextField1)
+                    .addComponent(jTextField2)
+                    .addComponent(jScrollPane2))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -115,12 +133,16 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(jTextField1)
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         ComboBoxListaSitios.getAccessibleContext().setAccessibleName("");
@@ -182,7 +204,34 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarGestionNacional(){
+    public void inicializarLista(){
+        
+        LoteVacunasDAO lote = new LoteVacunasDAO();
+        LoteVacunas lotevac= new LoteVacunas();
+       
+        try {
+            lotelist.setModel(modelo);
+            List<LoteVacunas> listalote = lote.seleccionarlotes();
+      
+            for(int i = 0; i < listalote.size();i++){
+                lotevac = listalote.get(i);
+                System.out.println(lotevac.id);
+                System.out.println(lotevac.tipo.farmaceutica);
+                System.out.println(lotevac.cantidad);
+                String id = lotevac.id;
+                String cant = String.valueOf(lotevac.cantidad);
+                modelo.addElement(id+" / "+lotevac.tipo.farmaceutica+" / "+cant);
+                
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    public void mostrarGestionNacional(){
+        inicializarLista();
         new PantallaGestionSistemaSaludNacional().setVisible(true);
     }
 
@@ -192,7 +241,10 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBoxListaSitios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JList<String> lotelist;
     // End of variables declaration//GEN-END:variables
 }

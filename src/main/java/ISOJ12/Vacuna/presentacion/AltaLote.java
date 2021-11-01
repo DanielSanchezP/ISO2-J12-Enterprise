@@ -141,7 +141,7 @@ public class AltaLote extends javax.swing.JFrame {
         TipoVacuna tipo = new TipoVacuna();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         
-        System.out.println("1111111111");
+        
         int numero = (int)(Math.random()*1000000);
         lote.id = Integer.toString(numero);
         lote.cantidad = Integer.parseInt(TextoNumVacunas.getText());
@@ -159,7 +159,8 @@ public class AltaLote extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonAltaLoteActionPerformed
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
-        PantallaGestionSistemaSaludNacional.mostrarGestionNacional();
+        PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
+        pantalla.mostrarGestionNacional();
         this.dispose();
     }//GEN-LAST:event_AtrasButtonActionPerformed
 

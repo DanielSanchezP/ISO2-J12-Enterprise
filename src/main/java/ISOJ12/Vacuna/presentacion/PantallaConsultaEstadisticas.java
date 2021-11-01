@@ -137,7 +137,6 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     
     public void mostrarEstadisticas(){
         VacunacionDAO vacunacion = new VacunacionDAO();
-        new PantallaConsultaEstadisticas().setVisible(true);
         Vacunacion vac= new Vacunacion();
        
         try {
