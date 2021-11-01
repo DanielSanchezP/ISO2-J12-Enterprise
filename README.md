@@ -1,5 +1,5 @@
 # Memoria Práctica ISO2
-[Enunciado del Proyecto](docs/Especificación, Análisis y Diseño parcial del sistema.pdf)
+[Enunciado del Proyecto](docs/Especificación, Análisis y Diseño parcial del sistema.md)
 ## 1. Análisis de Requisitos
 
 El proyecto que nos han encargado, consiste en realizar un programa de gestión de vacunas para el COVID-19, donde hay que gestionar como se recogen lotes provenientes de las farmaceúticas, junto con el reparto entre las diferentes comunidades autónomas dependiendo del grado de prioridad, que se calcula a partir de los grupos prioritarios, la incidencia acumulada y la población de dicha comunidad. Finalmente, se tienen que registrar las vacunaciones a cada paciente.
@@ -16,5 +16,7 @@ Una vez recogidos los requisitos, nos encargamos de construir la arquitectura de
 ## 3. Construcción del Programa 
 Una vez creado el esqueleto, lo transformamos en un proyecto Maven con el objetivo de gestionar el proyecto en su totalidad, ya fuera las dependencias, manejar las "build", etc.
 
-A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. El pr
+A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. El proyecto se realizará en codigo Java, usando el Eclipse y el Apache Netbeans.
+
+
 
