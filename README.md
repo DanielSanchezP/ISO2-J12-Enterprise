@@ -11,8 +11,10 @@ En el caso del SNS, el trabajador deberá primero poder dar de alta un lote de v
 En el caso del SRS, el trabajador debe dar de alta una entrega de vacunas procedente del SNS, cuyos datos son: su ID, la fecha en la que se recibe, el tipo de vacuna, la ID del lote del que procede, la cantidad de vacunas y el grupo prioritario para el que se hará la entrega. Además, se encargará de administrar las vacunas a sus respectivos pacientes, donde habrá que registrar los datos de este, la fecha de la vacunación, el tipo de vacuna y el número de la dosis que se le administra. Por último, podrá consultar las estadísticas de su comunidad autónoma, pudiendo revisar el número total de vacunas inoculadas, junto con el porcentaje de las vacunas recibidas.
 
 ## 2. Diseño del Programa
-Una vez recogidos los requisitos, nos encargamos de construir el esqueleto del proyecto. Lo primero que realizamos fue, obtener el diagrama UML que nos proporcionó nuestro cliente, con el cual generamos el esqueleto del código que implementaríamos. Una vez creado, lo transformamos en un proyecto Maven con el objetivo de gestionar el proyecto en su totalidad, ya fuera las dependencias, manejar las "build", etc.
-
-A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. 
+Una vez recogidos los requisitos, nos encargamos de construir la arquitectura del proyecto. Para ello, obtuvimos el diagrama UML que nos proporcionó nuestro cliente, y con el cual generamos el esqueleto del código que implementaríamos.  
 
 ## 3. Construcción del Programa 
+Una vez creado el esqueleto, lo transformamos en un proyecto Maven con el objetivo de gestionar el proyecto en su totalidad, ya fuera las dependencias, manejar las "build", etc.
+
+A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. El pr
+
