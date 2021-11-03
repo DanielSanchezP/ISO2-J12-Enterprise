@@ -46,6 +46,7 @@ public class VacunacionDAO extends AgenteBD {
 	/**
 	 * 
 	 * @param region
+     * @return 
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("null")

@@ -187,7 +187,8 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     }//GEN-LAST:event_segDosisRButtonActionPerformed
 
     private void AtrásButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrásButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
+        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+        pantalla.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_AtrásButtonActionPerformed
     //No modificar

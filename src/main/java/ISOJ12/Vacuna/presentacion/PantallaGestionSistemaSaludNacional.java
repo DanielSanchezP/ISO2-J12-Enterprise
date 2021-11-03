@@ -6,9 +6,7 @@
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
-import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
-import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,7 +47,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         lotelist = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -92,7 +90,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
 
         jLabel3.setText("IDLote/Marca/Vacunas:");
 
-        jScrollPane2.setViewportView(lotelist);
+        jScrollPane1.setViewportView(lotelist);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,7 +116,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jTextField1)
                     .addComponent(jTextField2)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane1))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -141,7 +139,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -205,22 +203,18 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
     
     public void inicializarLista(){
-        
+        lotelist.setModel(modelo);
         LoteVacunasDAO lote = new LoteVacunasDAO();
         LoteVacunas lotevac= new LoteVacunas();
        
         try {
-            lotelist.setModel(modelo);
+            
             List<LoteVacunas> listalote = lote.seleccionarlotes();
       
             for(int i = 0; i < listalote.size();i++){
                 lotevac = listalote.get(i);
-                System.out.println(lotevac.id);
-                System.out.println(lotevac.tipo.farmaceutica);
-                System.out.println(lotevac.cantidad);
-                String id = lotevac.id;
-                String cant = String.valueOf(lotevac.cantidad);
-                modelo.addElement(id+" / "+lotevac.tipo.farmaceutica+" / "+cant);
+                modelo.addElement(lotevac.id+" / "+ lotevac.tipo.farmaceutica + " / " + lotevac.cantidad);
+                
                 
             }
 
@@ -232,7 +226,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     
     public void mostrarGestionNacional(){
         inicializarLista();
-        new PantallaGestionSistemaSaludNacional().setVisible(true);
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -242,7 +236,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JList<String> lotelist;

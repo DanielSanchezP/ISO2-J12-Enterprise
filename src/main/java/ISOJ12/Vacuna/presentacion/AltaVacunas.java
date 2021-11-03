@@ -146,7 +146,8 @@ public class AltaVacunas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
+        PantallaGestionSistemaRegionalSalud pantalla= new PantallaGestionSistemaRegionalSalud();
+        pantalla.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_AtrasButtonActionPerformed
     //No modificar
