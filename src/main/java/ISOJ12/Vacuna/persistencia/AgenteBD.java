@@ -111,7 +111,7 @@ public class AgenteBD {
 	public static void crearBaseDatos() {
 		Statement stmt;
 		String createSQL = "create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))";
-		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, segundadosis varchar(5) not null, nombreregion varchar(30) not null)";
+		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)";
 		String createSQL3 = "create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)";
 		String createSQL4 = "create table vacunas (id varchar(30) not null, nombre varchar(30) not null, farmaceutica varchar(30) not null, grupoprioridad varchar(30) not null, fechaRecepcion Date not null, numVacunas int not null, nombreregion varchar(30) not null)";
 		String createSQL5 = "create table estadisticas(nombreregion varchar(30) not null, vacunados long not null, vacunasInoculadas long not null, poblacion long not null)";

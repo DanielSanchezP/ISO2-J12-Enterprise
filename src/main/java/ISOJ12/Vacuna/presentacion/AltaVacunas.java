@@ -103,7 +103,6 @@ public class AltaVacunas extends javax.swing.JFrame {
                                     .addComponent(marcatext))))))
                 .addContainerGap(164, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(AtrasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,8 +145,7 @@ public class AltaVacunas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud pantalla= new PantallaGestionSistemaRegionalSalud();
-        pantalla.mostrarGestionRegional();
+        PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_AtrasButtonActionPerformed
     //No modificar

@@ -48,8 +48,9 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         apellidopacientetext = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        segDosisRButton = new javax.swing.JRadioButton();
         AtrásButton = new javax.swing.JButton();
+        dosisSlide = new javax.swing.JSlider();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,19 +77,20 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
             }
         });
 
-        segDosisRButton.setText("¿Es segunda dosis?");
-        segDosisRButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                segDosisRButtonActionPerformed(evt);
-            }
-        });
-
         AtrásButton.setText("Atrás");
         AtrásButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AtrásButtonActionPerformed(evt);
             }
         });
+
+        dosisSlide.setMajorTickSpacing(1);
+        dosisSlide.setMaximum(10);
+        dosisSlide.setMinimum(1);
+        dosisSlide.setPaintLabels(true);
+        dosisSlide.setPaintTicks(true);
+
+        jLabel5.setText("Nº de dosis a recibir:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,38 +104,41 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nombrePacienteText, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                                    .addComponent(tipovacunatext)
-                                    .addComponent(fechaText)
-                                    .addComponent(apellidopacientetext)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(segDosisRButton, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(139, 139, 139)
+                                .addComponent(jLabel5))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nombrePacienteText, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                                            .addComponent(tipovacunatext)
+                                            .addComponent(fechaText)
+                                            .addComponent(apellidopacientetext)))
+                                    .addComponent(dosisSlide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 95, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nombrePacienteText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombrePacienteText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(apellidopacientetext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -143,9 +148,11 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fechaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dosisSlide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(segDosisRButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -171,7 +178,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        vac.isSegundaDosis = segDosisRButton.isSelected();
+        vac.numeroDosis = dosisSlide.getValue();
         
         
         
@@ -182,13 +189,8 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombrePacienteTextActionPerformed
 
-    private void segDosisRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_segDosisRButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_segDosisRButtonActionPerformed
-
     private void AtrásButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrásButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
-        pantalla.mostrarGestionRegional();
+        PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_AtrásButtonActionPerformed
     //No modificar
@@ -236,14 +238,15 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AtrásButton;
     private javax.swing.JTextField apellidopacientetext;
+    private javax.swing.JSlider dosisSlide;
     private javax.swing.JFormattedTextField fechaText;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nombrePacienteText;
-    private javax.swing.JRadioButton segDosisRButton;
     private javax.swing.JTextField tipovacunatext;
     // End of variables declaration//GEN-END:variables
 }
