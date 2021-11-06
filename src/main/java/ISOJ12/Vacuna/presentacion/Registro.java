@@ -159,9 +159,9 @@ public class Registro extends javax.swing.JFrame {
         String DNI=dnitext.getText();
         String contrasena = new String(TextoContrasenia.getPassword());
         String tipo=ComboBoxTipo.getSelectedItem().toString();
-        
+        String nombreregion = "Castilla-La Mancha";
         LoginDAO log=new LoginDAO();
-        log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo);
+        log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo, nombreregion);
         
         Login.mostrarLogin();
         this.dispose(); 

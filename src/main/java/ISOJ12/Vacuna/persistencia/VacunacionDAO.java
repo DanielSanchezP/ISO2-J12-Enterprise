@@ -18,7 +18,7 @@ public class VacunacionDAO extends AgenteBD {
 	public void insertarVacunacion(Vacunacion vacunacion){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 
-		BD.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"','"+vacunacion.numeroDosis+"','asdfecy')");
+		BD.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'asdfecy')");
 		
 	}
 
@@ -37,7 +37,7 @@ public class VacunacionDAO extends AgenteBD {
                          vacunacion.paciente = paciente;
 			 vacunacion.nombrevacuna = res.getObject(4).toString();
 			 vacunacion.fecha = (Date) res.getObject(5);
-			 vacunacion.numeroDosis = (Integer) res.getObject(6);
+			 vacunacion.numeroDosis = (int) res.getObject(6);
                          listavacunacion.add(vacunacion);    
         }
 		 return listavacunacion;
@@ -46,6 +46,7 @@ public class VacunacionDAO extends AgenteBD {
 	/**
 	 * 
 	 * @param region
+     * @return 
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("null")

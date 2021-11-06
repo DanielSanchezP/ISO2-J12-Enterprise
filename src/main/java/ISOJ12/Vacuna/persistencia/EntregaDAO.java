@@ -17,7 +17,7 @@ public class EntregaDAO extends AgenteBD {
 	 */
 	public void insertarEntrega(EntregaVacunas entrega) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-		String str="Insert into vacunas values("+ entrega.lote.id +","+ entrega.lote.tipo.nombre +","+ entrega.lote.tipo.farmaceutica +","+ entrega.grupoPrioridad +","+formatter.format(entrega.fecha)+","+ entrega.cantidad +","+ entrega.lote.region +")";
+		String str="Insert into vacunas values('"+ entrega.lote.id +"','"+ entrega.lote.tipo.nombre +"','"+ entrega.lote.tipo.farmaceutica +"','"+ entrega.grupoPrioridad +"','"+formatter.format(entrega.fecha)+"',"+ entrega.cantidad +",'"+ entrega.lote.region +"')";
 		agente.insert(str);
 	}
 
@@ -29,7 +29,7 @@ public class EntregaDAO extends AgenteBD {
 	@SuppressWarnings("null")
 	public List<EntregaVacunas> seleccionarEntregas(String region) throws SQLException {
 		List<EntregaVacunas> listaentrega = new ArrayList<EntregaVacunas>();
-		ResultSet res = agente.select("SELECT vacunas * WHERE nombreregion = "+region);
+		ResultSet res = agente.select("SELECT * FROM vacunas WHERE nombreregion = '"+region);
 		while (res.next()) {
 			 EntregaVacunas entrega = new EntregaVacunas();
                          TipoVacuna tipo = new TipoVacuna();

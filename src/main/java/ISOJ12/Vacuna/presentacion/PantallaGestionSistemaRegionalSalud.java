@@ -141,6 +141,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         
         PantallaConsultaEstadisticas est = new PantallaConsultaEstadisticas();
         est.mostrarVentanaEstadisticas();
+        
         this.dispose();
     }//GEN-LAST:event_ButtonestvacunadosActionPerformed
 
@@ -179,8 +180,8 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarGestionRegional(){
-        new PantallaGestionSistemaRegionalSalud().setVisible(true);
+    public void mostrarGestionRegional(){
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

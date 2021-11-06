@@ -91,7 +91,8 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
+        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+        pantalla.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_AtrasButtonActionPerformed
     //No modificar
@@ -137,7 +138,6 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     
     public void mostrarEstadisticas(){
         VacunacionDAO vacunacion = new VacunacionDAO();
-        new PantallaConsultaEstadisticas().setVisible(true);
         Vacunacion vac= new Vacunacion();
        
         try {
@@ -158,7 +158,7 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     
     public void mostrarVentanaEstadisticas(){
         mostrarEstadisticas();
-        new PantallaConsultaEstadisticas().setVisible(true);
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
