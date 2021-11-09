@@ -5,10 +5,11 @@ import java.util.*;
 
 public class Vacunacion {
 
-	public TipoVacuna vacuna;
+	
 	public Paciente paciente;
+	public String nombrevacuna;
 	VacunacionDAO vacunacionDao;
 	public Date fecha;
-	public boolean isSegundaDosis;
+	public int numeroDosis;
 
 }

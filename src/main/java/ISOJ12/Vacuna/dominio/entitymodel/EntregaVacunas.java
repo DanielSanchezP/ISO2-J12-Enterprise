@@ -4,11 +4,8 @@ import ISOJ12.Vacuna.persistencia.*;
 import java.util.*;
 
 public class EntregaVacunas {
-
-	public TipoVacuna tipo;
-	public RegionEnum region;
-	public GrupoPrioridad grupoPrioridad;
 	public LoteVacunas lote;
+	public String grupoPrioridad;
 	EntregaDAO entregaDao;
 	public Date fecha;
 	public int cantidad;

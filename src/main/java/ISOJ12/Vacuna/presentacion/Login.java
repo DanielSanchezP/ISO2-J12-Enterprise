@@ -5,6 +5,8 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.persistencia.LoginDAO;
+
 /**
  *
  * @author Daniel
@@ -29,7 +31,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        TextoContrasenia = new javax.swing.JPasswordField();
+        TextoContrasena = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         BotonLogin = new javax.swing.JButton();
         BotonRegistro = new javax.swing.JButton();
@@ -56,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         try {
-            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########-#")));
+            dnitext.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -77,7 +79,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TextoContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(TextoContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                             .addComponent(dnitext))))
                 .addContainerGap())
         );
@@ -90,7 +92,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(BotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,23 +107,33 @@ public class Login extends javax.swing.JFrame {
     
     
     private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
-        this.dispose();
         Registro.mostrarRegistro();
+        this.dispose();
     }//GEN-LAST:event_BotonRegistroActionPerformed
 
     private void BotonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLoginActionPerformed
-        this.dispose(); 
-        /**
-         * if(){ 
-            /*Si el que se logea es trabajador regional, se abre PantallaRegional
-            PantallaGestionSistemaRegionalSalud.mostrarGestionRegional();
+         String dni = dnitext.getText();
+         String contrasena = new String(TextoContrasena.getPassword());
+         LoginDAO log = new LoginDAO();
+         String[] comp=log.comprobarLogin(dni, contrasena);
+         
+         
+        if(comp[0].equals("true") && comp[1].equals("SRS")){ 
+            //Si el que se logea es trabajador regional, se abre PantallaRegional
+            PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+            pantalla.mostrarGestionRegional();
+            this.dispose();
         }
         
-        if(){
-            Si el que se logea es trabajador nacional se abre PantallaNacional
-            PantallaGestionSistemaSaludNacional.mostrarGestionNacional();
-        } 
-        */
+        if(comp[0].equals("true") && comp[1].equals("SNS")){
+            //Si el que se logea es trabajador nacional se abre PantallaNacional
+           PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
+           pantalla.mostrarGestionNacional();
+            this.dispose();
+        }
+        else{
+            System.out.println("Usuario o contraseña erróneos");
+        }
         
     }//GEN-LAST:event_BotonLoginActionPerformed
 
@@ -170,7 +182,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonLogin;
     private javax.swing.JButton BotonRegistro;
-    private javax.swing.JPasswordField TextoContrasenia;
+    private javax.swing.JPasswordField TextoContrasena;
     private javax.swing.JFormattedTextField dnitext;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
