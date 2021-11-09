@@ -61,6 +61,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         });
 
         BotonCalculo.setText("Repartir");
+        BotonCalculo.setEnabled(false);
         BotonCalculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCalculoActionPerformed(evt);
