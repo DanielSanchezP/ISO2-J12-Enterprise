@@ -5,8 +5,7 @@ import java.util.*;
 
 public class EntregaVacunas {
 	public LoteVacunas lote;
-	public TipoVacuna tipo;
-	public GrupoPrioridad grupoPrioridad;
+	public String grupoPrioridad;
 	EntregaDAO entregaDao;
 	public Date fecha;
 	public int cantidad;

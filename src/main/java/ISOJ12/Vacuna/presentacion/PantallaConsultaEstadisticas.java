@@ -5,12 +5,24 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.entitymodel.Paciente;
+import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author Daniel
  */
 public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
-
+    DefaultListModel modelo = new DefaultListModel();
+    
     /**
      * Creates new form PantallaConsultaEstadisticas
      */
@@ -29,21 +41,60 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaPaciente = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        AtrasButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jScrollPane1.setViewportView(listaPaciente);
+
+        jLabel1.setText("Pacientes Vacunados:");
+
+        AtrasButton.setText("Atrás");
+        AtrasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtrasButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(AtrasButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AtrasButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
+        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+        pantalla.mostrarGestionRegional();
+        this.dispose();
+    }//GEN-LAST:event_AtrasButtonActionPerformed
     //No modificar
     
     
@@ -78,16 +129,42 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PantallaConsultaEstadisticas().setVisible(true);
+                
             }
         });
+        
+        
     }
     
-    public static void mostrarEstadisticas(){
-        
-        
-        new PantallaConsultaEstadisticas().setVisible(true);
+    public void mostrarEstadisticas(){
+        VacunacionDAO vacunacion = new VacunacionDAO();
+        Vacunacion vac= new Vacunacion();
+       
+        try {
+            listaPaciente.setModel(modelo);
+            List<Vacunacion> listavacunacion = vacunacion.seleccionarVacunaciones();
+            
+          
+            
+            for(int i = 0; i < listavacunacion.size();i++){
+                vac = listavacunacion.get(i);
+                modelo.addElement(vac.paciente.nombre+" "+vac.paciente.apellidos);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void mostrarVentanaEstadisticas(){
+        mostrarEstadisticas();
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AtrasButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> listaPaciente;
     // End of variables declaration//GEN-END:variables
 }

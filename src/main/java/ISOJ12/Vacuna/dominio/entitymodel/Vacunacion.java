@@ -10,6 +10,6 @@ public class Vacunacion {
 	public String nombrevacuna;
 	VacunacionDAO vacunacionDao;
 	public Date fecha;
-	public boolean isSegundaDosis;
+	public int numeroDosis;
 
 }
