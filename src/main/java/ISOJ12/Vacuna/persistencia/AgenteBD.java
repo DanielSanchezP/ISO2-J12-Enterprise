@@ -66,12 +66,13 @@ public class AgenteBD {
 
 	public int insert(String sql) {
 		int res = 0;
-                PreparedStatement pstmt;
 		try {
-			conectarBD();
-			pstmt = mBD.prepareStatement(sql);
-			res = pstmt.executeUpdate();
-			desconectarBD();
+                    conectarBD();
+		try(PreparedStatement pstmt = mBD.prepareStatement(sql)){
+                    res = pstmt.executeUpdate();
+                }
+                desconectarBD();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
