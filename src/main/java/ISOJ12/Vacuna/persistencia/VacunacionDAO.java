@@ -10,7 +10,7 @@ import java.util.*;
 
 
 public class VacunacionDAO extends AgenteBD {
-	AgenteBD BD = AgenteBD.getAgente();
+	AgenteBD bd = AgenteBD.getAgente();
 	/**
 	 * @param paciente
 	 * @param vacunacion
@@ -18,15 +18,15 @@ public class VacunacionDAO extends AgenteBD {
 	public void insertarVacunacion(Vacunacion vacunacion){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 
-		BD.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'asdfecy')");
+		bd.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'asdfecy')");
 		
 	}
 
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones() throws SQLException{
-		List<Vacunacion> listavacunacion = new ArrayList<Vacunacion>();
+		List<Vacunacion> listavacunacion = new ArrayList<>();
                 
-		ResultSet res = BD.select("SELECT * FROM vacunacion");
+		ResultSet res = bd.select("SELECT * FROM vacunacion");
                 
 		while (res.next()) {
                          Vacunacion vacunacion = new Vacunacion();
@@ -52,7 +52,7 @@ public class VacunacionDAO extends AgenteBD {
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones(String region) throws SQLException{
 		List<Vacunacion> listavacunacion = null;
-		ResultSet res = BD.select("SELECT vacunacion * WHERE nombreregion = asdfecy ");
+		ResultSet res = bd.select("SELECT vacunacion * WHERE nombreregion = asdfecy ");
 		 while (res.next()) {
 			 Vacunacion vacunacion = new Vacunacion();
 			 vacunacion.paciente.dni = res.getObject(1).toString();

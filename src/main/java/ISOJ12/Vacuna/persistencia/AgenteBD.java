@@ -18,20 +18,20 @@ import java.sql.Statement;
 
 public class AgenteBD {
 	
-	private PreparedStatement pstmt;
+	
 	private Statement stmt;
 	private static  Connection mBD;
-	protected static AgenteBD Instancia = null;
+	protected static AgenteBD instancia = null;
 	
 	protected AgenteBD(){
 		crearBaseDatos();
 	}
 	
 	public static AgenteBD getAgente(){
-        if (Instancia == null) {
-            Instancia = new AgenteBD();
+        if (instancia == null) {
+            instancia = new AgenteBD();
         }
-        return Instancia;
+        return instancia;
     }
 
 	public static void conectarBD() {
@@ -57,8 +57,7 @@ public class AgenteBD {
 			conectarBD();
 			stmt = mBD.createStatement();
 			res = stmt.executeQuery(sql);
-                        //stmt.close();
-			//desconectarBD();
+                        
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -67,6 +66,7 @@ public class AgenteBD {
 
 	public int insert(String sql) {
 		int res = 0;
+                PreparedStatement pstmt;
 		try {
 			conectarBD();
 			pstmt = mBD.prepareStatement(sql);
