@@ -96,8 +96,7 @@ public class AgenteBD {
 	}
 
 	public int delete(String sql) {
-		int res = update(sql);
-                return res;
+		return update(sql);      
 	}
 	
 	public static void crearBaseDatos() {

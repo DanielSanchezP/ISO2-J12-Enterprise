@@ -29,33 +29,33 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="vacunasLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="proveedorLabel2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="TextoNumVacunas" pref="100" max="32767" attributes="0"/>
+                          <Component id="textoNumVacunas" pref="100" max="32767" attributes="0"/>
                           <Component id="proveedortext" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="LabelFecha" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelFecha" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TextoFecha" max="32767" attributes="0"/>
+                      <Component id="textoFecha" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="144" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="AtrasButton" min="-2" max="-2" attributes="0"/>
+              <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="171" max="32767" attributes="0"/>
-              <Component id="BotonAltaLote" min="-2" pref="150" max="-2" attributes="0"/>
+              <Component id="botonAltaLote" min="-2" pref="150" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -65,27 +65,27 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TextoNumVacunas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="vacunasLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textoNumVacunas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="proveedorLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="proveedortext" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LabelFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
-                      <Component id="BotonAltaLote" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="botonAltaLote" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="AtrasButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -94,12 +94,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="vacunasLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vacunas Recibidas: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextoNumVacunas">
+    <Component class="javax.swing.JFormattedTextField" name="textoNumVacunas">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format format="#0" subtype="-1" type="0"/>
@@ -109,12 +109,12 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="proveedorLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Proveedor: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelFecha">
+    <Component class="javax.swing.JLabel" name="labelFecha">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha de Recepcion: "/>
       </Properties>
@@ -122,7 +122,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextoFecha">
+    <Component class="javax.swing.JFormattedTextField" name="textoFecha">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format subtype="1" type="1"/>
@@ -132,22 +132,22 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonAltaLote">
+    <Component class="javax.swing.JButton" name="botonAltaLote">
       <Properties>
         <Property name="text" type="java.lang.String" value="ALTA"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAltaLoteActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAltaLoteActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="proveedortext">
     </Component>
-    <Component class="javax.swing.JButton" name="AtrasButton">
+    <Component class="javax.swing.JButton" name="atrasButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
