@@ -96,18 +96,8 @@ public class AgenteBD {
 	}
 
 	public int delete(String sql) {
-		int res = 0;
-		try {
-			conectarBD();
-			stmt = mBD.createStatement();
-			res=stmt.executeUpdate(sql);
-                        stmt.close();
-			desconectarBD();
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		return res;
+		int res = update(sql);
+                return res;
 	}
 	
 	public static void crearBaseDatos() {
