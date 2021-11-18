@@ -100,6 +100,7 @@ public class LoteVacunasDAOTest {
         instance.modificarLoteVacunas(lote1, cantidad);
     }
 
+    
     /**
      * Test of seleccionarlotes method, of class LoteVacunasDAO.
      */
