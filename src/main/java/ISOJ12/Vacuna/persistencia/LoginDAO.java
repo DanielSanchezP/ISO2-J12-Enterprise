@@ -4,7 +4,7 @@ import ISOJ12.Vacuna.dominio.entitymodel.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+
 
 public class LoginDAO extends AgenteBD {
 	AgenteBD bd = AgenteBD.getAgente();
