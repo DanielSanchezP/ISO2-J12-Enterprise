@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class EntregaDAO extends AgenteBD {
-	AgenteBD agente=AgenteBD.getAgente();;
+	AgenteBD agente=AgenteBD.getAgente();
 	
 	/**
 	 * 
@@ -24,11 +24,12 @@ public class EntregaDAO extends AgenteBD {
 	/**
 	 * 
 	 * @param region
+     * @return 
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("null")
 	public List<EntregaVacunas> seleccionarEntregas(String region) throws SQLException {
-		List<EntregaVacunas> listaentrega = new ArrayList<EntregaVacunas>();
+		List<EntregaVacunas> listaentrega = new ArrayList<>();
 		ResultSet res = agente.select("SELECT * FROM vacunas WHERE nombreregion = '"+region);
 		while (res.next()) {
 			 EntregaVacunas entrega = new EntregaVacunas();
