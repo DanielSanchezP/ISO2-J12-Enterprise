@@ -28,6 +28,7 @@ public class LoteVacunasDAOTest {
     LoteVacunas lote = new LoteVacunas();
     LoteVacunas lote1 = new LoteVacunas();
     
+    
     public LoteVacunasDAOTest() {
     }
     
