@@ -5,15 +5,14 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
-
-import ISOJ12.Vacuna.dominio.controller.GestorLogin;
+import ISOJ12.Vacuna.persistencia.LoginDAO;
 
 /**
  *
  * @author Daniel
  */
 public class Login extends javax.swing.JFrame {
-    GestorLogin gl = new GestorLogin();
+
     /**
      * Creates new form Login
      */
@@ -31,30 +30,30 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dniLabel = new javax.swing.JLabel();
-        textoContrasena = new javax.swing.JPasswordField();
-        contraseniaLabel = new javax.swing.JLabel();
-        botonLogin = new javax.swing.JButton();
-        botonRegistro = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        TextoContrasena = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        BotonLogin = new javax.swing.JButton();
+        BotonRegistro = new javax.swing.JButton();
         dnitext = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        dniLabel.setText("DNI:");
+        jLabel1.setText("DNI:");
 
-        contraseniaLabel.setText("Contraseña:");
+        jLabel2.setText("Contraseña:");
 
-        botonLogin.setText("Iniciar Sesión");
-        botonLogin.addActionListener(new java.awt.event.ActionListener() {
+        BotonLogin.setText("Iniciar Sesión");
+        BotonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonLoginActionPerformed(evt);
+                BotonLoginActionPerformed(evt);
             }
         });
 
-        botonRegistro.setText("Registrarse");
-        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+        BotonRegistro.setText("Registrarse");
+        BotonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegistroActionPerformed(evt);
+                BotonRegistroActionPerformed(evt);
             }
         });
 
@@ -72,15 +71,15 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(202, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(botonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                        .addComponent(botonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(BotonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                        .addComponent(BotonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(contraseniaLabel)
-                            .addComponent(dniLabel))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textoContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(TextoContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                             .addComponent(dnitext))))
                 .addContainerGap())
         );
@@ -89,17 +88,17 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dniLabel)
+                    .addComponent(jLabel1)
                     .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contraseniaLabel))
+                    .addComponent(TextoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(botonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addComponent(BotonRegistro)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -107,14 +106,17 @@ public class Login extends javax.swing.JFrame {
     //No modificar
     
     
-    private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+    private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
         Registro.mostrarRegistro();
         this.dispose();
-    }//GEN-LAST:event_botonRegistroActionPerformed
+    }//GEN-LAST:event_BotonRegistroActionPerformed
 
-    private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
+    private void BotonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLoginActionPerformed
+         String dni = dnitext.getText();
+         String contrasena = new String(TextoContrasena.getPassword());
+         LoginDAO log = new LoginDAO();
+         String[] comp=log.comprobarLogin(dni, contrasena);
          
-        String[] comp = gl.login(dnitext.getText(), new String(textoContrasena.getPassword()));
          
         if(comp[0].equals("true") && comp[1].equals("SRS")){ 
             //Si el que se logea es trabajador regional, se abre PantallaRegional
@@ -132,7 +134,8 @@ public class Login extends javax.swing.JFrame {
         else{
             System.out.println("Usuario o contraseña erróneos");
         }
-    }//GEN-LAST:event_botonLoginActionPerformed
+        
+    }//GEN-LAST:event_BotonLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,16 +153,22 @@ public class Login extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Login().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
         });
     }
     
@@ -171,11 +180,11 @@ public class Login extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonLogin;
-    private javax.swing.JButton botonRegistro;
-    private javax.swing.JLabel contraseniaLabel;
-    private javax.swing.JLabel dniLabel;
+    private javax.swing.JButton BotonLogin;
+    private javax.swing.JButton BotonRegistro;
+    private javax.swing.JPasswordField TextoContrasena;
     private javax.swing.JFormattedTextField dnitext;
-    private javax.swing.JPasswordField textoContrasena;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

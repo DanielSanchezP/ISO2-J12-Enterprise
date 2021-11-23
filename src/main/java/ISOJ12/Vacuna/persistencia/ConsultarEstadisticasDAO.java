@@ -4,11 +4,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConsultarEstadisticasDAO extends AgenteBD {
-	AgenteBD bd=AgenteBD.getAgente();
+	AgenteBD BD=AgenteBD.getAgente();
 	/**
 	 * 
 	 * @param region
-     * @return 
 	 * @throws SQLException 
 	 */
 	public String[][] comprobarEstadisticasNacional(String region) throws SQLException {
@@ -16,10 +15,10 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
                 int cont=0;
 		ResultSet res = null;
 		if(region.equals("Todas")) {
-			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas");
+			res = BD.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas");
 		}
 		else {
-			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas WHERE nombreregion ='"+region+"' ");
+			res = BD.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas WHERE nombreregion ='"+region+"' ");
 		}
 		while (res.next()) {
                 String[] estadistica = new String[3];
@@ -36,7 +35,7 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
 	public String[] comprobarEstadisticasRegional(String region) throws SQLException {
 		String[] estadisticas=new String[3];
 		ResultSet res = null;
-		res = bd.select("SELECT nombreregion, vacunasInoculadas, poblacion FROM estadisticas WHERE nombreregion ='"+region+"' ");
+		res = BD.select("SELECT nombreregion, vacunasInoculadas, poblacion FROM estadisticas WHERE nombreregion ='"+region+"' ");
 		while (res.next()) {
         	estadisticas[0]=res.getObject(1).toString();
                 estadisticas[1]=res.getObject(2).toString();

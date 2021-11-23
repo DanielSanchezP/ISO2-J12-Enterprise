@@ -10,25 +10,26 @@ import java.util.Date;
 import java.util.List;
 
 public class LoteVacunasDAO extends AgenteBD {
-	AgenteBD bd = AgenteBD.getAgente();
+	AgenteBD BD = AgenteBD.getAgente();
 	/**
 	 * 
 	 * @param lote
 	 */
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    public String id;
 	public void insertarLoteVacunas(LoteVacunas lote){
-		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.tipo.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
+		BD.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.tipo.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
 		
 	}
         
         public void modificarLoteVacunas(LoteVacunas lote, int cantidad){
-            bd.update("UPDATE lotevacunas SET cantidad = "+(lote.cantidad - cantidad)+" WHERE id = "+lote.id+"");
+            BD.update("UPDATE lotevacunas SET cantidad = "+(lote.cantidad - cantidad)+" WHERE id = "+lote.id+"");
         }
         
         public List<LoteVacunas> seleccionarlotes() throws SQLException{
-		List<LoteVacunas> listalote = new ArrayList<>();
+		List<LoteVacunas> listalote = new ArrayList<LoteVacunas>();
                 
-		ResultSet res = bd.select("SELECT * FROM lotevacunas");
+		ResultSet res = BD.select("SELECT * FROM lotevacunas");
                 
 		while (res.next()) {
                     

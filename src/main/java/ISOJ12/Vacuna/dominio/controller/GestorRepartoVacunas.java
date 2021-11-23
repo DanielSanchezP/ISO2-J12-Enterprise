@@ -1,8 +1,8 @@
 package ISOJ12.Vacuna.dominio.controller;
 
 import java.util.*;
-
 import ISOJ12.Vacuna.dominio.entitymodel.*;
+import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 
 public class GestorRepartoVacunas {
 
@@ -13,8 +13,19 @@ public class GestorRepartoVacunas {
 	 * @param cantidad
 	 */
 	public void altaNuevoLoteVacunas(Date fecha, String tipo, int cantidad) {
-		// TODO - implement GestorRepartoVacunas.altaNuevoLoteVacunas
-		throw new UnsupportedOperationException();
+            LoteVacunas lote = new LoteVacunas();
+            TipoVacuna tipovacuna = new TipoVacuna();
+            LoteVacunasDAO lotedao = new LoteVacunasDAO();
+            
+            int numero = (int)(Math.random()*1000000);
+            lote.id = Integer.toString(numero);
+            tipovacuna.farmaceutica = tipo;
+            lote.tipo = tipovacuna;
+            lote.cantidad = cantidad;
+            lote.fecha = fecha;
+                
+            lotedao.insertarLoteVacunas(lote);
+            throw new UnsupportedOperationException();
 	}
 
 	public List<EntregaVacunas> calcularEntregasRegion() {

@@ -5,9 +5,13 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.entitymodel.Paciente;
 import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
 import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,21 +41,21 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelScrollPane = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         listaPaciente = new javax.swing.JList<>();
-        pacienteLabel = new javax.swing.JLabel();
-        atrasButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        AtrasButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelScrollPane.setViewportView(listaPaciente);
+        jScrollPane1.setViewportView(listaPaciente);
 
-        pacienteLabel.setText("Pacientes Vacunados:");
+        jLabel1.setText("Pacientes Vacunados:");
 
-        atrasButton.setText("Atrás");
-        atrasButton.addActionListener(new java.awt.event.ActionListener() {
+        AtrasButton.setText("Atrás");
+        AtrasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atrasButtonActionPerformed(evt);
+                AtrasButtonActionPerformed(evt);
             }
         });
 
@@ -64,33 +68,33 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pacienteLabel)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(atrasButton)))
+                        .addComponent(AtrasButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(pacienteLabel)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(atrasButton)
+                .addComponent(AtrasButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void atrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasButtonActionPerformed
+    private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
         PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
         pantalla.mostrarGestionRegional();
         this.dispose();
-    }//GEN-LAST:event_atrasButtonActionPerformed
+    }//GEN-LAST:event_AtrasButtonActionPerformed
     //No modificar
     
     
@@ -110,16 +114,23 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new PantallaConsultaEstadisticas().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PantallaConsultaEstadisticas().setVisible(true);
+                
+            }
         });
         
         
@@ -151,9 +162,9 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton atrasButton;
+    private javax.swing.JButton AtrasButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> listaPaciente;
-    private javax.swing.JLabel pacienteLabel;
-    private javax.swing.JScrollPane panelScrollPane;
     // End of variables declaration//GEN-END:variables
 }

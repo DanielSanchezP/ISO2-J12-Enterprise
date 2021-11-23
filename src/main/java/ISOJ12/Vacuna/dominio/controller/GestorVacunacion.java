@@ -1,6 +1,8 @@
 package ISOJ12.Vacuna.dominio.controller;
 
 import ISOJ12.Vacuna.dominio.entitymodel.*;
+import ISOJ12.Vacuna.persistencia.EntregaDAO;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.util.*;
 
 public class GestorVacunacion {
@@ -12,9 +14,15 @@ public class GestorVacunacion {
 	 * @param cantidad
 	 * @param prioridad
 	 */
-	public void altaEntregaVacunas(String lote, Date fecha, int cantidad, int prioridad) {
-		// TODO - implement GestorVacunacion.altaEntregaVacunas
-		throw new UnsupportedOperationException();
+	public void altaEntregaVacunas(LoteVacunas lote, Date fecha, int cantidad, String prioridad) {
+            EntregaVacunas entrega = new EntregaVacunas();
+            EntregaDAO entregadao = new EntregaDAO();
+            entrega.lote = lote;
+            entrega.fecha = fecha;
+            entrega.cantidad = cantidad;
+            entrega.grupoPrioridad = prioridad;    
+            entregadao.insertarEntrega(entrega);
+            throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -25,8 +33,20 @@ public class GestorVacunacion {
 	 * @param nif
 	 * @param tipo
 	 */
-	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, TipoVacuna tipo) {
-		// TODO - implement GestorVacunacion.registrarVacunacion
+	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis) {
+		VacunacionDAO vacunaciondao = new VacunacionDAO();
+                Vacunacion vacunacion = new Vacunacion();
+                Paciente pac=new Paciente();
+                pac.nombre = nombre;
+                pac.apellidos = apellidos;
+                pac.dni = nif;
+                vacunacion.paciente = pac;
+                vacunacion.nombrevacuna = tipo;
+                vacunacion.numeroDosis = dosis;
+                System.out.print("Fecha: "+fecha);
+                vacunacion.fecha=fecha;
+                
+                vacunaciondao.insertarVacunacion(vacunacion);
 		throw new UnsupportedOperationException();
 	}
 

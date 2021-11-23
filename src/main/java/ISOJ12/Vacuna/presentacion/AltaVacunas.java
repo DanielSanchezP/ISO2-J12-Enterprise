@@ -5,12 +5,23 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.controller.GestorVacunacion;
+import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+import ISOJ12.Vacuna.dominio.entitymodel.TipoVacuna;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Daniel
  */
 public class AltaVacunas extends javax.swing.JFrame {
-
+    GestorVacunacion gestor = new GestorVacunacion();
+    TipoVacuna tipo = new TipoVacuna();
+    LoteVacunas lote = new LoteVacunas();
     /**
      * Creates new form AltaVacunas
      */
@@ -29,47 +40,52 @@ public class AltaVacunas extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<>();
-        textoFecha = new javax.swing.JFormattedTextField();
-        fechaLabel = new javax.swing.JLabel();
-        marcaLabel = new javax.swing.JLabel();
-        loteLabel = new javax.swing.JLabel();
-        textoLote = new javax.swing.JFormattedTextField();
-        cantidadLabel = new javax.swing.JLabel();
-        textoCantidad = new javax.swing.JFormattedTextField();
-        grupoLabel = new javax.swing.JLabel();
-        botonAlta = new javax.swing.JButton();
+        TextoFecha = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        TextoLote = new javax.swing.JFormattedTextField();
+        jLabel4 = new javax.swing.JLabel();
+        TextoCantidad = new javax.swing.JFormattedTextField();
+        jLabel5 = new javax.swing.JLabel();
+        BotonAlta = new javax.swing.JButton();
         marcatext = new javax.swing.JTextField();
-        grupoComboBox = new javax.swing.JComboBox<>();
-        atrasButton = new javax.swing.JButton();
+        GrupoComboBox = new javax.swing.JComboBox();
+        AtrasButton = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        textoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        TextoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
-        fechaLabel.setText("Fecha: ");
+        jLabel1.setText("Fecha: ");
 
-        marcaLabel.setText("Marca: ");
+        jLabel2.setText("Marca: ");
 
-        loteLabel.setText("Lote: ");
+        jLabel3.setText("Lote: ");
 
-        textoLote.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        TextoLote.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        cantidadLabel.setText("Cantidad: ");
+        jLabel4.setText("Cantidad: ");
 
-        textoCantidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        TextoCantidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        grupoLabel.setText("Grupo Prioritario:");
+        jLabel5.setText("Grupo Prioritario:");
 
-        botonAlta.setText("ALTA");
-
-        grupoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        atrasButton.setText("Atrás");
-        atrasButton.addActionListener(new java.awt.event.ActionListener() {
+        BotonAlta.setText("ALTA");
+        BotonAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atrasButtonActionPerformed(evt);
+                BotonAltaActionPerformed(evt);
+            }
+        });
+
+        GrupoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        AtrasButton.setText("Atrás");
+        AtrasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtrasButtonActionPerformed(evt);
             }
         });
 
@@ -81,32 +97,32 @@ public class AltaVacunas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addComponent(cantidadLabel)
+                        .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(grupoLabel)
+                                .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(grupoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(GrupoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(loteLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(marcaLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(fechaLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textoLote, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addComponent(textoFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(TextoLote, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(TextoFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(marcatext))))))
                 .addContainerGap(164, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(atrasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AtrasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,41 +131,62 @@ public class AltaVacunas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(atrasButton))
+                        .addComponent(AtrasButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fechaLabel))
+                            .addComponent(TextoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(marcaLabel)
+                            .addComponent(jLabel2)
                             .addComponent(marcatext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(loteLabel)
-                            .addComponent(textoLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)
+                            .addComponent(TextoLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cantidadLabel)
-                            .addComponent(textoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4)
+                            .addComponent(TextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(grupoLabel)
-                            .addComponent(grupoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)
+                            .addComponent(GrupoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(botonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)))
+                        .addComponent(BotonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void atrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasButtonActionPerformed
+    private void AtrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasButtonActionPerformed
         PantallaGestionSistemaRegionalSalud pantalla= new PantallaGestionSistemaRegionalSalud();
         pantalla.mostrarGestionRegional();
         this.dispose();
-    }//GEN-LAST:event_atrasButtonActionPerformed
+    }//GEN-LAST:event_AtrasButtonActionPerformed
+
+    private void BotonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaActionPerformed
+        Date fecha = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        
+        String id = TextoLote.getText();
+        String farmaceutica = marcatext.getText();
+        
+        lote.id = id;
+        tipo.farmaceutica = farmaceutica;
+        lote.tipo = tipo;
+        
+        String prioridad = GrupoComboBox.getSelectedItem().toString();
+        int cantidad = Integer.parseInt(TextoCantidad.getText());
+        try {
+            fecha = formatter.parse(TextoFecha.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        gestor.altaEntregaVacunas(lote, fecha, cantidad, prioridad);
+    }//GEN-LAST:event_BotonAltaActionPerformed
     //No modificar
     
     
@@ -181,31 +218,31 @@ public class AltaVacunas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new AltaVacunas().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AltaVacunas().setVisible(true);
+            }
         });
     }
     
     public static void mostrarAV(){
-        
-        
         new AltaVacunas().setVisible(true);
     }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton atrasButton;
-    private javax.swing.JButton botonAlta;
-    private javax.swing.JLabel cantidadLabel;
-    private javax.swing.JLabel fechaLabel;
-    private javax.swing.JComboBox<String> grupoComboBox;
-    private javax.swing.JLabel grupoLabel;
+    private javax.swing.JButton AtrasButton;
+    private javax.swing.JButton BotonAlta;
+    private javax.swing.JComboBox GrupoComboBox;
+    private javax.swing.JFormattedTextField TextoCantidad;
+    private javax.swing.JFormattedTextField TextoFecha;
+    private javax.swing.JFormattedTextField TextoLote;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel loteLabel;
-    private javax.swing.JLabel marcaLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField marcatext;
-    private javax.swing.JFormattedTextField textoCantidad;
-    private javax.swing.JFormattedTextField textoFecha;
-    private javax.swing.JFormattedTextField textoLote;
     // End of variables declaration//GEN-END:variables
 }
