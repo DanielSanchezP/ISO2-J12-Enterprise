@@ -19,6 +19,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 /**
  *
  * @author Julián M
@@ -111,5 +112,4 @@ public class LoteVacunasDAOTest {
         List<LoteVacunas> result = instance.seleccionarlotes();
         assertFalse(result.isEmpty());
     }
-    
 }
