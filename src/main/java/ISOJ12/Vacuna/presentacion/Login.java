@@ -5,14 +5,15 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
-import ISOJ12.Vacuna.persistencia.LoginDAO;
+
+import ISOJ12.Vacuna.dominio.controller.GestorLogin;
 
 /**
  *
  * @author Daniel
  */
 public class Login extends javax.swing.JFrame {
-
+    GestorLogin gl = new GestorLogin();
     /**
      * Creates new form Login
      */
@@ -112,11 +113,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
-         String dni = dnitext.getText();
-         String contrasena = new String(textoContrasena.getPassword());
-         LoginDAO log = new LoginDAO();
-         String[] comp=log.comprobarLogin(dni, contrasena);
          
+        String[] comp = gl.login(dnitext.getText(), new String(textoContrasena.getPassword()));
          
         if(comp[0].equals("true") && comp[1].equals("SRS")){ 
             //Si el que se logea es trabajador regional, se abre PantallaRegional
@@ -134,7 +132,6 @@ public class Login extends javax.swing.JFrame {
         else{
             System.out.println("Usuario o contraseña erróneos");
         }
-        
     }//GEN-LAST:event_botonLoginActionPerformed
 
     /**
