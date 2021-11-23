@@ -44,28 +44,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="cantidadLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="TextoCantidad" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="textoCantidad" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="grupoLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="GrupoComboBox" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="grupoComboBox" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="loteLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="marcaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fechaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="TextoLote" alignment="0" pref="100" max="32767" attributes="0"/>
-                                  <Component id="TextoFecha" alignment="0" pref="100" max="32767" attributes="0"/>
+                                  <Component id="textoLote" alignment="0" pref="100" max="32767" attributes="0"/>
+                                  <Component id="textoFecha" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="marcatext" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -76,9 +76,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="AtrasButton" min="-2" pref="67" max="-2" attributes="0"/>
+              <Component id="atrasButton" min="-2" pref="67" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="BotonAlta" min="-2" pref="152" max="-2" attributes="0"/>
+              <Component id="botonAlta" min="-2" pref="152" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -89,36 +89,36 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="AtrasButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TextoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marcaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="marcatext" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextoLote" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="loteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoLote" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextoCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cantidadLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="GrupoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="grupoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="grupoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="BotonAlta" pref="65" max="32767" attributes="0"/>
+                      <Component id="botonAlta" pref="65" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -127,7 +127,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JFormattedTextField" name="TextoFecha">
+    <Component class="javax.swing.JFormattedTextField" name="textoFecha">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format subtype="1" type="1"/>
@@ -137,22 +137,22 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="fechaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="marcaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Marca: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="loteLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lote: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextoLote">
+    <Component class="javax.swing.JFormattedTextField" name="textoLote">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format format="#0" subtype="-1" type="0"/>
@@ -162,12 +162,12 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="cantidadLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cantidad: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextoCantidad">
+    <Component class="javax.swing.JFormattedTextField" name="textoCantidad">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format format="#0" subtype="-1" type="0"/>
@@ -177,19 +177,19 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="grupoLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Grupo Prioritario:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonAlta">
+    <Component class="javax.swing.JButton" name="botonAlta">
       <Properties>
         <Property name="text" type="java.lang.String" value="ALTA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="marcatext">
     </Component>
-    <Component class="javax.swing.JComboBox" name="GrupoComboBox">
+    <Component class="javax.swing.JComboBox" name="grupoComboBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -201,15 +201,15 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="AtrasButton">
+    <Component class="javax.swing.JButton" name="atrasButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
