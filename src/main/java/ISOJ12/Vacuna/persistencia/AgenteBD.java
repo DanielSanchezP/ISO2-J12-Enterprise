@@ -94,22 +94,11 @@ public class AgenteBD {
 	}
 
 	public int delete(String sql) {
-		int res = 0;
-		try {
-			conectarBD();
-			stmt = mBD.createStatement();
-			res=stmt.executeUpdate(sql);
-                        stmt.close();
-			desconectarBD();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return res;
+		return update(sql);
 	}
 	
 	public static void crearBaseDatos() {
-		Statement stmt;
+		String admin = "admin";
 		String createSQL = "create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))";
 		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)";
 		String createSQL3 = "create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)";
@@ -118,14 +107,14 @@ public class AgenteBD {
 		try {
 			Driver derbyEmbeddedDriver = new EmbeddedDriver();
 			DriverManager.registerDriver(derbyEmbeddedDriver);
-			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=true", "admin", "admin");
-			stmt = mBD.createStatement();
-			stmt.execute(createSQL);
-			stmt.execute(createSQL2);
-			stmt.execute(createSQL3);
-			stmt.execute(createSQL4);
-			stmt.execute(createSQL5);
-                        stmt.close();
+			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=true", admin, admin);
+                    try (Statement stmt = mBD.createStatement()) {
+                        stmt.execute(createSQL);
+                        stmt.execute(createSQL2);
+                        stmt.execute(createSQL3);
+                        stmt.execute(createSQL4);
+                        stmt.execute(createSQL5);
+                    }
 		} catch (SQLException ex) {
 			System.out.println("in connection" + ex);
 		}
