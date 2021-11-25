@@ -39,58 +39,58 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BotonAltaLote = new javax.swing.JButton();
-        BotonCalculo = new javax.swing.JButton();
-        ComboBoxListaSitios = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        botonAltaLote = new javax.swing.JButton();
+        botonCalculo = new javax.swing.JButton();
+        comboBoxListaSitios = new javax.swing.JComboBox<>();
+        totalvacunadosText = new javax.swing.JTextField();
+        porcentajevacunadosText = new javax.swing.JTextField();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
+        scrollPane1 = new javax.swing.JScrollPane();
         lotelist = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        BotonAltaLote.setLabel("Alta de Lote");
-        BotonAltaLote.setName("BotonAltaLote"); // NOI18N
-        BotonAltaLote.addActionListener(new java.awt.event.ActionListener() {
+        botonAltaLote.setLabel("Alta de Lote");
+        botonAltaLote.setName("botonAltaLote"); // NOI18N
+        botonAltaLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAltaLoteActionPerformed(evt);
+                botonAltaLoteActionPerformed(evt);
             }
         });
 
-        BotonCalculo.setText("Repartir");
-        BotonCalculo.addActionListener(new java.awt.event.ActionListener() {
+        botonCalculo.setText("Repartir");
+        botonCalculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCalculoActionPerformed(evt);
+                botonCalculoActionPerformed(evt);
             }
         });
 
-        ComboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", " " }));
-        ComboBoxListaSitios.setToolTipText("");
-        ComboBoxListaSitios.addActionListener(new java.awt.event.ActionListener() {
+        comboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", " " }));
+        comboBoxListaSitios.setToolTipText("");
+        comboBoxListaSitios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxListaSitiosActionPerformed(evt);
+                comboBoxListaSitiosActionPerformed(evt);
             }
         });
 
-        jTextField1.setEditable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        totalvacunadosText.setEditable(false);
+        totalvacunadosText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                totalvacunadosTextActionPerformed(evt);
             }
         });
 
-        jTextField2.setEditable(false);
+        porcentajevacunadosText.setEditable(false);
 
-        jLabel1.setText("Total de Vacunados:");
+        label1.setText("Total de Vacunados:");
 
-        jLabel2.setText("Porcentaje de Vacunados:");
+        label2.setText("Porcentaje de Vacunados:");
 
-        jLabel3.setText("IDLote/Marca/Vacunas:");
+        label3.setText("IDLote/Marca/Vacunas:");
 
-        jScrollPane1.setViewportView(lotelist);
+        scrollPane1.setViewportView(lotelist);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,23 +100,23 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BotonAltaLote, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonAltaLote, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                        .addComponent(BotonCalculo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonCalculo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
-                        .addComponent(ComboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jScrollPane1))
+                    .addComponent(label3)
+                    .addComponent(label2)
+                    .addComponent(label1)
+                    .addComponent(totalvacunadosText)
+                    .addComponent(porcentajevacunadosText)
+                    .addComponent(scrollPane1))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -124,48 +124,48 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAltaLote, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonCalculo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonAltaLote, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCalculo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(ComboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel1)
+                .addComponent(label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1)
+                .addComponent(totalvacunadosText)
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2)
+                .addComponent(label2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(porcentajevacunadosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(label3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        ComboBoxListaSitios.getAccessibleContext().setAccessibleName("");
+        comboBoxListaSitios.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //No modificar
     
     
-    private void BotonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaLoteActionPerformed
+    private void botonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAltaLoteActionPerformed
         AltaLote.mostrarAL();
         this.dispose();
-    }//GEN-LAST:event_BotonAltaLoteActionPerformed
+    }//GEN-LAST:event_botonAltaLoteActionPerformed
 
-    private void ComboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxListaSitiosActionPerformed
+    private void comboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaSitiosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxListaSitiosActionPerformed
+    }//GEN-LAST:event_comboBoxListaSitiosActionPerformed
 
-    private void BotonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalculoActionPerformed
+    private void botonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotonCalculoActionPerformed
+    }//GEN-LAST:event_botonCalculoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void totalvacunadosTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalvacunadosTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_totalvacunadosTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,22 +183,16 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PantallaGestionSistemaSaludNacional().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new PantallaGestionSistemaSaludNacional().setVisible(true);
         });
     }
     
@@ -230,15 +224,15 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAltaLote;
-    private javax.swing.JButton BotonCalculo;
-    private javax.swing.JComboBox<String> ComboBoxListaSitios;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton botonAltaLote;
+    private javax.swing.JButton botonCalculo;
+    private javax.swing.JComboBox<String> comboBoxListaSitios;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
     private javax.swing.JList<String> lotelist;
+    private javax.swing.JTextField porcentajevacunadosText;
+    private javax.swing.JScrollPane scrollPane1;
+    private javax.swing.JTextField totalvacunadosText;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,7 +3,6 @@ package ISOJ12.Vacuna.persistencia;
 
 import org.apache.derby.jdbc.*;
 
-import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -18,27 +17,28 @@ import java.sql.Statement;
 
 public class AgenteBD {
 	
-	private PreparedStatement pstmt;
+	
 	private Statement stmt;
 	private static  Connection mBD;
-	protected static AgenteBD Instancia = null;
+	protected static AgenteBD instancia = null;
 	
 	protected AgenteBD(){
 		crearBaseDatos();
 	}
 	
 	public static AgenteBD getAgente(){
-        if (Instancia == null) {
-            Instancia = new AgenteBD();
+        if (instancia == null) {
+            instancia = new AgenteBD();
         }
-        return Instancia;
+        return instancia;
     }
 
 	public static void conectarBD() {
 		Driver derbyEmbeddedDriver = new EmbeddedDriver();
+                String admin = "admin";
 		try {
 			DriverManager.registerDriver(derbyEmbeddedDriver);
-			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=false", "admin", "admin");
+			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=false", admin, admin);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -57,8 +57,6 @@ public class AgenteBD {
 			conectarBD();
 			stmt = mBD.createStatement();
 			res = stmt.executeQuery(sql);
-                        //stmt.close();
-			//desconectarBD();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -66,6 +64,7 @@ public class AgenteBD {
 	}
 
 	public int insert(String sql) {
+            PreparedStatement pstmt;
 		int res = 0;
 		try {
 			conectarBD();
@@ -87,7 +86,6 @@ public class AgenteBD {
                         stmt.close();
 			desconectarBD();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return res;

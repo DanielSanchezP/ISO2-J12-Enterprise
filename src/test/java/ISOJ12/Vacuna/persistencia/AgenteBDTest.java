@@ -7,8 +7,6 @@ package ISOJ12.Vacuna.persistencia;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,7 +44,7 @@ public class AgenteBDTest {
      * Test of crearBaseDatos method, of class AgenteBD.
      */
     @Test
-    public void testCrearBaseDatos() {
+    void testCrearBaseDatos() {
         System.out.println("crearBaseDatos");
         abd.crearBaseDatos();
     }
@@ -55,7 +53,7 @@ public class AgenteBDTest {
      * Test of getAgente method, of class AgenteBD.
      */
     @Test
-    public void testGetAgente() {
+    void testGetAgente() {
         System.out.println("getAgente");
         AgenteBD result = AgenteBD.getAgente();
         assertEquals(result, abd);
@@ -65,7 +63,7 @@ public class AgenteBDTest {
      * Test of conectarBD method, of class AgenteBD.
      */
     @Test
-    public void testConectarBD() {
+    void testConectarBD() {
         System.out.println("conectarBD");
         abd.conectarBD();
     }
@@ -74,7 +72,7 @@ public class AgenteBDTest {
      * Test of desconectarBD method, of class AgenteBD.
      */
     @Test
-    public void testDesconectarBD() {
+    void testDesconectarBD() {
         System.out.println("desconectarBD");
         abd.desconectarBD();
     }
@@ -83,7 +81,7 @@ public class AgenteBDTest {
      * Test of insert method, of class AgenteBD.
      */
     @Test
-    public void testInsert() {
+    void testInsert() {
         System.out.println("insert");
         String sql = "INSERT INTO trabajadores VALUES ('01234567B','Pepe', 'Viyuela', '1234', 'SNS', '')";
         int expResult = 1;
@@ -96,7 +94,7 @@ public class AgenteBDTest {
      * Test of select method, of class AgenteBD.
      */
     @Test
-    public void testSelect() {
+    void testSelect() {
         System.out.println("select");
         String sql1 = "INSERT INTO trabajadores VALUES ('01234567A','Pepe', 'Viyuela', '1234', 'SNS', '')";
         abd.insert(sql1);
@@ -119,7 +117,7 @@ public class AgenteBDTest {
      * Test of update method, of class AgenteBD.
      */
     @Test
-    public void testUpdate() {
+    void testUpdate() {
         System.out.println("update");
         String sql1 = "INSERT INTO trabajadores VALUES ('01234567A','Pepe', 'Viyuela', '1234', 'SNS', '')";
         abd.insert(sql1);
@@ -132,7 +130,7 @@ public class AgenteBDTest {
      * Test of delete method, of class AgenteBD.
      */
     @Test
-    public void testDelete() {
+    void testDelete() {
         System.out.println("delete");
         String sql = "DELETE FROM trabajadores WHERE dni = '01234567B' OR dni = '01234567A'";
         int result = abd.delete(sql);

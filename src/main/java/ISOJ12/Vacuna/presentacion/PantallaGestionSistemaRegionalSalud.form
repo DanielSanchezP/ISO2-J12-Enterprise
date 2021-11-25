@@ -27,26 +27,26 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="BotonAltaVacunas" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="botonAltaVacunas" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace pref="75" max="32767" attributes="0"/>
-                      <Component id="BotonRegistro" min="-2" pref="142" max="-2" attributes="0"/>
+                      <Component id="botonRegistro" min="-2" pref="142" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" min="-2" max="-2" attributes="0"/>
+                          <Component id="label1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="211" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="TextoSegundaDosis" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textoSegundaDosis" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="TextoPrimeraDosis" alignment="0" pref="220" max="32767" attributes="0"/>
-                                  <Component id="TextoVacunaTotal" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="textoPrimeraDosis" alignment="0" pref="220" max="32767" attributes="0"/>
+                                  <Component id="textoVacunaTotal" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -56,7 +56,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="Buttonestvacunados" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonestvacunados" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -66,72 +66,75 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BotonAltaVacunas" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="BotonRegistro" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="botonAltaVacunas" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="botonRegistro" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="label1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="TextoVacunaTotal" min="-2" max="-2" attributes="0"/>
+              <Component id="textoVacunaTotal" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="label2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="TextoPrimeraDosis" min="-2" max="-2" attributes="0"/>
+              <Component id="textoPrimeraDosis" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <Component id="label3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="TextoSegundaDosis" min="-2" max="-2" attributes="0"/>
+              <Component id="textoSegundaDosis" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Buttonestvacunados" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonestvacunados" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="BotonAltaVacunas">
+    <Component class="javax.swing.JButton" name="botonAltaVacunas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alta Vacunas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAltaVacunasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAltaVacunasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonRegistro">
+    <Component class="javax.swing.JButton" name="botonRegistro">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar Vacunaci&#xf3;n"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRegistroActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="TextoVacunaTotal">
+    <Component class="javax.swing.JTextField" name="textoVacunaTotal">
     </Component>
-    <Component class="javax.swing.JTextField" name="TextoPrimeraDosis">
+    <Component class="javax.swing.JTextField" name="textoPrimeraDosis">
     </Component>
-    <Component class="javax.swing.JTextField" name="TextoSegundaDosis">
+    <Component class="javax.swing.JTextField" name="textoSegundaDosis">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoSegundaDosisActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Total de Vacunas inoculadas:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="label2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Primera Dosis:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="label3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Segunda Dosis:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Buttonestvacunados">
+    <Component class="javax.swing.JButton" name="buttonestvacunados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Pacientes Vacunados"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonestvacunadosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonestvacunadosActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
