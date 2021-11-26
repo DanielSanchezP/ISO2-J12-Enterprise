@@ -17,8 +17,7 @@ public class GestorRepartoVacunas {
             TipoVacuna tipovacuna = new TipoVacuna();
             LoteVacunasDAO lotedao = new LoteVacunasDAO();
             
-            Random r = new Random();
-            int numero = r.nextInt(1000000);
+            int numero = (int)(Math.random()*10000000);
             lote.id = Integer.toString(numero);
             tipovacuna.farmaceutica = tipo;
             lote.tipo = tipovacuna;

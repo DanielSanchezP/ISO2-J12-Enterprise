@@ -64,11 +64,10 @@ public class AgenteBD {
 	}
 
 	public int insert(String sql) {
-            PreparedStatement pstmt;
 		int res = 0;
 		try {
 			conectarBD();
-			pstmt = mBD.prepareStatement(sql);
+			PreparedStatement pstmt = mBD.prepareStatement(sql);
 			res = pstmt.executeUpdate();
 			desconectarBD();
 		} catch (SQLException e) {
