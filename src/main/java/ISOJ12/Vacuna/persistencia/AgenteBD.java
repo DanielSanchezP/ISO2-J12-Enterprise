@@ -79,11 +79,12 @@ public class AgenteBD {
 	public int update(String sql) {
 		int res = 0;
 		try {
-			conectarBD();
-			stmt = mBD.createStatement();
-			res=stmt.executeUpdate(sql);
-                        stmt.close();
-			desconectarBD();
+                    conectarBD();
+		try(PreparedStatement pstmt = mBD.prepareStatement(sql)){
+                    res = pstmt.executeUpdate();
+                }
+                desconectarBD();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
