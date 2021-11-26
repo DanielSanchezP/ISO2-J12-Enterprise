@@ -80,7 +80,7 @@ public class AgenteBD {
 		int res = 0;
 		try {
                     conectarBD();
-		try(PreparedStatement pstmt = mBD.prepareStatement(sql)){
+		try( PreparedStatement pstmt = mBD.prepareStatement(sql)){
                     res = pstmt.executeUpdate();
                 }
                 desconectarBD();
