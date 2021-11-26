@@ -64,12 +64,14 @@ public class AgenteBD {
 	}
 
 	public int insert(String sql) {
-		int res = 0;
+            int res = 0;
 		try {
-			conectarBD();
-			PreparedStatement pstmt = mBD.prepareStatement(sql);
-			res = pstmt.executeUpdate();
-			desconectarBD();
+                    conectarBD();
+		try( PreparedStatement pstmt = mBD.prepareStatement(sql)){
+                    res = pstmt.executeUpdate();
+                }
+                desconectarBD();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -79,12 +81,11 @@ public class AgenteBD {
 	public int update(String sql) {
 		int res = 0;
 		try {
-                    conectarBD();
-		try( PreparedStatement pstmt = mBD.prepareStatement(sql)){
-                    res = pstmt.executeUpdate();
-                }
-                desconectarBD();
-			
+			conectarBD();
+			stmt = mBD.createStatement();
+			res=stmt.executeUpdate(sql);
+                        stmt.close();
+			desconectarBD();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
