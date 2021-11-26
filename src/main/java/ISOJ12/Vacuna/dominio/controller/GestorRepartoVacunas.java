@@ -1,9 +1,9 @@
 package ISOJ12.Vacuna.dominio.controller;
 
 
-
 import ISOJ12.Vacuna.dominio.entitymodel.*;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
+import java.security.SecureRandom;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +20,8 @@ public class GestorRepartoVacunas {
             TipoVacuna tipovacuna = new TipoVacuna();
             LoteVacunasDAO lotedao = new LoteVacunasDAO();
             
-            int numero = (int)Math.floor(Math.random()*10000000);
+            SecureRandom number = new SecureRandom();
+            int numero = number.nextInt(1000001);
             lote.id = Integer.toString(numero);
             tipovacuna.farmaceutica = tipo;
             lote.tipo = tipovacuna;
