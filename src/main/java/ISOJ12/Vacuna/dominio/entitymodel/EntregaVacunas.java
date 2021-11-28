@@ -10,5 +10,4 @@ public class EntregaVacunas {
 	public Date fecha;
 	public int cantidad;
         public String nombreregion;
-
 }
