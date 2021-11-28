@@ -66,5 +66,4 @@ public class LoginDAOTest {
         String[] expResult = new String []{"true", "SNS"};
         assertArrayEquals(expResult, result);
     }
-    
 }
