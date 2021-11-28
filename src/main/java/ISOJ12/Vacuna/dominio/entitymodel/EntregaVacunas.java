@@ -9,5 +9,6 @@ public class EntregaVacunas {
 	EntregaDAO entregaDao;
 	public Date fecha;
 	public int cantidad;
+        public String nombreregion;
 
 }
