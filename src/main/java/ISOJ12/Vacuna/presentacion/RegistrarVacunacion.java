@@ -185,7 +185,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
             String nombre = nombrePacienteText.getText();
             String apellidos = apellidopacientetext.getText();
             String nombrevacuna = tipovacunatext.getText();
-            int numeroDosis = dosisSlider.getValue();          
+            int numeroDosis = dosisSlider.getValue();
             Date fecha;
             
         try {
