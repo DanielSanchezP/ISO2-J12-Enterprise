@@ -22,7 +22,6 @@ public class GestorVacunacion {
             entrega.cantidad = cantidad;
             entrega.grupoPrioridad = prioridad;    
             entregadao.insertarEntrega(entrega);
-            throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -47,7 +46,6 @@ public class GestorVacunacion {
                 vacunacion.fecha=fecha;
                 
                 vacunaciondao.insertarVacunacion(vacunacion);
-		throw new UnsupportedOperationException();
 	}
 
 }

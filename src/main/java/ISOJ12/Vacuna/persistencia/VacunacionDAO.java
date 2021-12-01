@@ -52,7 +52,7 @@ public class VacunacionDAO extends AgenteBD {
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones(String region) throws SQLException{
 		List<Vacunacion> listavacunacion = null;
-		ResultSet res = bd.select("SELECT vacunacion * WHERE nombreregion = asdfecy ");
+		ResultSet res = bd.select("SELECT vacunacion * WHERE nombreregion = '"+ region +"'");
 		 while (res.next()) {
 			 Vacunacion vacunacion = new Vacunacion();
 			 vacunacion.paciente.dni = res.getObject(1).toString();
