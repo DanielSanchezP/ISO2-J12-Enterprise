@@ -28,11 +28,11 @@ public class EntregaDAO extends AgenteBD {
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("null")
-	public List<EntregaVacunas> seleccionarEntregas(String region) throws SQLException {
-		List<EntregaVacunas> listaentrega = new ArrayList<>();
+	public EntregaVacunas seleccionarEntregas(String region) throws SQLException {
+                EntregaVacunas entrega = new EntregaVacunas();
 		ResultSet res = agente.select("SELECT * FROM vacunas WHERE nombreregion = '"+region);
 		while (res.next()) {
-			 EntregaVacunas entrega = new EntregaVacunas();
+			 
                          TipoVacuna tipo = new TipoVacuna();
                          LoteVacunas lote = new LoteVacunas();
 			 lote.id = res.getObject(1).toString();
@@ -43,8 +43,8 @@ public class EntregaDAO extends AgenteBD {
 			 entrega.grupoPrioridad = res.getObject(4).toString();
 			 entrega.fecha = (Date) res.getObject(5);
 			 entrega.cantidad = (Integer) res.getObject(6);
-                        listaentrega.add(entrega);
+                        
         }
-		 return listaentrega;
+		 return entrega;
 	}
 }

@@ -6,6 +6,9 @@
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.persistencia.LoginDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -128,7 +131,11 @@ public class Login extends javax.swing.JFrame {
         if(comp[0].equals("true") && comp[1].equals("SNS")){
             //Si el que se logea es trabajador nacional se abre PantallaNacional
            PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
-           pantalla.mostrarGestionNacional();
+             try {
+                 pantalla.mostrarGestionNacional();
+             } catch (SQLException ex) {
+                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+             }
             this.dispose();
         }
         else{

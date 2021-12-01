@@ -6,6 +6,7 @@
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorRepartoVacunas;
+import java.sql.SQLException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -151,7 +152,11 @@ public class AltaLote extends javax.swing.JFrame {
 
     private void atrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasButtonActionPerformed
         PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
-        pantalla.mostrarGestionNacional();
+        try {
+            pantalla.mostrarGestionNacional();
+        } catch (SQLException ex) {
+            Logger.getLogger(AltaLote.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_atrasButtonActionPerformed
 

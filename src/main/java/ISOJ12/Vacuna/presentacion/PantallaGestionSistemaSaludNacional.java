@@ -5,7 +5,9 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,13 +15,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
+
+
+
 /**
  *
  * @author Daniel
  */
 public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     DefaultListModel modelo = new DefaultListModel();
-	
+    GestorEstadisticas gestor = new GestorEstadisticas();
     /**
      * Creates new form PantallaGestionSistemaSaludNacional
      */
@@ -197,9 +202,9 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
     
     public void inicializarLista(){
-        lotelist.setModel(modelo);
-        LoteVacunasDAO lote = new LoteVacunasDAO();
-        LoteVacunas lotevac= new LoteVacunas();
+                lotelist.setModel(modelo);
+                LoteVacunasDAO lote = new LoteVacunasDAO();
+                LoteVacunas lotevac= new LoteVacunas();
        
         try {
             
@@ -215,24 +220,33 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
         }
+		throw new UnsupportedOperationException();
     }
     
     
-    public void mostrarGestionNacional(){
+    public void mostrarGestionNacional() throws SQLException{
+    
+    
         inicializarLista();
+        if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
+            gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
+        }
+        else{
+            gestor.consultarTotalVacunadosPorRegion(comboBoxListaSitios.getSelectedItem().toString());
+        }
         this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAltaLote;
     private javax.swing.JButton botonCalculo;
-    private javax.swing.JComboBox<String> comboBoxListaSitios;
+    public javax.swing.JComboBox<String> comboBoxListaSitios;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;
-    private javax.swing.JList<String> lotelist;
-    private javax.swing.JTextField porcentajevacunadosText;
+    public javax.swing.JList<String> lotelist;
+    public javax.swing.JTextField porcentajevacunadosText;
     private javax.swing.JScrollPane scrollPane1;
-    private javax.swing.JTextField totalvacunadosText;
+    public javax.swing.JTextField totalvacunadosText;
     // End of variables declaration//GEN-END:variables
 }
