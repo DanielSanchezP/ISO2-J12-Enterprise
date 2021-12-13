@@ -78,7 +78,7 @@ public class Registro extends javax.swing.JFrame {
 
         label6.setText("Region (Solo para SRS):");
 
-        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asturias", "Galicia" }));
 
         botonAtras.setText("Atrás");
         botonAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,12 @@ public class Registro extends javax.swing.JFrame {
         String DNI=dnitext.getText();
         String contrasena = new String(textoContrasenia.getPassword());
         String tipo=comboBoxTipo.getSelectedItem().toString();
-        String nombreregion = "Castilla-La Mancha";
+        String nombreregion=null;
+        if (tipo.equals("SNS")){
+            nombreregion = "Nacional";
+        }else{
+            nombreregion = regionComboBox.getSelectedItem().toString();
+        }
         LoginDAO log=new LoginDAO();
         log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo, nombreregion);
         

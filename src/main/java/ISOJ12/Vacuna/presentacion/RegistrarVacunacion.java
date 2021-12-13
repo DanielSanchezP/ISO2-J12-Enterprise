@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class RegistrarVacunacion extends javax.swing.JFrame {
     GestorVacunacion gestor = new GestorVacunacion();
+    String region=null;
     //Esto es para probar solo
 
     /**
@@ -205,7 +206,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     }//GEN-LAST:event_nombrePacienteTextActionPerformed
 
     private void atrásButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrásButtonActionPerformed
-        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud(region);
         pantalla.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_atrásButtonActionPerformed

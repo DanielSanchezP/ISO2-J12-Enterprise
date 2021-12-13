@@ -22,19 +22,21 @@ public class LoginDAO extends AgenteBD {
 	}
 	
 	public String[] comprobarLogin(String dni, String contrasena) {
-        String[] trabajador=new String[3];
-        String[] result=new String[2];
+        String[] trabajador=new String[4];
+        String[] result=new String[3];
         System.out.println(contrasena);
-        ResultSet res = bd.select("SELECT dni, contrasena, tipousuario FROM trabajadores WHERE dni ='"+dni+"' AND contrasena ='"+contrasena+"' ");
+        ResultSet res = bd.select("SELECT dni, contrasena, tipousuario, nombreregion FROM trabajadores WHERE dni ='"+dni+"' AND contrasena ='"+contrasena+"' ");
         try {
             while (res.next()) {
             	trabajador[0]=res.getObject(1).toString();
             	trabajador[1]=res.getObject(2).toString();
                 trabajador[2]=res.getObject(3).toString();
+                trabajador[3]=res.getObject(4).toString();
             }
             if (trabajador[0].equals(dni) && trabajador[1].equals(contrasena)) {
                 result[0]="true";
                 result[1]=trabajador[2];
+                result[2]=trabajador[3];
                 return result;
             }
         }catch(SQLException | NullPointerException ex) {

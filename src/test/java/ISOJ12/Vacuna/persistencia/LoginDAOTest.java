@@ -48,7 +48,7 @@ public class LoginDAOTest {
         String apellido = "Viyuela";
         String contrasena = "1234";
         String tipoUsuario = "SNS";
-        String nombreregion = "";
+        String nombreregion = "Nacional";
         LoginDAO instance = new LoginDAO();
         instance.insertarTrabajador(dni, nombre, apellido, contrasena, tipoUsuario, nombreregion);
     }
@@ -63,7 +63,7 @@ public class LoginDAOTest {
         String contrasena = "1234";
         LoginDAO instance = new LoginDAO();
         String[] result = instance.comprobarLogin(dni, contrasena);
-        String[] expResult = new String []{"true", "SNS"};
+        String[] expResult = new String []{"true", "SNS", "Nacional"};
         assertArrayEquals(expResult, result);
     }
 }

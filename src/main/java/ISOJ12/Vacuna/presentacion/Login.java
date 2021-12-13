@@ -123,7 +123,8 @@ public class Login extends javax.swing.JFrame {
          
         if(comp[0].equals("true") && comp[1].equals("SRS")){ 
             //Si el que se logea es trabajador regional, se abre PantallaRegional
-            PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud();
+            System.out.println(comp[2]);
+            PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud(comp[2]);
             pantalla.mostrarGestionRegional();
             this.dispose();
         }
@@ -174,8 +175,6 @@ public class Login extends javax.swing.JFrame {
     }
     
     public static void mostrarLogin(){
-        
-        
         new Login().setVisible(true);
     }
     

@@ -103,7 +103,6 @@ public class AgenteBD {
 			DriverManager.registerDriver(derbyEmbeddedDriver);
 			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=true", admin, admin);
                     try (Statement stmt = mBD.createStatement()) {
-                        System.out.println("sadjkhvcbasdkjvghb");
                         stmt.execute("create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))");
                         stmt.execute("create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)");
                         stmt.execute("create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)");
@@ -130,9 +129,7 @@ public class AgenteBD {
                         stmt.execute("INSERT INTO estadisticas VALUES('Melilla', 150, 300, 980000)");
                         stmt.execute("INSERT INTO estadisticas VALUES('Extremadura', 25000, 50000, 15350000)");
                         
-                        System.out.println("asdasdasdasdasdasdasdasdasd");
-                        boolean res = stmt.execute("INSERT INTO vacunas VALUES('12345', 'Moderna', 'Grupo 1', 200000, '3/12/2021', 'Asturias')");
-                        System.out.println("res:"+res);
+                        stmt.execute("INSERT INTO vacunas VALUES('12345', 'Moderna', 'Grupo 1', 200000, '3/12/2021', 'Asturias')");
                     }
 		} catch (SQLException ex) {
 			System.out.println("in connection" + ex);

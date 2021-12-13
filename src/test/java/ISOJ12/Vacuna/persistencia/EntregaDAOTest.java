@@ -7,7 +7,6 @@ package ISOJ12.Vacuna.persistencia;
 
 import ISOJ12.Vacuna.dominio.entitymodel.EntregaVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
-import ISOJ12.Vacuna.dominio.entitymodel.TipoVacuna;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -54,10 +53,8 @@ public class EntregaDAOTest {
         System.out.println("insertarEntrega");
         EntregaVacunas entrega = new EntregaVacunas();
         LoteVacunas lote = new LoteVacunas();
-        TipoVacuna tipo = new TipoVacuna();
-        tipo.farmaceutica="Pfizer";
         lote.id="sfget5dgrgd";
-        lote.tipo=tipo;
+        lote.farmaceutica="Pfizer";
         entrega.lote=lote;
         entrega.grupoPrioridad="3";
         entrega.cantidad=232555;

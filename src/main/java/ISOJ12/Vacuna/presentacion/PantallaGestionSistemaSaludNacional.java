@@ -225,7 +225,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             List<LoteVacunas> listalote = lote.seleccionarlotes();
             for(int i = 0; i < listalote.size();i++){
                 lotevac = listalote.get(i);
-                modelo.addElement(lotevac.id+" / "+ lotevac.tipo.farmaceutica + " / " + lotevac.cantidad);
+                modelo.addElement(lotevac.id+" / "+ lotevac.farmaceutica + " / " + lotevac.cantidad);
             }
 
         } catch (SQLException ex) {

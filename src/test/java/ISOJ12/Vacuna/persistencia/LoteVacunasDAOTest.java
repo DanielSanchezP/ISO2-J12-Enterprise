@@ -6,7 +6,6 @@
 package ISOJ12.Vacuna.persistencia;
 
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
-import ISOJ12.Vacuna.dominio.entitymodel.TipoVacuna;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -36,7 +35,6 @@ public class LoteVacunasDAOTest {
     @BeforeAll
     public void setUpClass() {
         lote1 = new LoteVacunas();
-        TipoVacuna tipo = new TipoVacuna();
         
         int numero = (int)(Math.random()*1000000);
         lote1.id = Integer.toString(numero);
@@ -46,8 +44,7 @@ public class LoteVacunasDAOTest {
         } catch (ParseException ex) {
             Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tipo.farmaceutica="Pfizer";
-        lote1.tipo=tipo;
+        lote1.farmaceutica="Pfizer";
         
         LoteVacunasDAO instance = new LoteVacunasDAO();
         instance.insertarLoteVacunas(lote1);
@@ -72,7 +69,6 @@ public class LoteVacunasDAOTest {
     public void testInsertarLoteVacunas() {
         System.out.println("insertarLoteVacunas");
         LoteVacunas lote = new LoteVacunas();
-        TipoVacuna tipo = new TipoVacuna();
         
         int numero = (int)(Math.random()*1000000);
         lote.id = Integer.toString(numero);
@@ -82,8 +78,7 @@ public class LoteVacunasDAOTest {
         } catch (ParseException ex) {
             Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tipo.farmaceutica="Pfizer";
-        lote.tipo=tipo;
+        lote.farmaceutica="Pfizer";
         
         LoteVacunasDAO instance = new LoteVacunasDAO();
         instance.insertarLoteVacunas(lote);
