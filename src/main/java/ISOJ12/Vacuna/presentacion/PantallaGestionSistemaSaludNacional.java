@@ -161,7 +161,22 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAltaLoteActionPerformed
 
     private void comboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaSitiosActionPerformed
-        // TODO add your handling code here:
+        try {
+            if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
+                long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
+                totalvacunadosText.setText(Long.toString(total));
+                double porcentaje = gestor.consultarPorcentajeVacunadosSobreRecibidas();
+                porcentajevacunadosText.setText(Double.toString(porcentaje));
+            }
+            else{
+                long totalregion = gestor.consultarTotalVacunadosPorRegion(comboBoxListaSitios.getSelectedItem().toString());
+                totalvacunadosText.setText(Long.toString(totalregion));
+                double porcentajeregion = gestor.consultarPorcentajeVacunadosSobreRecibidasEnRegion(comboBoxListaSitios.getSelectedItem().toString());
+                porcentajevacunadosText.setText(Double.toString(porcentajeregion));
+            }
+        } catch (SQLException ex) {
+                Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }//GEN-LAST:event_comboBoxListaSitiosActionPerformed
 
     private void botonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalculoActionPerformed
@@ -200,7 +215,6 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             new PantallaGestionSistemaSaludNacional().setVisible(true);
         });
     }
-    
     public void inicializarLista(){
                 lotelist.setModel(modelo);
                 LoteVacunasDAO lote = new LoteVacunasDAO();
@@ -209,31 +223,25 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         try {
             
             List<LoteVacunas> listalote = lote.seleccionarlotes();
-      
             for(int i = 0; i < listalote.size();i++){
                 lotevac = listalote.get(i);
                 modelo.addElement(lotevac.id+" / "+ lotevac.tipo.farmaceutica + " / " + lotevac.cantidad);
-                
-                
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
         }
-		throw new UnsupportedOperationException();
+		
     }
     
     
     public void mostrarGestionNacional() throws SQLException{
-    
-    
-        inicializarLista();
-        if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
-            gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
-        }
-        else{
-            gestor.consultarTotalVacunadosPorRegion(comboBoxListaSitios.getSelectedItem().toString());
-        }
+
+        inicializarLista();      
+        long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
+        totalvacunadosText.setText(Long.toString(total));
+        double porcentaje = gestor.consultarPorcentajeVacunadosSobreRecibidas();
+        porcentajevacunadosText.setText(Double.toString(porcentaje));
         this.setVisible(true);
     }
 

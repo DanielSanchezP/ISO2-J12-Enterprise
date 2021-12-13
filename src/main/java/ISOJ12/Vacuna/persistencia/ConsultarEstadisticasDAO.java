@@ -12,14 +12,15 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
 	 * @throws SQLException 
 	 */
 	public String[][] comprobarEstadisticasNacional(String region) throws SQLException {
-		String[][] estadisticas=new String[17][3];
+		String[][] estadisticas=new String[19][3];
                 int cont=0;
+                System.out.println("Region: "+region);
 		ResultSet res = null;
 		if(region.equals("Nacional")) {
 			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas");
 		}
 		else {
-			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas WHERE nombreregion ='"+region+"' ");
+			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas WHERE nombreregion ='"+region+"'");
 		}
 		while (res.next()) {
                 String[] estadistica = new String[3];

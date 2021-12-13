@@ -69,7 +69,7 @@ public class EntregaDAOTest {
             Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
         EntregaDAO instance = new EntregaDAO();
-        instance.insertarEntrega(entrega);
+        instance.entregarVacunas(entrega);
     }
 
     /**

@@ -29,7 +29,6 @@ public class GestorRepartoVacunas {
             lote.fecha = fecha;
                 
             lotedao.insertarLoteVacunas(lote);
-            throw new UnsupportedOperationException();
 	}
 
 	public List<EntregaVacunas> calcularEntregasRegion() {

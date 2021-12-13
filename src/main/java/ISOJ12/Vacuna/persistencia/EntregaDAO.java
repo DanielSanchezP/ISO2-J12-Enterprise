@@ -9,16 +9,16 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class EntregaDAO extends AgenteBD {
-	AgenteBD agente=AgenteBD.getAgente();
+	AgenteBD bd=AgenteBD.getAgente();
 	
 	/**
 	 * 
 	 * @param entrega
 	 */
-	public void insertarEntrega(EntregaVacunas entrega) {
+	public void entregarVacunas(EntregaVacunas entrega) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		String str="Insert into vacunas values('"+ entrega.lote.id +"','"+ entrega.lote.tipo.farmaceutica +"','"+ entrega.grupoPrioridad +"','"+formatter.format(entrega.fecha)+"',"+ entrega.cantidad +"',"+ entrega.nombreregion +"')";
-		agente.insert(str);
+		bd.insert(str);
 	}
 
 	/**
@@ -28,23 +28,35 @@ public class EntregaDAO extends AgenteBD {
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("null")
-	public EntregaVacunas seleccionarEntregas(String region) throws SQLException {
-                EntregaVacunas entrega = new EntregaVacunas();
-		ResultSet res = agente.select("SELECT * FROM vacunas WHERE nombreregion = '"+region);
+	public List<EntregaVacunas> seleccionarVacunas(String region) throws SQLException {
+                List<EntregaVacunas> listaentrega = new ArrayList<>();
+                ResultSet res = null;
+                if(region.equals("Nacional")) {
+                    res = bd.select("SELECT * FROM vacunas");
+                    System.out.println("askljalivdhb");
+		}
+                else{
+                    res = bd.select("SELECT * FROM vacunas WHERE nombreregion = '"+region+"'");
+                }
 		while (res.next()) {
-			 
+                        System.out.println("asdasdasdasdasdasd");
+			 EntregaVacunas entrega = new EntregaVacunas();
                          TipoVacuna tipo = new TipoVacuna();
                          LoteVacunas lote = new LoteVacunas();
+                         
 			 lote.id = res.getObject(1).toString();
-			 tipo.nombre = res.getObject(2).toString();
-			 tipo.farmaceutica = res.getObject(3).toString();
+			 tipo.farmaceutica = res.getObject(2).toString();
                          lote.tipo=tipo;
                          entrega.lote=lote;
-			 entrega.grupoPrioridad = res.getObject(4).toString();
+			 entrega.grupoPrioridad = res.getObject(3).toString();
+                         entrega.cantidad = Integer.parseInt(res.getObject(4).toString());
 			 entrega.fecha = (Date) res.getObject(5);
-			 entrega.cantidad = (Integer) res.getObject(6);
+                         entrega.nombreregion = res.getObject(6).toString();
+			 
+                         
+                         listaentrega.add(entrega);
                         
         }
-		 return entrega;
+		 return listaentrega;
 	}
 }

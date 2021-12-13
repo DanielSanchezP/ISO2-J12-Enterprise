@@ -21,7 +21,7 @@ public class GestorVacunacion {
             entrega.fecha = fecha;
             entrega.cantidad = cantidad;
             entrega.grupoPrioridad = prioridad;    
-            entregadao.insertarEntrega(entrega);
+            entregadao.entregarVacunas(entrega);
 	}
 
 	/**
