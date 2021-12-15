@@ -68,7 +68,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         botonCalculo.setText("Repartir");
         botonCalculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCalculoActionPerformed(evt);
+                botonRepartirActionPerformed(evt);
             }
         });
 
@@ -179,9 +179,11 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
           }
     }//GEN-LAST:event_comboBoxListaSitiosActionPerformed
 
-    private void botonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCalculoActionPerformed
+    private void botonRepartirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRepartirActionPerformed
+        Repartir rep = new Repartir();
+        rep.mostrar();
+        this.dispose();
+    }//GEN-LAST:event_botonRepartirActionPerformed
 
     private void totalvacunadosTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalvacunadosTextActionPerformed
         // TODO add your handling code here:

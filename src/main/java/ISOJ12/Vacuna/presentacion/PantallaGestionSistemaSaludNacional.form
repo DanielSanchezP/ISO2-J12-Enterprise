@@ -95,7 +95,7 @@
         <Property name="text" type="java.lang.String" value="Repartir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCalculoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRepartirActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxListaSitios">

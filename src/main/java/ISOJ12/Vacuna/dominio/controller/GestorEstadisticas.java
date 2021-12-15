@@ -80,16 +80,27 @@ public class GestorEstadisticas {
      * @throws java.sql.SQLException
 	 */
 	public double consultarPorcentajeVacunadosSobreRecibidasEnRegion(String region) throws SQLException {
-		String[] vacunados = consulta.comprobarEstadisticasRegional(region);
+		String[] vacunados = null;
+            try {
+                vacunados = consulta.comprobarEstadisticasRegional(region);
+            } catch (SQLException ex) {
+                Logger.getLogger(GestorEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
 		EntregaDAO consultaentrega = new EntregaDAO();
-                EntregaVacunas entrega;
+                EntregaVacunas entrega = new EntregaVacunas();
                 long totalcantidad = 0;
                 List<EntregaVacunas> entregavac = consultaentrega.seleccionarVacunas(region);
-                for(int i = 0; i < entregavac.size();i++){
-                     entrega = entregavac.get(i);
-                     totalcantidad += entrega.cantidad;
-                 }
-                double resultado = (Double.parseDouble(vacunados[3])/totalcantidad)*100;
+                for(int i = 0; i< entregavac.size();i++){
+                    entrega = entregavac.get(0);
+                    totalcantidad += entrega.cantidad;
+                }
+                double resultado = 0;
+                if (totalcantidad != 0){
+                    resultado = (Double.parseDouble(vacunados[3])/totalcantidad)*100;
+                }
+                
+                
                 return resultado;
 	}
         public long consultarTotalVacunasEnRegion(String region){

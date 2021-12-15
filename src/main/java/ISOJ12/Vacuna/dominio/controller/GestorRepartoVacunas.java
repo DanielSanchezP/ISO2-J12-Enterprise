@@ -33,46 +33,63 @@ public class GestorRepartoVacunas {
             lotedao.insertarLoteVacunas(lote);
 	}
 
-	public List<EntregaVacunas> calcularEntregasRegion(){
+	public String[][] calcularEntregasRegion(String id){
             ConsultarEstadisticasDAO consulta = new ConsultarEstadisticasDAO();
-            EntregaVacunas entrega = new EntregaVacunas();
-            List<EntregaVacunas> listaentrega= new ArrayList<>();
             GestorEstadisticas gestorest = new GestorEstadisticas();
             
-            try{
-                List <LoteVacunas> listalote = lotedao.seleccionarlotes();
+            String[][] reparto = new String[19][2];
+     
+            
+            try {
+                
+                LoteVacunas lote = lotedao.cogerlote(id);
                 String[][] estadisticas = consulta.comprobarEstadisticasNacional("Nacional");
-                String prioridad [][] = new String[19][2];
+                String[][] prioridad  = new String[19][2];
             
                 double totalprioridad = 0;
                 for (int i = 0;i<estadisticas.length;i++){
                     double pr=0;
                     prioridad[i][0] = estadisticas[i][0];
-                    System.out.println("Comunidad"+prioridad[i][0]);
                     int vacunados = Integer.parseInt(estadisticas[i][1]);
+                    
                     int poblacion = Integer.parseInt(estadisticas[i][2]);
-                    pr += (vacunados/poblacion)*100;
+                    
+                    pr += ((double)vacunados/poblacion)*100;
+                    
                     double porcentajedosis = gestorest.consultarPorcentajeVacunadosSobreRecibidasEnRegion(prioridad[i][0]);
+                    
                     pr+= porcentajedosis;
-                    System.out.print(pr);
+                   
                     prioridad[i][1] = Double.toString(pr);
                     totalprioridad+=pr;
-                    System.out.print("Relacion: "+prioridad[i][1]);
                 }
-            
-            
-            
-                for(int i=0;i<listalote.size();i++){
-                    lote = listalote.get(i);
-                    int totalcantidad = lote.cantidad;
-                    double algo = (Double.parseDouble(prioridad[i][1])/totalprioridad) *100;
-                }
+                
+                
+                int totalcantidad = lote.cantidad;
+                
+                int totalcantidad2 = totalcantidad;
+                
+                for(int i=0;i<prioridad.length;i++){
+                    EntregaDAO entregadao = new EntregaDAO();
+                    EntregaVacunas entrega = new EntregaVacunas();
+                    reparto[i][0] = prioridad[i][0]; 
+                    double porcentajecant = (Double.parseDouble(prioridad[i][1])/totalprioridad) *100;
+                    int repartocant = (int)(totalcantidad*porcentajecant)/100;
+                    totalcantidad2 -= repartocant;
+                    reparto[i][1] = Integer.toString(repartocant);
+                    
+                    entrega.lote = lote;
+                    entrega.grupoPrioridad = "Yayos";
+                    entrega.fecha = new Date();
+                    entrega.cantidad = repartocant;
+                    entrega.nombreregion = reparto[i][0];
+                    entregadao.entregarVacunas(entrega);
+                }           
             }catch (SQLException e) {
                 e.printStackTrace();
             }
             
-            listaentrega.add(entrega);
-            return listaentrega;
+            return reparto;   
 	}
         
         public List<EntregaVacunas> vacunasEnRegion(String region){

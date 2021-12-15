@@ -22,9 +22,6 @@ public class LoteVacunasDAO extends AgenteBD {
 		
 	}
         
-        public void modificarLoteVacunas(LoteVacunas lote, int cantidad){
-            bd.update("UPDATE lotevacunas SET cantidad = "+(lote.cantidad - cantidad)+" WHERE id = "+lote.id+"");
-        }
         
         public List<LoteVacunas> seleccionarlotes() throws SQLException{
 		List<LoteVacunas> listalote = new ArrayList<>();
@@ -42,5 +39,16 @@ public class LoteVacunasDAO extends AgenteBD {
              }
                return listalote;
         }
-
+        public LoteVacunas cogerlote(String id) throws SQLException{
+                LoteVacunas lote = new LoteVacunas();
+		ResultSet res = bd.select("SELECT * FROM lotevacunas WHERE id ='"+id+"'");
+                
+		while (res.next()) {
+			lote.id = res.getObject(1).toString();
+                        lote.farmaceutica = res.getObject(2).toString();
+                        lote.cantidad = (int) res.getObject(3);
+			lote.fecha = (Date) res.getObject(4);     
+             }
+               return lote;
+        }
 }

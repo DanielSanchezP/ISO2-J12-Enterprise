@@ -155,13 +155,13 @@ public class AltaLote extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAltaLoteActionPerformed
 
     private void atrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasButtonActionPerformed
-        PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
         try {
+            PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
             pantalla.mostrarGestionNacional();
+            this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(AltaLote.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.dispose();
     }//GEN-LAST:event_atrasButtonActionPerformed
 
     /**

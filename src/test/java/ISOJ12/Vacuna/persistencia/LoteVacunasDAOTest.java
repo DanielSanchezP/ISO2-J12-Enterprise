@@ -84,17 +84,6 @@ public class LoteVacunasDAOTest {
         instance.insertarLoteVacunas(lote);
     }
 
-    /**
-     * Test of modificarLoteVacunas method, of class LoteVacunasDAO.
-     */
-    @Test
-    public void testModificarLoteVacunas() {
-        System.out.println("modificarLoteVacunas");
-        int cantidad = 5;
-        LoteVacunasDAO instance = new LoteVacunasDAO();
-        System.out.println(lote1.cantidad);
-        instance.modificarLoteVacunas(lote1, cantidad);
-    }
 
     
     /**
