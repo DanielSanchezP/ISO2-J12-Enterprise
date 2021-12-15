@@ -5,6 +5,7 @@ on:
       - Features
   pull_request:
     types: [opened, synchronize, reopened]
+    
 jobs:
   build:
     name: Build
