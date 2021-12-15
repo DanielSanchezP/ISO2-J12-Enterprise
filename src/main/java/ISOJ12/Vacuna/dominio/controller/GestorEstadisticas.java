@@ -3,12 +3,17 @@ package ISOJ12.Vacuna.dominio.controller;
 
 import ISOJ12.Vacuna.dominio.entitymodel.EntregaVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
 import ISOJ12.Vacuna.persistencia.ConsultarEstadisticasDAO;
 import ISOJ12.Vacuna.persistencia.EntregaDAO;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
+import ISOJ12.Vacuna.presentacion.PantallaGestionSistemaSaludNacional;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 
@@ -76,24 +81,49 @@ public class GestorEstadisticas {
 	 */
 	public double consultarPorcentajeVacunadosSobreRecibidasEnRegion(String region) throws SQLException {
 		String[] vacunados = consulta.comprobarEstadisticasRegional(region);
-                System.out.println("vacunados: "+vacunados[3]);
 		EntregaDAO consultaentrega = new EntregaDAO();
+                EntregaVacunas entrega;
+                long totalcantidad = 0;
+                List<EntregaVacunas> entregavac = consultaentrega.seleccionarVacunas(region);
+                for(int i = 0; i < entregavac.size();i++){
+                     entrega = entregavac.get(i);
+                     totalcantidad += entrega.cantidad;
+                 }
+                double resultado = (Double.parseDouble(vacunados[3])/totalcantidad)*100;
+                return resultado;
+	}
+        public long consultarTotalVacunasEnRegion(String region){
+                EntregaDAO consultaentrega = new EntregaDAO();
                 EntregaVacunas entrega = new EntregaVacunas();
                 long totalcantidad = 0;
                 List<EntregaVacunas> entregavac = consultaentrega.seleccionarVacunas(region);
                 for(int i = 0; i < entregavac.size();i++){
-                    
-                     entrega = entregavac.get(i);
-                     totalcantidad += entrega.cantidad;
-                 }
-                System.out.println("totalcantidad"+totalcantidad);
-                double resultado = (Double.parseDouble(vacunados[3])/totalcantidad)*100;
-                System.out.println("resutlado:"+resultado);
-                return resultado;
+                        entrega = entregavac.get(i);
+                        totalcantidad += entrega.cantidad;
+                    }
+                return totalcantidad;
+        }
+        
+        public double consultarVacunadosDeNVacuna(String region, int ndosis){
+            
+            VacunacionDAO vacdao =new VacunacionDAO();
+            int totalvac=0;
+            try{
+                String[] est = consulta.comprobarEstadisticasRegional(region);
+                List<Vacunacion> listvac = vacdao.seleccionarVacunaciones(region);
+                for(int i = 0; i < listvac.size();i++){
+                    Vacunacion vac=listvac.get(i);
+                    if(vac.numeroDosis==ndosis){
+                        totalvac++;
+                    }
+                }
+                System.out.println(totalvac);
+                return (double)((double)totalvac/Integer.parseInt(est[3]));
                 
-                //pantalla.porcentajevacunadosText.setText(Integer.toString(resultado));
-	}
-        
-        
+            }catch (SQLException ex) {
+                Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return 0.0;
+        }
         
 }

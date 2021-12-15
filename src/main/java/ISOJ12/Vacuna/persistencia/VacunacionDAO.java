@@ -54,7 +54,6 @@ public class VacunacionDAO extends AgenteBD {
 		List<Vacunacion> listavacunacion = new ArrayList<>();
 		ResultSet res = bd.select("SELECT * FROM vacunacion WHERE nombreregion = '"+ region +"'");
 		 while (res.next()) {
-                     System.out.println("ISOJ12.Vacuna.persistencia.VacunacionDAO.seleccionarVacunaciones()");
 			 Vacunacion vacunacion = new Vacunacion();
                          Paciente pac=new Paciente();
 			 pac.dni = res.getObject(1).toString();
@@ -66,7 +65,7 @@ public class VacunacionDAO extends AgenteBD {
 			 vacunacion.numeroDosis = (Integer) res.getObject(6);
              listavacunacion.add(vacunacion);
          }
-		 return listavacunacion;
+		return listavacunacion;
 	}
 
 }

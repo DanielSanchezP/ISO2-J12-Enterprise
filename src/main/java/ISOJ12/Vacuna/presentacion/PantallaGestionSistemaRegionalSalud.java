@@ -5,11 +5,14 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
+
 /**
  *
  * @author Daniel
  */
 public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
+    GestorEstadisticas gestor = new GestorEstadisticas();
     String region=null;
 	
     /**
@@ -58,6 +61,11 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
             }
         });
 
+        textoVacunaTotal.setEditable(false);
+
+        textoPrimeraDosis.setEditable(false);
+
+        textoSegundaDosis.setEditable(false);
         textoSegundaDosis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoSegundaDosisActionPerformed(evt);
@@ -184,6 +192,9 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }
     
     public void mostrarGestionRegional(){
+        this.textoVacunaTotal.setText(Long.toString(gestor.consultarTotalVacunasEnRegion(this.region)));
+        this.textoPrimeraDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,1)));
+        this.textoSegundaDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,2)));
         this.setVisible(true);
     }
 
