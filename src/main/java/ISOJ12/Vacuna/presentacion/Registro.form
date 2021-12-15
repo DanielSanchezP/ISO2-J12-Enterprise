@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JTextField" name="TextoNombre3">
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -31,13 +27,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="regionLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="label6" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tipoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="apellidosLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="dniLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="contraseniaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="botonAtras" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -61,32 +57,32 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="apellidosLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="dniLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="label3" min="-2" max="-2" attributes="0"/>
                   <Component id="dnitext" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="contraseniaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoContrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tipoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="regionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="regionComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="61" max="32767" attributes="0"/>
@@ -100,22 +96,22 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="nombreLabel">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="apellidosLabel">
+    <Component class="javax.swing.JLabel" name="label2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Apellidos: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="dniLabel">
+    <Component class="javax.swing.JLabel" name="label3">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="contraseniaLabel">
+    <Component class="javax.swing.JLabel" name="label4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a: "/>
       </Properties>
@@ -133,7 +129,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="tipoLabel">
+    <Component class="javax.swing.JLabel" name="label5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tipo de Usuario:"/>
       </Properties>
@@ -162,7 +158,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="regionLabel">
+    <Component class="javax.swing.JLabel" name="label6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Region (Solo para SRS):"/>
       </Properties>
@@ -170,11 +166,9 @@
     <Component class="javax.swing.JComboBox" name="regionComboBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Asturias"/>
+            <StringItem index="1" value="Galicia"/>
           </StringArray>
         </Property>
       </Properties>

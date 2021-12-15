@@ -10,12 +10,14 @@ package ISOJ12.Vacuna.presentacion;
  * @author Daniel
  */
 public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
-
+    String region=null;
 	
     /**
      * Creates new form PantallaGestionSistemaRegionalSalud
      */
-    public PantallaGestionSistemaRegionalSalud() {
+    public PantallaGestionSistemaRegionalSalud(String region_) {
+        this.region=region_;
+        System.out.println(this.region);
         initComponents();
     }
 
@@ -30,22 +32,22 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonAltaVacunas = new javax.swing.JButton();
+        botonVacunasDisp = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         textoVacunaTotal = new javax.swing.JTextField();
         textoPrimeraDosis = new javax.swing.JTextField();
         textoSegundaDosis = new javax.swing.JTextField();
-        totalLabel = new javax.swing.JLabel();
-        porcentajeprimeraLabel = new javax.swing.JLabel();
-        porcentajesegundoLabel = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
         buttonestvacunados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonAltaVacunas.setText("Alta Vacunas");
-        botonAltaVacunas.addActionListener(new java.awt.event.ActionListener() {
+        botonVacunasDisp.setText("Vacunas disponibles");
+        botonVacunasDisp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAltaVacunasActionPerformed(evt);
+                botonVacunasDispActionPerformed(evt);
             }
         });
 
@@ -56,11 +58,17 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
             }
         });
 
-        totalLabel.setText("Total de Vacunas inoculadas:");
+        textoSegundaDosis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoSegundaDosisActionPerformed(evt);
+            }
+        });
 
-        porcentajeprimeraLabel.setText("Porcentaje de Primera Dosis:");
+        label1.setText("Total de Vacunas inoculadas:");
 
-        porcentajesegundoLabel.setText("Porcentaje de Segunda Dosis:");
+        label2.setText("Porcentaje de Primera Dosis:");
+
+        label3.setText("Porcentaje de Segunda Dosis:");
 
         buttonestvacunados.setText("Consultar Pacientes Vacunados");
         buttonestvacunados.addActionListener(new java.awt.event.ActionListener() {
@@ -75,75 +83,76 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonAltaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                        .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(porcentajeprimeraLabel)
-                            .addComponent(totalLabel))
-                        .addGap(0, 211, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textoSegundaDosis, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(porcentajesegundoLabel)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                                    .addComponent(textoVacunaTotal, javax.swing.GroupLayout.Alignment.LEADING))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(botonVacunasDisp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label2)
+                    .addComponent(label1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(textoSegundaDosis, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label3)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textoVacunaTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(108, 108, 108)
                 .addComponent(buttonestvacunados)
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAltaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVacunasDisp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(totalLabel)
+                .addGap(27, 27, 27)
+                .addComponent(label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoVacunaTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(porcentajeprimeraLabel)
+                .addComponent(label2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(porcentajesegundoLabel)
+                .addComponent(label3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoSegundaDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(buttonestvacunados)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //No modificar
-    private void botonAltaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAltaVacunasActionPerformed
-        AltaVacunas.mostrarAV();
+    private void botonVacunasDispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVacunasDispActionPerformed
+        VacunasDisponibles.mostrarVD(this.region);
         this.dispose();
-    }//GEN-LAST:event_botonAltaVacunasActionPerformed
+    }//GEN-LAST:event_botonVacunasDispActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        RegistrarVacunacion.mostrarRV();
+        RegistrarVacunacion.mostrarRV(this.region);
         this.dispose();
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void buttonestvacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonestvacunadosActionPerformed
         
         PantallaConsultaEstadisticas est = new PantallaConsultaEstadisticas();
-        est.mostrarVentanaEstadisticas();
+        est.mostrarVentanaEstadisticas(this.region);
         
         this.dispose();
     }//GEN-LAST:event_buttonestvacunadosActionPerformed
+
+    private void textoSegundaDosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoSegundaDosisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoSegundaDosisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +179,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new PantallaGestionSistemaRegionalSalud().setVisible(true);
+            new PantallaGestionSistemaRegionalSalud("").setVisible(true);
         });
     }
     
@@ -179,14 +188,14 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAltaVacunas;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JButton botonVacunasDisp;
     private javax.swing.JButton buttonestvacunados;
-    private javax.swing.JLabel porcentajeprimeraLabel;
-    private javax.swing.JLabel porcentajesegundoLabel;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
     private javax.swing.JTextField textoPrimeraDosis;
     private javax.swing.JTextField textoSegundaDosis;
     private javax.swing.JTextField textoVacunaTotal;
-    private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
 }

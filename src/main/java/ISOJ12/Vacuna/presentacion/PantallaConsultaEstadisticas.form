@@ -24,20 +24,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="panelScrollPane" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
-                          <Component id="pacienteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                      <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="atrasButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="scrollPane1" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,18 +38,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="pacienteLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="label1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelScrollPane" min="-2" pref="230" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="scrollPane1" pref="251" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="panelScrollPane">
+    <Container class="javax.swing.JScrollPane" name="scrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -75,7 +68,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="pacienteLabel">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pacientes Vacunados:"/>
       </Properties>

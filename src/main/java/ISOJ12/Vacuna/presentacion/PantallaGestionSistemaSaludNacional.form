@@ -42,12 +42,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="idLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="porcentajevacunadosLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="totalvacunadosLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label2" min="-2" max="-2" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
                   <Component id="totalvacunadosText" max="32767" attributes="0"/>
-                  <Component id="porcentajeText" max="32767" attributes="0"/>
-                  <Component id="panelScrollPane" max="32767" attributes="0"/>
+                  <Component id="porcentajevacunadosText" max="32767" attributes="0"/>
+                  <Component id="scrollPane1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
           </Group>
@@ -64,17 +64,17 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="comboBoxListaSitios" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="totalvacunadosLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="label1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="totalvacunadosText" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="porcentajevacunadosLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="label2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="porcentajeText" min="-2" max="-2" attributes="0"/>
+              <Component id="porcentajevacunadosText" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="idLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="label3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelScrollPane" min="-2" max="-2" attributes="0"/>
+              <Component id="scrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -93,7 +93,6 @@
     <Component class="javax.swing.JButton" name="botonCalculo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Repartir"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCalculoActionPerformed"/>
@@ -121,6 +120,7 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="totalvacunadosText">
@@ -130,28 +130,35 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalvacunadosTextActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="porcentajeText">
+    <Component class="javax.swing.JTextField" name="porcentajevacunadosText">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="totalvacunadosLabel">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Total de Vacunados:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="porcentajevacunadosLabel">
+    <Component class="javax.swing.JLabel" name="label2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Vacunados:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="idLabel">
+    <Component class="javax.swing.JLabel" name="label3">
       <Properties>
         <Property name="text" type="java.lang.String" value="IDLote/Marca/Vacunas:"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="panelScrollPane">
+    <Container class="javax.swing.JScrollPane" name="scrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -166,6 +173,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
       </SubComponents>

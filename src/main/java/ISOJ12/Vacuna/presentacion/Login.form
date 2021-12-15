@@ -32,8 +32,8 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="contraseniaLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="dniLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" min="-2" max="-2" attributes="0"/>
+                          <Component id="label1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -51,32 +51,32 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="141" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="dniLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dnitext" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textoContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="contraseniaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botonLogin" min="-2" pref="49" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="botonRegistro" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="botonRegistro" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="dniLabel">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="textoContrasena">
     </Component>
-    <Component class="javax.swing.JLabel" name="contraseniaLabel">
+    <Component class="javax.swing.JLabel" name="label2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
       </Properties>

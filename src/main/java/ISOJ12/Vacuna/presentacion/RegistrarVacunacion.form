@@ -29,15 +29,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="atrásButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="registrarButton" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="botonRegistrar" min="-2" pref="104" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="apellidosLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="tipoLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="label4" min="-2" max="-2" attributes="0"/>
+                          <Component id="label3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" min="-2" max="-2" attributes="0"/>
+                          <Component id="label1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label6" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -45,6 +46,7 @@
                           <Component id="tipovacunatext" max="32767" attributes="0"/>
                           <Component id="fechaText" max="32767" attributes="0"/>
                           <Component id="apellidopacientetext" max="32767" attributes="0"/>
+                          <Component id="dnitext" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -52,63 +54,64 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="numerodosisLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                      <Component id="label5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="dosisSlider" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="dosisSlider" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="label6" min="-2" max="-2" attributes="0"/>
+                  <Component id="dnitext" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nombrePacienteText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="apellidosLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="apellidopacientetext" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tipoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tipovacunatext" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="fechaText" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="numerodosisLabel" min="-2" pref="14" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="dosisSlider" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
-                      <Component id="registrarButton" min="-2" pref="43" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="atrásButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tipovacunatext" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fechaText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="label5" min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="dosisSlider" min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="botonRegistrar" min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="atrásButton" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="nombreLabel">
+    <Component class="javax.swing.JLabel" name="label1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre del Paciente:"/>
       </Properties>
@@ -121,7 +124,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="tipoLabel">
+    <Component class="javax.swing.JLabel" name="label2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tipo de Vacuna:"/>
       </Properties>
@@ -131,7 +134,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="fechaLabel">
+    <Component class="javax.swing.JLabel" name="label3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha:"/>
       </Properties>
@@ -139,29 +142,33 @@
     <Component class="javax.swing.JFormattedTextField" name="fechaText">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="d/M/yyyy" subtype="-1" type="1"/>
+          <Format subtype="1" type="1"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="apellidosLabel">
+    <Component class="javax.swing.JLabel" name="label4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Apellidos del Paciente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="apellidopacientetext">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="apellidopacientetextActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="registrarButton">
+    <Component class="javax.swing.JButton" name="botonRegistrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRegistrarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="atr&#xe1;sButton">
@@ -172,7 +179,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atr&#xe1;sButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="numerodosisLabel">
+    <Component class="javax.swing.JLabel" name="label5">
       <Properties>
         <Property name="text" type="java.lang.String" value="N&#xba; de dosis a recibir:"/>
       </Properties>
@@ -185,6 +192,13 @@
         <Property name="paintLabels" type="boolean" value="true"/>
         <Property name="paintTicks" type="boolean" value="true"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="dni del Paciente:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dnitext">
     </Component>
   </SubComponents>
 </Form>

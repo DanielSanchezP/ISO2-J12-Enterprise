@@ -16,8 +16,9 @@ public class LoteVacunasDAO extends AgenteBD {
 	 * @param lote
 	 */
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    static String id;
 	public void insertarLoteVacunas(LoteVacunas lote){
-		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.tipo.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
+		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
 		
 	}
         
@@ -33,10 +34,8 @@ public class LoteVacunasDAO extends AgenteBD {
 		while (res.next()) {
                     
                         LoteVacunas lote = new LoteVacunas();
-                        TipoVacuna tipo = new TipoVacuna();
 			lote.id = res.getObject(1).toString();
-			tipo.farmaceutica = res.getObject(2).toString();
-                        lote.tipo = tipo;
+                        lote.farmaceutica = res.getObject(2).toString();
                         lote.cantidad = (int) res.getObject(3);
 			lote.fecha = (Date) res.getObject(4);
                         listalote.add(lote);    
