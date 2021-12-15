@@ -25,7 +25,8 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarVacunacion
      */
-    public RegistrarVacunacion() {
+    public RegistrarVacunacion(String region_) {
+        this.region=region_;
         initComponents();
     }
 
@@ -179,8 +180,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-               
-       
+            
             SimpleDateFormat formatter = new SimpleDateFormat("d/MM/yyyy");
             String dni = dnitext.getText();
             String nombre = nombrePacienteText.getText();
@@ -192,7 +192,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         try {
             fecha = formatter.parse(fechaText.getText());
            
-            gestor.registrarVacunacion(fecha, nombre, apellidos, dni, nombrevacuna, numeroDosis);
+            gestor.registrarVacunacion(fecha, nombre, apellidos, dni, nombrevacuna, numeroDosis, this.region);
         } catch (ParseException ex) {
             Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -242,12 +242,12 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RegistrarVacunacion().setVisible(true);
+            new RegistrarVacunacion("").setVisible(true);
         });
     }
     
-    public static void mostrarRV(){
-        new RegistrarVacunacion().setVisible(true);
+    public static void mostrarRV(String region_){
+        new RegistrarVacunacion(region_).setVisible(true);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

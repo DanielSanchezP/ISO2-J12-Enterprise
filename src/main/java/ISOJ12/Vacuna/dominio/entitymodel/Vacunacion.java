@@ -11,5 +11,5 @@ public class Vacunacion {
 	VacunacionDAO vacunacionDao;
 	public Date fecha;
 	public int numeroDosis;
-
+        public String nombreregion;
 }

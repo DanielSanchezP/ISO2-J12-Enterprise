@@ -16,8 +16,8 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
      * Creates new form PantallaGestionSistemaRegionalSalud
      */
     public PantallaGestionSistemaRegionalSalud(String region_) {
-        
         this.region=region_;
+        System.out.println(this.region);
         initComponents();
     }
 
@@ -138,7 +138,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVacunasDispActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        RegistrarVacunacion.mostrarRV();
+        RegistrarVacunacion.mostrarRV(this.region);
         this.dispose();
     }//GEN-LAST:event_botonRegistroActionPerformed
 

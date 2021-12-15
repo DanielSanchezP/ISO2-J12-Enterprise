@@ -32,7 +32,7 @@ public class GestorVacunacion {
 	 * @param nif
 	 * @param tipo
 	 */
-	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis) {
+	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion) {
 		VacunacionDAO vacunaciondao = new VacunacionDAO();
                 Vacunacion vacunacion = new Vacunacion();
                 Paciente pac=new Paciente();
@@ -42,8 +42,8 @@ public class GestorVacunacion {
                 vacunacion.paciente = pac;
                 vacunacion.nombrevacuna = tipo;
                 vacunacion.numeroDosis = dosis;
-                System.out.print("Fecha: "+fecha);
                 vacunacion.fecha=fecha;
+                vacunacion.nombreregion=nombreregion;
                 
                 vacunaciondao.insertarVacunacion(vacunacion);
 	}
