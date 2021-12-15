@@ -36,9 +36,9 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="label4" min="-2" max="-2" attributes="0"/>
                           <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <Component id="label2" min="-2" max="-2" attributes="0"/>
                           <Component id="label1" min="-2" max="-2" attributes="0"/>
                           <Component id="label6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -70,9 +70,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="label6" min="-2" max="-2" attributes="0"/>
-                  <Component id="dnitext" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="dnitext" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -136,7 +136,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha:"/>
+        <Property name="text" type="java.lang.String" value="Fecha (dd.mm.aaaa):"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="fechaText">
@@ -195,7 +195,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="dni del Paciente:"/>
+        <Property name="text" type="java.lang.String" value="DNI del Paciente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="dnitext">

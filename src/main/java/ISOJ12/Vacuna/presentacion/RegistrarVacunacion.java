@@ -67,7 +67,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
         label2.setText("Tipo de Vacuna:");
 
-        label3.setText("Fecha:");
+        label3.setText("Fecha (dd.mm.aaaa):");
 
         fechaText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         fechaText.setToolTipText("");
@@ -102,7 +102,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         dosisSlider.setPaintLabels(true);
         dosisSlider.setPaintTicks(true);
 
-        label6.setText("dni del Paciente:");
+        label6.setText("DNI del Paciente:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,9 +120,9 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label4)
                             .addComponent(label3)
-                            .addComponent(label2)
                             .addComponent(label1)
-                            .addComponent(label6))
+                            .addComponent(label6)
+                            .addComponent(label2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nombrePacienteText, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
@@ -145,9 +145,9 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label6)
-                    .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label1)
@@ -181,7 +181,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
             
-            SimpleDateFormat formatter = new SimpleDateFormat("d/MM/yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
             String dni = dnitext.getText();
             String nombre = nombrePacienteText.getText();
             String apellidos = apellidopacientetext.getText();
