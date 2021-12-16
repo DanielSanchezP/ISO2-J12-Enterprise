@@ -30,7 +30,7 @@ public class EntregaDAOTest {
     
     @BeforeAll
     public static void setUpClass() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         System.out.println("insertarEntrega");
         EntregaVacunas entrega = new EntregaVacunas();
         LoteVacunas lote = new LoteVacunas();
@@ -67,7 +67,7 @@ public class EntregaDAOTest {
      */
     @Test
     public void testEntregarVacunas() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         System.out.println("insertarEntrega");
         EntregaVacunas entrega = new EntregaVacunas();
         LoteVacunas lote = new LoteVacunas();

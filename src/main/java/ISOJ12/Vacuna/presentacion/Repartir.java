@@ -6,6 +6,7 @@
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorRepartoVacunas;
+import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -273,6 +274,7 @@ public class Repartir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void repartirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repartirButtonActionPerformed
+        LoteVacunasDAO lotedao = new LoteVacunasDAO();
         String id = textid.getText();
         System.out.println("Id: "+id);
         String[][] reparto = gestor.calcularEntregasRegion(id);
@@ -296,6 +298,7 @@ public class Repartir extends javax.swing.JFrame {
         textceuta.setText(reparto[16][1]);
         textmelilla.setText(reparto[17][1]);
         textextremadura.setText(reparto[18][1]);
+        lotedao.borrarlote(id);
     }//GEN-LAST:event_repartirButtonActionPerformed
 
     private void atrasbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasbuttonActionPerformed

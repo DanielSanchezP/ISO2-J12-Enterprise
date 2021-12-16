@@ -165,7 +165,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
                 long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
                 totalvacunadosText.setText(Long.toString(total));
-                double porcentaje = gestor.consultarPorcentajeVacunadosSobreRecibidas();
+                double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
                 porcentajevacunadosText.setText(Double.toString(porcentaje));
             }
             else{
@@ -242,7 +242,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         inicializarLista();      
         long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
         totalvacunadosText.setText(Long.toString(total));
-        double porcentaje = gestor.consultarPorcentajeVacunadosSobreRecibidas();
+        double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
         porcentajevacunadosText.setText(Double.toString(porcentaje));
         this.setVisible(true);
     }

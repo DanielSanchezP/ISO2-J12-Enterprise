@@ -54,7 +54,7 @@ public class GestorRepartoVacunas {
                     
                     int poblacion = Integer.parseInt(estadisticas[i][2]);
                     
-                    pr += ((double)vacunados/poblacion)*100;
+                    pr += (1/((double)vacunados/poblacion)*100);
                     
                     double porcentajedosis = gestorest.consultarPorcentajeVacunadosSobreRecibidasEnRegion(prioridad[i][0]);
                     
