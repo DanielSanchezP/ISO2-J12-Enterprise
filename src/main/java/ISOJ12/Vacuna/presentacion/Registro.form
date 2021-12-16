@@ -166,9 +166,26 @@
     <Component class="javax.swing.JComboBox" name="regionComboBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="19">
             <StringItem index="0" value="Asturias"/>
             <StringItem index="1" value="Galicia"/>
+            <StringItem index="2" value="Cantabria"/>
+            <StringItem index="3" value="La Rioja"/>
+            <StringItem index="4" value="Pais Vasco"/>
+            <StringItem index="5" value="Navarra"/>
+            <StringItem index="6" value="Aragon"/>
+            <StringItem index="7" value="Catalu&#xf1;a"/>
+            <StringItem index="8" value="Castilla y Leon"/>
+            <StringItem index="9" value="Madrid"/>
+            <StringItem index="10" value="Castilla-La Mancha"/>
+            <StringItem index="11" value="Comunidad Valenciana"/>
+            <StringItem index="12" value="Murcia"/>
+            <StringItem index="13" value="Andalucia"/>
+            <StringItem index="14" value="Extremadura"/>
+            <StringItem index="15" value="Islas Baleares"/>
+            <StringItem index="16" value="Islas Canarias"/>
+            <StringItem index="17" value="Ceuta"/>
+            <StringItem index="18" value="Melilla"/>
           </StringArray>
         </Property>
       </Properties>

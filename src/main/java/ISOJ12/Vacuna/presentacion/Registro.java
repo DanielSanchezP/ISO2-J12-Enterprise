@@ -78,7 +78,7 @@ public class Registro extends javax.swing.JFrame {
 
         label6.setText("Region (Solo para SRS):");
 
-        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asturias", "Galicia" }));
+        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asturias", "Galicia", "Cantabria", "La Rioja", "Pais Vasco", "Navarra", "Aragon", "Cataluña", "Castilla y Leon", "Madrid", "Castilla-La Mancha", "Comunidad Valenciana", "Murcia", "Andalucia", "Extremadura", "Islas Baleares", "Islas Canarias", "Ceuta", "Melilla" }));
 
         botonAtras.setText("Atrás");
         botonAtras.addActionListener(new java.awt.event.ActionListener() {
