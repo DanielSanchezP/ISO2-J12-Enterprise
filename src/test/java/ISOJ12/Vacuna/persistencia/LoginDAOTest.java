@@ -50,18 +50,27 @@ public class LoginDAOTest {
         String tipoUsuario = "SNS";
         String nombreregion = "Nacional";
         LoginDAO instance = new LoginDAO();
-        instance.insertarTrabajador(dni, nombre, apellido, contrasena, tipoUsuario, nombreregion);
+        int i=instance.insertarTrabajador(dni, nombre, apellido, contrasena, tipoUsuario, nombreregion);
+        assertEquals(1, i);
     }
-
     /**
      * Test of comprobarLogin method, of class LoginDAO.
      */
     @Test
     public void testComprobarLogin() {
-        System.out.println("comprobarLogin");
-        String dni = "01234567A";
+        String dni = "01234567C";
+        String nombre = "Pepe";
+        String apellido = "Viyuela";
         String contrasena = "1234";
+        String tipoUsuario = "SNS";
+        String nombreregion = "Nacional";
         LoginDAO instance = new LoginDAO();
+        int i=instance.insertarTrabajador(dni, nombre, apellido, contrasena, tipoUsuario, nombreregion);
+        assertEquals(1, i);
+        
+        System.out.println("comprobarLogin");
+        dni = "01234567C";
+        contrasena = "1234";
         String[] result = instance.comprobarLogin(dni, contrasena);
         String[] expResult = new String []{"true", "SNS", "Nacional"};
         assertArrayEquals(expResult, result);
