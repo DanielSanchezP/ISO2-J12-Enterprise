@@ -13,7 +13,7 @@ public class Vacunacion {
 	public int numeroDosis;
         public String nombreregion;
         
-        public boolean equals(Vacunacion vac){
+        public boolean equal(Vacunacion vac){
             return this.paciente.equals(vac.paciente) && this.nombrevacuna.equals(vac.nombrevacuna)
                     && this.fecha.equals(vac.fecha) && this.numeroDosis == vac.numeroDosis
                     && this.nombreregion.equals(vac.nombreregion);
