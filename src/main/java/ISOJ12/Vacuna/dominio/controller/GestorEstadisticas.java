@@ -104,15 +104,16 @@ public class GestorEstadisticas {
                 return resultado;
 	}
         public long consultarTotalVacunasEnRegion(String region){
-                EntregaDAO consultaentrega = new EntregaDAO();
-                EntregaVacunas entrega = new EntregaVacunas();
-                long totalcantidad = 0;
-                List<EntregaVacunas> entregavac = consultaentrega.seleccionarVacunas(region);
-                for(int i = 0; i < entregavac.size();i++){
-                        entrega = entregavac.get(i);
-                        totalcantidad += entrega.cantidad;
-                    }
-                return totalcantidad;
+            ConsultarEstadisticasDAO consultaest = new ConsultarEstadisticasDAO();
+            long totalcantidad = 0;
+            String[] vacunasinoc = null;
+            try {
+                vacunasinoc = consultaest.comprobarEstadisticasRegional(region);
+            } catch (SQLException ex) {
+                Logger.getLogger(GestorEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            totalcantidad = Long.parseLong(vacunasinoc[1]);
+            return totalcantidad;
         }
         
         public double consultarVacunadosDeNVacuna(String region, int ndosis){

@@ -72,7 +72,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             }
         });
 
-        comboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", " " }));
+        comboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", "La Rioja", "Navarra", "Aragon", "Cataluña", "Castilla y Leon", "Madrid", "Castilla-La Mancha", "Comunidad Valenciana", "Extremadura", "Andalucía", "Murcia", "Islas Baleares", "Islas Canarias", "Ceuta", "Melilla ", " " }));
         comboBoxListaSitios.setToolTipText("");
         comboBoxListaSitios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

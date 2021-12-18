@@ -59,26 +59,14 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
         label1.setText("Nombre del Paciente:");
 
-        nombrePacienteText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombrePacienteTextActionPerformed(evt);
-            }
-        });
-
         label2.setText("Tipo de Vacuna:");
 
         label3.setText("Fecha (dd.mm.aaaa):");
 
-        fechaText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        fechaText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd.MM.yyyy"))));
         fechaText.setToolTipText("");
 
         label4.setText("Apellidos del Paciente:");
-
-        apellidopacientetext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                apellidopacientetextActionPerformed(evt);
-            }
-        });
 
         botonRegistrar.setText("Registrar");
         botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -180,40 +168,28 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-            
-            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        Date fecha = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
             String dni = dnitext.getText();
             String nombre = nombrePacienteText.getText();
             String apellidos = apellidopacientetext.getText();
             String nombrevacuna = tipovacunatext.getText();
             int numeroDosis = dosisSlider.getValue();
-            Date fecha;
             
         try {
-            fecha = formatter.parse(fechaText.getText());
-           
-            gestor.registrarVacunacion(fecha, nombre, apellidos, dni, nombrevacuna, numeroDosis, this.region);
+            fecha = formatter.parse(fechaText.getText());            
         } catch (ParseException ex) {
             Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-            
-        
+        gestor.registrarVacunacion(fecha, nombre, apellidos, dni, nombrevacuna, numeroDosis, this.region);
+        this.dispose();
     }//GEN-LAST:event_botonRegistrarActionPerformed
-
-    private void nombrePacienteTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePacienteTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombrePacienteTextActionPerformed
 
     private void atrásButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrásButtonActionPerformed
         PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud(region);
         pantalla.mostrarGestionRegional();
         this.dispose();
     }//GEN-LAST:event_atrásButtonActionPerformed
-
-    private void apellidopacientetextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidopacientetextActionPerformed
-        
-    }//GEN-LAST:event_apellidopacientetextActionPerformed
     //No modificar
     
     

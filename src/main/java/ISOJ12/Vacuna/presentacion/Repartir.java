@@ -75,6 +75,7 @@ public class Repartir extends javax.swing.JFrame {
         textislascanarias = new javax.swing.JTextField();
         textceuta = new javax.swing.JTextField();
         textmelilla = new javax.swing.JTextField();
+        labeledad = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,19 +133,14 @@ public class Repartir extends javax.swing.JFrame {
             }
         });
 
+        labeledad.setText("50% para mayores de 65 años, 30% para gente de entre 15-64 años y 20% para niños de entre 0-14 años");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(label1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textid, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(repartirButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -175,7 +171,7 @@ public class Repartir extends javax.swing.JFrame {
                             .addComponent(textcastillayleon, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textextremadura, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textgalicia))
-                        .addGap(18, 43, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label11)
                             .addComponent(label10)
@@ -185,28 +181,40 @@ public class Repartir extends javax.swing.JFrame {
                             .addComponent(label15)
                             .addComponent(label16)
                             .addComponent(label17)
-                            .addComponent(label18))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textcomunidadvalenciana)
-                    .addComponent(textmadrid)
-                    .addComponent(textcastillalamancha)
-                    .addComponent(textmurcia)
-                    .addComponent(textandalucia)
-                    .addComponent(textislasbaleares)
-                    .addComponent(textislascanarias)
-                    .addComponent(textceuta)
-                    .addComponent(textmelilla, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                .addContainerGap())
+                            .addComponent(label18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textcomunidadvalenciana)
+                            .addComponent(textmadrid)
+                            .addComponent(textcastillalamancha)
+                            .addComponent(textmurcia)
+                            .addComponent(textandalucia)
+                            .addComponent(textislasbaleares)
+                            .addComponent(textislascanarias)
+                            .addComponent(textceuta)
+                            .addComponent(textmelilla, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(label1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textid, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(repartirButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(labeledad)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label1)
                     .addComponent(textid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(repartirButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labeledad)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelgalicia)
@@ -265,7 +273,7 @@ public class Repartir extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label19)
                     .addComponent(textextremadura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(atrasbutton)
                 .addContainerGap())
         );
@@ -370,6 +378,7 @@ public class Repartir extends javax.swing.JFrame {
     private javax.swing.JLabel label7;
     private javax.swing.JLabel label8;
     private javax.swing.JLabel label9;
+    private javax.swing.JLabel labeledad;
     private javax.swing.JLabel labelgalicia;
     private javax.swing.JButton repartirButton;
     private javax.swing.JTextField textandalucia;

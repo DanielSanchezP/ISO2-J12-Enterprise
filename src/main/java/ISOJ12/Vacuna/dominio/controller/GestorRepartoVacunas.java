@@ -8,6 +8,7 @@ import ISOJ12.Vacuna.persistencia.EntregaDAO;
 import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class GestorRepartoVacunas {
 	public String[][] calcularEntregasRegion(String id){
             ConsultarEstadisticasDAO consulta = new ConsultarEstadisticasDAO();
             GestorEstadisticas gestorest = new GestorEstadisticas();
-            
+            List<String> listgrupo = new ArrayList<>(Arrays.asList("Ancianos", "Adultos/Adolescentes","Niños"));
             String[][] reparto = new String[19][2];
      
             
@@ -78,12 +79,27 @@ public class GestorRepartoVacunas {
                     totalcantidad2 -= repartocant;
                     reparto[i][1] = Integer.toString(repartocant);
                     
-                    entrega.lote = lote;
-                    entrega.grupoPrioridad = "Yayos";
-                    entrega.fecha = new Date();
-                    entrega.cantidad = repartocant;
-                    entrega.nombreregion = reparto[i][0];
-                    entregadao.entregarVacunas(entrega);
+                    for (int j=0;j<listgrupo.size();j++){
+                        entrega.lote = lote;
+                        entrega.grupoPrioridad = listgrupo.get(j);
+                        entrega.fecha = new Date();
+                        switch (j) {
+                            case 0:
+                                entrega.cantidad = (int)(repartocant*0.5);
+                                break;
+                            case 1:
+                                entrega.cantidad = (int)(repartocant*0.3);
+                                break;
+                            case 2:
+                                entrega.cantidad = (int)(repartocant*0.2);
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                        entrega.nombreregion = reparto[i][0];
+                        entregadao.entregarVacunas(entrega);
+                    }
                 }           
             }catch (SQLException e) {
                 e.printStackTrace();

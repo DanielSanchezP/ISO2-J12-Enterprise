@@ -101,13 +101,28 @@
     <Component class="javax.swing.JComboBox" name="comboBoxListaSitios">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="21">
             <StringItem index="0" value="Nacional"/>
             <StringItem index="1" value="Asturias"/>
             <StringItem index="2" value="Galicia"/>
             <StringItem index="3" value="Cantabria"/>
             <StringItem index="4" value="Pais Vasco"/>
-            <StringItem index="5" value=" "/>
+            <StringItem index="5" value="La Rioja"/>
+            <StringItem index="6" value="Navarra"/>
+            <StringItem index="7" value="Aragon"/>
+            <StringItem index="8" value="Catalu&#xf1;a"/>
+            <StringItem index="9" value="Castilla y Leon"/>
+            <StringItem index="10" value="Madrid"/>
+            <StringItem index="11" value="Castilla-La Mancha"/>
+            <StringItem index="12" value="Comunidad Valenciana"/>
+            <StringItem index="13" value="Extremadura"/>
+            <StringItem index="14" value="Andaluc&#xed;a"/>
+            <StringItem index="15" value="Murcia"/>
+            <StringItem index="16" value="Islas Baleares"/>
+            <StringItem index="17" value="Islas Canarias"/>
+            <StringItem index="18" value="Ceuta"/>
+            <StringItem index="19" value="Melilla "/>
+            <StringItem index="20" value=" "/>
           </StringArray>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
