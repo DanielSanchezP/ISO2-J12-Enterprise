@@ -108,8 +108,22 @@ public class AgenteBDTest {
             }
             assertNotNull(str1);
             assertNotNull(str2);
+            
         } catch (SQLException ex) {
             fail("No existe ningún elemento.");
+        }
+        sql = "SELECT dni, contrasena FROM trabajadores WHERE dni ='fregtg54534rf' AND contrasena ='12ertgetg' ";
+        result = abd.select(sql);
+        try {
+            while (result.next()) {
+                str1=result.getObject(1).toString();
+                str2=result.getObject(2).toString();
+            }
+            assertNull(str1);
+            assertNull(str2);
+            
+        } catch (SQLException ex) {
+            fail("Existe ningún elemento.");
         }
     }
 

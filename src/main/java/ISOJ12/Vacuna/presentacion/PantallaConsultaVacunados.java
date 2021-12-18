@@ -17,14 +17,14 @@ import javax.swing.DefaultListModel;
  *
  * @author Daniel
  */
-public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
+public class PantallaConsultaVacunados extends javax.swing.JFrame {
     DefaultListModel modelo = new DefaultListModel();
     String region = null;
     
     /**
      * Creates new form PantallaConsultaEstadisticas
      */
-    public PantallaConsultaEstadisticas() {
+    public PantallaConsultaVacunados() {
         initComponents();
     }
 
@@ -109,15 +109,16 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaConsultaVacunados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new PantallaConsultaEstadisticas().setVisible(true);
+            new PantallaConsultaVacunados().setVisible(true);
         });
         
         
@@ -137,7 +138,7 @@ public class PantallaConsultaEstadisticas extends javax.swing.JFrame {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(PantallaConsultaEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PantallaConsultaVacunados.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

@@ -30,7 +30,7 @@ public class VacunacionDAOTest {
     
     @BeforeAll
     public static void setUpClass() {
-        SimpleDateFormat formatter = new SimpleDateFormat("d/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         
         System.out.println("insertarVacunacion");
         Vacunacion vacunacion = new Vacunacion();
@@ -41,8 +41,9 @@ public class VacunacionDAOTest {
         vacunacion.paciente = pac;
         vacunacion.nombrevacuna = "Pfizer";
         vacunacion.numeroDosis = 9;
+        vacunacion.nombreregion="asdfecy";
         try {
-            vacunacion.fecha=formatter.parse("2/02/2002");
+            vacunacion.fecha=formatter.parse("2.02.2002");
         } catch (ParseException ex) {
             Logger.getLogger(VacunacionDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -68,7 +69,7 @@ public class VacunacionDAOTest {
      */
     @Test
     public void testInsertarVacunacion() {
-        SimpleDateFormat formatter = new SimpleDateFormat("d/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         
         System.out.println("insertarVacunacion");
         Vacunacion vacunacion = new Vacunacion();
@@ -79,8 +80,9 @@ public class VacunacionDAOTest {
         vacunacion.paciente = pac;
         vacunacion.nombrevacuna = "Pfizer";
         vacunacion.numeroDosis = 9;
+        vacunacion.nombreregion="asdfecy";
         try {
-            vacunacion.fecha=formatter.parse("2/02/2002");
+            vacunacion.fecha=formatter.parse("2.02.2002");
         } catch (ParseException ex) {
             Logger.getLogger(VacunacionDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -113,5 +115,4 @@ public class VacunacionDAOTest {
         List<Vacunacion> result = instance.seleccionarVacunaciones(region);
         assertFalse(result.isEmpty());
     }
-    
 }

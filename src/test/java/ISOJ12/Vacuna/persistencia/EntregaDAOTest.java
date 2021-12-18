@@ -42,7 +42,7 @@ public class EntregaDAOTest {
         entrega.nombreregion="abcd";
         
         try {
-            entrega.fecha=formatter.parse("2/02/2002");
+            entrega.fecha=formatter.parse("2.02.2002");
         } catch (ParseException ex) {
             Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -79,7 +79,7 @@ public class EntregaDAOTest {
         entrega.nombreregion="abcd";
         
         try {
-            entrega.fecha=formatter.parse("2/02/2002");
+            entrega.fecha=formatter.parse("2.02.2002");
         } catch (ParseException ex) {
             Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -92,7 +92,7 @@ public class EntregaDAOTest {
     @Test
     public void testSeleccionarEntregas() throws Exception {
         System.out.println("seleccionarEntregas");
-        String region = "Asturias";
+        String region = "abcd";
         EntregaDAO instance = new EntregaDAO();
         List<EntregaVacunas> result = instance.seleccionarVacunas(region);
         assertFalse(result.isEmpty());

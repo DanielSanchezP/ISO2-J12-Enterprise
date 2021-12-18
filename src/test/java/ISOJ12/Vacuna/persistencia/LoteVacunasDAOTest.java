@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Julián M
  */
 public class LoteVacunasDAOTest {
-    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
     LoteVacunas lote = new LoteVacunas();
     LoteVacunas lote1 = new LoteVacunas();
     
@@ -40,7 +40,7 @@ public class LoteVacunasDAOTest {
         lote1.id = Integer.toString(numero);
         lote1.cantidad=(int)(Math.random()*10000);
         try {
-            lote1.fecha=formatter.parse("3/10/2020");
+            lote1.fecha=formatter.parse("3.10.2020");
         } catch (ParseException ex) {
             Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -74,7 +74,7 @@ public class LoteVacunasDAOTest {
         lote.id = Integer.toString(numero);
         lote.cantidad=(int)(Math.random()*10000);
         try {
-            lote.fecha=formatter.parse("3/10/2020");
+            lote.fecha=formatter.parse("3.10.2020");
         } catch (ParseException ex) {
             Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
