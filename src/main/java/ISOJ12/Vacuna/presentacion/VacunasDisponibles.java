@@ -8,13 +8,9 @@ package ISOJ12.Vacuna.presentacion;
 import ISOJ12.Vacuna.dominio.controller.GestorRepartoVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.EntregaVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.swing.DefaultListModel;
 
 /**

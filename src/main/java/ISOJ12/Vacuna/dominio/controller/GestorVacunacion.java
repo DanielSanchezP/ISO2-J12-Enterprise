@@ -11,23 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GestorVacunacion {
-
-	/**
-	 * 
-	 * @param lote
-	 * @param fecha
-	 * @param cantidad
-	 * @param prioridad
-	 */
-	public void altaEntregaVacunas(LoteVacunas lote, Date fecha, int cantidad, String prioridad) {
-            EntregaVacunas entrega = new EntregaVacunas();
-            EntregaDAO entregadao = new EntregaDAO();
-            entrega.lote = lote;
-            entrega.fecha = fecha;
-            entrega.cantidad = cantidad;
-            entrega.grupoPrioridad = prioridad;    
-            entregadao.entregarVacunas(entrega);
-	}
+	
 
 	/**
 	 * 
@@ -39,10 +23,11 @@ public class GestorVacunacion {
      * @param dosis
      * @param nombreregion
      * @param grupo
+     * @return 
 	 */
-	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
+	public boolean registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
 		VacunacionDAO vacunaciondao = new VacunacionDAO();
-                
+                boolean vacuna = false;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 Vacunacion vacunacion = new Vacunacion();
                 List<Vacunacion> listavac = new ArrayList<>();
@@ -56,11 +41,15 @@ public class GestorVacunacion {
                 vacunacion.numeroDosis = dosis;
                 vacunacion.fecha=fecha;
                 vacunacion.nombreregion=nombreregion;
-                
-            try {
+                if (dosis<=0 || nombre.length()>30 || apellidos.length() > 30 || tipo.length()>30){
+                    vacuna = false;
+                }
+                else{
+                    try {
                 listavac = vacunaciondao.seleccionarVacunaciones();
                 if(listavac.isEmpty()){
                     vacunaciondao.insertarVacunacion(vacunacion);
+                    vacuna = true;
                 }
                 
                 else{
@@ -68,6 +57,7 @@ public class GestorVacunacion {
                     if(!vacunacion.equal(listavac.get(i))){
                         System.out.print("LO METO");
                         vacunaciondao.insertarVacunacion(vacunacion);
+                        vacuna = true;
                         break;
                     }
                     else{
@@ -80,7 +70,9 @@ public class GestorVacunacion {
             } catch (SQLException ex) {
                 Logger.getLogger(GestorVacunacion.class.getName()).log(Level.SEVERE, null, ex);
             }
-                 
+                }
+            
+            return vacuna;
 	}
 
 }

@@ -286,7 +286,6 @@ public class Repartir extends javax.swing.JFrame {
         String id = textid.getText();
         System.out.println("Id: "+id);
         String[][] reparto = gestor.calcularEntregasRegion(id);
-        System.out.print("COSOS DE EXTREMADURA: "+reparto[18][1]);
         textgalicia.setText(reparto[0][1]);
         textasturias.setText(reparto[1][1]);
         textlarioja.setText(reparto[2][1]);

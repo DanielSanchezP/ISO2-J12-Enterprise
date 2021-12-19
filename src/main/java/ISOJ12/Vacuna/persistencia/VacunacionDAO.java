@@ -40,6 +40,10 @@ public class VacunacionDAO extends AgenteBD {
 			 vacunacion.numeroDosis = (int) res.getObject(6);
                          listavacunacion.add(vacunacion);    
         }
+                if(listavacunacion.isEmpty()){
+                    return null;
+                }
+                
 		 return listavacunacion;
 	}
 

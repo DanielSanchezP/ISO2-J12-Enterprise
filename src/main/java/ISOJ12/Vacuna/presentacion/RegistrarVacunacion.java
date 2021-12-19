@@ -6,7 +6,6 @@
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorVacunacion;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
