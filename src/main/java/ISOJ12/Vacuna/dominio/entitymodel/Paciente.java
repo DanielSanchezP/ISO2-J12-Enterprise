@@ -7,7 +7,7 @@ public class Paciente {
 	public String apellidos;
 	public String grupo;
         
-        public boolean equals(Paciente paciente){
+        public boolean equal(Paciente paciente){
             
             return this.dni.equals(paciente.dni) && this.nombre.equals(paciente.nombre)&&
                     this.apellidos.equals(paciente.apellidos)

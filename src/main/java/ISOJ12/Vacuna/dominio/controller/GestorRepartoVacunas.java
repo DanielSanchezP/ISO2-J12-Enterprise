@@ -20,9 +20,13 @@ public class GestorRepartoVacunas {
 	 * @param fecha
 	 * @param tipo
 	 * @param cantidad
+     * @return 
 	 */
-	public void altaNuevoLoteVacunas(Date fecha, String tipo, int cantidad) {
+	public boolean altaNuevoLoteVacunas(Date fecha, String tipo, int cantidad) {
             
+            if(cantidad <= 0){
+                return false;
+            }
             
             SecureRandom number = new SecureRandom();
             int numero = number.nextInt(1000001);
@@ -32,6 +36,7 @@ public class GestorRepartoVacunas {
             lote.fecha = fecha;
                 
             lotedao.insertarLoteVacunas(lote);
+            return true;
 	}
 
 	public String[][] calcularEntregasRegion(String id){

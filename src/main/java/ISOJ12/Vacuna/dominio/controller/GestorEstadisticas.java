@@ -2,15 +2,12 @@ package ISOJ12.Vacuna.dominio.controller;
 
 
 import ISOJ12.Vacuna.dominio.entitymodel.EntregaVacunas;
-import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
 import ISOJ12.Vacuna.persistencia.ConsultarEstadisticasDAO;
 import ISOJ12.Vacuna.persistencia.EntregaDAO;
-import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import ISOJ12.Vacuna.presentacion.PantallaGestionSistemaSaludNacional;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

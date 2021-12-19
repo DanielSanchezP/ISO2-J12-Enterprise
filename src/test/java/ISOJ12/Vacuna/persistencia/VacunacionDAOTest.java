@@ -47,7 +47,7 @@ public class VacunacionDAOTest {
         } catch (ParseException ex) {
             Logger.getLogger(VacunacionDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-;
+
         VacunacionDAO instance = new VacunacionDAO();
         instance.insertarVacunacion(vacunacion);
     }
@@ -86,7 +86,7 @@ public class VacunacionDAOTest {
         } catch (ParseException ex) {
             Logger.getLogger(VacunacionDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-;
+
         VacunacionDAO instance = new VacunacionDAO();
         instance.insertarVacunacion(vacunacion);
     }

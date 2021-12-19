@@ -38,6 +38,7 @@ public class GestorVacunacion {
 	 * @param tipo
      * @param dosis
      * @param nombreregion
+     * @param grupo
 	 */
 	public void registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
 		VacunacionDAO vacunaciondao = new VacunacionDAO();
@@ -56,41 +57,21 @@ public class GestorVacunacion {
                 vacunacion.fecha=fecha;
                 vacunacion.nombreregion=nombreregion;
                 
-                Vacunacion vac2 = new Vacunacion();
-                Paciente pac2 = new Paciente();
-                
-                pac2.nombre= "pepe";
-                pac2.apellidos = "viyuela";
-                pac2.dni = "12345678X";
-                pac2.grupo = "Adulto";
-                
-                Paciente pac3 = new Paciente();
-                pac3.nombre= "dani";
-                pac3.apellidos = "viyuela";
-                pac3.dni = "12345678X";
-                pac3.grupo = "Adulto";
-                
-                if(pac2.equals(pac3)){
-                    System.out.println("DOS COSSOS IGUALES FUNCIONA");
-                }
-                else{
-                    System.out.println("DOS COSSOS DIFERENTES FUNCIONA");
-                }
-                
             try {
                 listavac = vacunaciondao.seleccionarVacunaciones();
                 if(listavac.isEmpty()){
                     vacunaciondao.insertarVacunacion(vacunacion);
-                    System.out.println("LO METO Y ESTA VACIA LA LISTA");
                 }
+                
                 else{
                 for(int i = 0; i<listavac.size();i++){
-                    if(vacunacion.equal(listavac.get(i))){
-                        System.out.print("OYE TU COSA REPETIDA");
-                    }
-                    else{
+                    if(!vacunacion.equal(listavac.get(i))){
                         System.out.print("LO METO");
                         vacunaciondao.insertarVacunacion(vacunacion);
+                        break;
+                    }
+                    else{
+                        System.out.print("OYE TU COSA REPETIDA");
                         break;
                         }
                     }

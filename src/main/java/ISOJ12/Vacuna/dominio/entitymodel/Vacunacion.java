@@ -14,8 +14,8 @@ public class Vacunacion {
         public String nombreregion;
         
         public boolean equal(Vacunacion vac){
-            return this.paciente.equals(vac.paciente) && this.nombrevacuna.equals(vac.nombrevacuna)
-                    && this.fecha.equals(vac.fecha) && this.numeroDosis == vac.numeroDosis
+            return this.paciente.equal(vac.paciente) && this.nombrevacuna.equals(vac.nombrevacuna)
+                     && this.numeroDosis == vac.numeroDosis
                     && this.nombreregion.equals(vac.nombreregion);
         }
 }
