@@ -176,82 +176,99 @@ public class GestorRepartoVacunasTest {
      */
     @Test
     public void testvacunasEnRegion(){
-        List<EntregaVacunas> reparto = new ArrayList<>();
+        LoteVacunasDAO lotedao = new LoteVacunasDAO();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        LoteVacunas lote = new LoteVacunas();
         
-        String id = "Asturias";
+        String id = "54321";
+        lote.id = id;
+        lote.farmaceutica = "Pfizer";
+        lote.cantidad = 500000;
+        try {
+            lote.fecha=formatter.parse("19.12.2021");
+        } catch (ParseException ex) {
+            Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        lotedao.insertarLoteVacunas(lote);
+        
+        instance.calcularEntregasRegion(id);
+        
+        List<EntregaVacunas> reparto;
+        
+        id = "Asturias";
         reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id2 = "Galicia";
-        reparto = instance.vacunasEnRegion(id2);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id3 = "Cantabria";
-        reparto = instance.vacunasEnRegion(id3);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id4 = "La Rioja";
-        reparto = instance.vacunasEnRegion(id4);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id5 = "Pais Vasco";
-        reparto = instance.vacunasEnRegion(id5);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id6 = "Navarra";
-        reparto = instance.vacunasEnRegion(id6);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id7 = "Aragon";
-        reparto = instance.vacunasEnRegion(id7);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id8 = "Cataluña";
-        reparto = instance.vacunasEnRegion(id8);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id9 = "Castilla y Leon";
-        reparto = instance.vacunasEnRegion(id9);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id10 = "Madrid";
-        reparto = instance.vacunasEnRegion(id10);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id11 = "Castilla La Mancha";
-        reparto = instance.vacunasEnRegion(id11);
-        assertFalse(reparto.isEmpty()); 
-        
-        String id12 = "Comunidad Valenciana";
-        reparto = instance.vacunasEnRegion(id12);
+        id = "Galicia";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id13 = "Murcia";
-        reparto = instance.vacunasEnRegion(id13);
+        id = "Cantabria";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "La Rioja";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Pais Vasco";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Navarra";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Aragon";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Cataluña";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Castilla y Leon";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Madrid";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Castilla La Mancha";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty()); 
+        
+        id = "Comunidad Valenciana";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id14 = "Andalucia";
-        reparto = instance.vacunasEnRegion(id14);
+        id = "Murcia";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id15 = "Extremadura";
-        reparto = instance.vacunasEnRegion(id15);
+        id = "Andalucia";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id16 = "Islas Baleares";
-        reparto = instance.vacunasEnRegion(id16);
+        id = "Extremadura";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id17 = "Islas Canarias";
-        reparto = instance.vacunasEnRegion(id17);
+        id = "Islas Baleares";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id18 = "Ceuta";
-        reparto = instance.vacunasEnRegion(id18);
+        id = "Islas Canarias";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
         
-        String id19 = "Melilla";
-        reparto = instance.vacunasEnRegion(id19);
+        id = "Ceuta";
+        reparto = instance.vacunasEnRegion(id);
+        assertFalse(reparto.isEmpty());
+        
+        id = "Melilla";
+        reparto = instance.vacunasEnRegion(id);
         assertFalse(reparto.isEmpty());
     
     }
