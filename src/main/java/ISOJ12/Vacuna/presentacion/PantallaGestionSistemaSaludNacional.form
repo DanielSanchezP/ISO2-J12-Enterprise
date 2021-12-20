@@ -113,10 +113,10 @@
             <StringItem index="8" value="Catalu&#xf1;a"/>
             <StringItem index="9" value="Castilla y Leon"/>
             <StringItem index="10" value="Madrid"/>
-            <StringItem index="11" value="Castilla-La Mancha"/>
+            <StringItem index="11" value="Castilla La Mancha"/>
             <StringItem index="12" value="Comunidad Valenciana"/>
             <StringItem index="13" value="Extremadura"/>
-            <StringItem index="14" value="Andaluc&#xed;a"/>
+            <StringItem index="14" value="Andalucia"/>
             <StringItem index="15" value="Murcia"/>
             <StringItem index="16" value="Islas Baleares"/>
             <StringItem index="17" value="Islas Canarias"/>

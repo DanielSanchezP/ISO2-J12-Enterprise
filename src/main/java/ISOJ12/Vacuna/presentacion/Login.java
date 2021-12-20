@@ -110,7 +110,8 @@ public class Login extends javax.swing.JFrame {
     
     
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        Registro.mostrarRegistro();
+        Registro reg = new Registro();
+        reg.mostrarRegistro();
         this.dispose();
     }//GEN-LAST:event_botonRegistroActionPerformed
 
@@ -174,8 +175,8 @@ public class Login extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarLogin(){
-        new Login().setVisible(true);
+    public void mostrarLogin(){
+        this.setVisible(true);
     }
     
     

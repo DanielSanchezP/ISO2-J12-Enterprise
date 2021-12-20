@@ -12,7 +12,7 @@ import ISOJ12.Vacuna.persistencia.LoginDAO;
  * @author Daniel
  */
 public class Registro extends javax.swing.JFrame {
-
+    Login login=new Login();
     /**
      * Creates new form Registro
      */
@@ -153,6 +153,8 @@ public class Registro extends javax.swing.JFrame {
     //No modificar
     
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        
+        
         String nombre=textoNombre.getText();
         String apellidos=textoApellidos.getText();
         String DNI=dnitext.getText();
@@ -167,12 +169,12 @@ public class Registro extends javax.swing.JFrame {
         LoginDAO log=new LoginDAO();
         log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo, nombreregion);
         
-        Login.mostrarLogin();
+        login.mostrarLogin();
         this.dispose(); 
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
-        Login.mostrarLogin();
+        login.mostrarLogin();
         this.dispose();
     }//GEN-LAST:event_botonAtrasActionPerformed
 
@@ -205,10 +207,8 @@ public class Registro extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarRegistro(){
-        
-        
-        new Registro().setVisible(true);
+    public void mostrarRegistro(){
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

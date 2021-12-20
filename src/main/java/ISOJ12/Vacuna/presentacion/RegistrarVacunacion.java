@@ -233,8 +233,9 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarRV(String region_){
-        new RegistrarVacunacion().setVisible(true);
+    public void mostrarRV(String region_){
+        this.region=region_;
+        this.setVisible(true);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
