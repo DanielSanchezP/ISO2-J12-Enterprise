@@ -18,7 +18,8 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarVacunacion
      */
-    public RegistrarVacunacion() {
+    public RegistrarVacunacion(String region_) {
+        this.region=region_;
         initComponents();
     }
 
@@ -77,7 +78,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrarVacunacion().setVisible(true);
+                new RegistrarVacunacion("").setVisible(true);
             }
         });
     }
