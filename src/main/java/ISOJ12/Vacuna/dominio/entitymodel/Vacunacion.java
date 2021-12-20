@@ -11,5 +11,11 @@ public class Vacunacion {
 	VacunacionDAO vacunacionDao;
 	public Date fecha;
 	public int numeroDosis;
-
+        public String nombreregion;
+        
+        public boolean equal(Vacunacion vac){
+            return this.paciente.equal(vac.paciente) && this.nombrevacuna.equals(vac.nombrevacuna)
+                     && this.numeroDosis == vac.numeroDosis
+                    && this.nombreregion.equals(vac.nombreregion);
+        }
 }

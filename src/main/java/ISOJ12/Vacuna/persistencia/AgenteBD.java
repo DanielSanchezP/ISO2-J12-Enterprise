@@ -3,7 +3,6 @@ package ISOJ12.Vacuna.persistencia;
 
 import org.apache.derby.jdbc.*;
 
-import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -58,7 +57,6 @@ public class AgenteBD {
 			conectarBD();
 			stmt = mBD.createStatement();
 			res = stmt.executeQuery(sql);
-                        
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -66,10 +64,10 @@ public class AgenteBD {
 	}
 
 	public int insert(String sql) {
-		int res = 0;
+            int res = 0;
 		try {
                     conectarBD();
-		try(PreparedStatement pstmt = mBD.prepareStatement(sql)){
+		try( PreparedStatement pstmt = mBD.prepareStatement(sql)){
                     res = pstmt.executeUpdate();
                 }
                 desconectarBD();
@@ -89,33 +87,49 @@ public class AgenteBD {
                         stmt.close();
 			desconectarBD();
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
 		}
 		return res;
 	}
 
 	public int delete(String sql) {
-		return update(sql);      
+		return update(sql);
 	}
 	
 	public static void crearBaseDatos() {
-		String admin = "admin";
-		String createSQL = "create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))";
-		String createSQL2 = "create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)";
-		String createSQL3 = "create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)";
-		String createSQL4 = "create table vacunas (id varchar(30) not null, nombre varchar(30) not null, farmaceutica varchar(30) not null, grupoprioridad varchar(30) not null, fechaRecepcion Date not null, numVacunas int not null, nombreregion varchar(30) not null)";
-		String createSQL5 = "create table estadisticas(nombreregion varchar(30) not null, vacunados long not null, vacunasInoculadas long not null, poblacion long not null)";
+		String admin = "admin";                
 		try {
 			Driver derbyEmbeddedDriver = new EmbeddedDriver();
 			DriverManager.registerDriver(derbyEmbeddedDriver);
 			mBD = DriverManager.getConnection(""+"jdbc:derby"+":"+"BDVacuna"+";create=true", admin, admin);
                     try (Statement stmt = mBD.createStatement()) {
-                        stmt.execute(createSQL);
-                        stmt.execute(createSQL2);
-                        stmt.execute(createSQL3);
-                        stmt.execute(createSQL4);
-                        stmt.execute(createSQL5);
+                        stmt.execute("create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))");
+                        stmt.execute("create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)");
+                        stmt.execute("create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)");
+                        stmt.execute("create table vacunas (id varchar(30) not null, farmaceutica varchar(30) not null, grupoprioridad varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null, nombreregion varchar(30) not null)");
+                        stmt.execute("create table estadisticas (nombreregion varchar(30) not null, vacunados bigint not null, vacunasInoculadas bigint not null, poblacion bigint not null)");
+                        
+                        stmt.execute("INSERT INTO estadisticas VALUES('Galicia', 500, 1000, 1200356)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Asturias', 400, 800, 1000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('La Rioja', 600, 1200, 980750)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Pais Vasco', 450, 900, 1500000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Cantabria', 550, 1100, 800000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Navarra', 800, 1600, 1600000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Aragon', 1000, 2000, 8000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Cataluña', 12000, 24000, 20585690)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Castilla y Leon', 9000, 18000, 1000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Madrid', 50000, 100000, 24000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Castilla La Mancha', 8500, 17000, 9500400)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Comunidad Valenciana', 11000, 22000, 15680320)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Murcia', 10, 20, 3500000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Andalucia', 24000, 48000, 30000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Islas Baleares', 650, 1300, 8000000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Islas Canarias', 750, 1400, 5500000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Ceuta', 200, 400, 1250000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Melilla', 150, 300, 980000)");
+                        stmt.execute("INSERT INTO estadisticas VALUES('Extremadura', 25000, 50000, 15350000)");
+                        
+                        stmt.execute("INSERT INTO vacunas VALUES('12345', 'Moderna', 'Grupo 1', 200000, '3/12/2021', 'Asturias')");
                     }
 		} catch (SQLException ex) {
 			System.out.println("in connection" + ex);

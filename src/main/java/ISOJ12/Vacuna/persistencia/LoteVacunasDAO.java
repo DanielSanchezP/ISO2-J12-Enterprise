@@ -15,15 +15,13 @@ public class LoteVacunasDAO extends AgenteBD {
 	 * 
 	 * @param lote
 	 */
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        static String id;
 	public void insertarLoteVacunas(LoteVacunas lote){
-		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.tipo.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
+		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
 		
 	}
         
-        public void modificarLoteVacunas(LoteVacunas lote, int cantidad){
-            bd.update("UPDATE lotevacunas SET cantidad = "+(lote.cantidad - cantidad)+" WHERE id = "+lote.id+"");
-        }
         
         public List<LoteVacunas> seleccionarlotes() throws SQLException{
 		List<LoteVacunas> listalote = new ArrayList<>();
@@ -33,15 +31,28 @@ public class LoteVacunasDAO extends AgenteBD {
 		while (res.next()) {
                     
                         LoteVacunas lote = new LoteVacunas();
-                        TipoVacuna tipo = new TipoVacuna();
 			lote.id = res.getObject(1).toString();
-			tipo.farmaceutica = res.getObject(2).toString();
-                        lote.tipo = tipo;
+                        lote.farmaceutica = res.getObject(2).toString();
                         lote.cantidad = (int) res.getObject(3);
 			lote.fecha = (Date) res.getObject(4);
                         listalote.add(lote);    
              }
                return listalote;
         }
-
+        public LoteVacunas cogerlote(String id) throws SQLException{
+                LoteVacunas lote = new LoteVacunas();
+		ResultSet res = bd.select("SELECT * FROM lotevacunas WHERE id ='"+id+"'");
+                
+		while (res.next()) {
+			lote.id = res.getObject(1).toString();
+                        lote.farmaceutica = res.getObject(2).toString();
+                        lote.cantidad = (int) res.getObject(3);
+			lote.fecha = (Date) res.getObject(4);     
+             }
+               return lote;
+        }
+        
+        public void borrarlote(String id){
+		bd.delete("DELETE FROM lotevacunas WHERE id = '"+id+"'");
+	}
 }

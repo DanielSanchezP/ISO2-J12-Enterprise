@@ -5,7 +5,9 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
+import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
 import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
+
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,13 +15,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
+
+
+
 /**
  *
  * @author Daniel
  */
 public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     DefaultListModel modelo = new DefaultListModel();
-	
+    GestorEstadisticas gestor = new GestorEstadisticas();
     /**
      * Creates new form PantallaGestionSistemaSaludNacional
      */
@@ -43,11 +48,11 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         botonCalculo = new javax.swing.JButton();
         comboBoxListaSitios = new javax.swing.JComboBox<>();
         totalvacunadosText = new javax.swing.JTextField();
-        porcentajeText = new javax.swing.JTextField();
-        totalvacunadosLabel = new javax.swing.JLabel();
-        porcentajevacunadosLabel = new javax.swing.JLabel();
-        idLabel = new javax.swing.JLabel();
-        panelScrollPane = new javax.swing.JScrollPane();
+        porcentajevacunadosText = new javax.swing.JTextField();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
+        scrollPane1 = new javax.swing.JScrollPane();
         lotelist = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,14 +66,13 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         });
 
         botonCalculo.setText("Repartir");
-        botonCalculo.setEnabled(false);
         botonCalculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCalculoActionPerformed(evt);
+                botonRepartirActionPerformed(evt);
             }
         });
 
-        comboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", " " }));
+        comboBoxListaSitios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Asturias", "Galicia", "Cantabria", "Pais Vasco", "La Rioja", "Navarra", "Aragon", "Cataluña", "Castilla y Leon", "Madrid", "Castilla La Mancha", "Comunidad Valenciana", "Extremadura", "Andalucia", "Murcia", "Islas Baleares", "Islas Canarias", "Ceuta", "Melilla ", " " }));
         comboBoxListaSitios.setToolTipText("");
         comboBoxListaSitios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,15 +87,15 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             }
         });
 
-        porcentajeText.setEditable(false);
+        porcentajevacunadosText.setEditable(false);
 
-        totalvacunadosLabel.setText("Total de Vacunados:");
+        label1.setText("Total de Vacunados:");
 
-        porcentajevacunadosLabel.setText("Porcentaje de Vacunados:");
+        label2.setText("Porcentaje de Vacunados:");
 
-        idLabel.setText("IDLote/Marca/Vacunas:");
+        label3.setText("IDLote/Marca/Vacunas:");
 
-        panelScrollPane.setViewportView(lotelist);
+        scrollPane1.setViewportView(lotelist);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,12 +116,12 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(idLabel)
-                    .addComponent(porcentajevacunadosLabel)
-                    .addComponent(totalvacunadosLabel)
+                    .addComponent(label3)
+                    .addComponent(label2)
+                    .addComponent(label1)
                     .addComponent(totalvacunadosText)
-                    .addComponent(porcentajeText)
-                    .addComponent(panelScrollPane))
+                    .addComponent(porcentajevacunadosText)
+                    .addComponent(scrollPane1))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -130,17 +134,17 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(comboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(totalvacunadosLabel)
+                .addComponent(label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalvacunadosText)
                 .addGap(14, 14, 14)
-                .addComponent(porcentajevacunadosLabel)
+                .addComponent(label2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(porcentajeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(porcentajevacunadosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(idLabel)
+                .addComponent(label3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -157,12 +161,29 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAltaLoteActionPerformed
 
     private void comboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaSitiosActionPerformed
-        // TODO add your handling code here:
+        try {
+            if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
+                long total = gestor.consultarTotalVacunados();
+                totalvacunadosText.setText(Long.toString(total));
+                double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
+                porcentajevacunadosText.setText(Double.toString(porcentaje));
+            }
+            else{
+                long totalregion = gestor.consultarTotalVacunadosPorRegion(comboBoxListaSitios.getSelectedItem().toString());
+                totalvacunadosText.setText(Long.toString(totalregion));
+                double porcentajeregion = gestor.consultarPorcentajeVacunadosSobreRecibidasEnRegion(comboBoxListaSitios.getSelectedItem().toString());
+                porcentajevacunadosText.setText(Double.toString(porcentajeregion));
+            }
+        } catch (SQLException ex) {
+                Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }//GEN-LAST:event_comboBoxListaSitiosActionPerformed
 
-    private void botonCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCalculoActionPerformed
+    private void botonRepartirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRepartirActionPerformed
+        Repartir rep = new Repartir();
+        rep.mostrar();
+        this.dispose();
+    }//GEN-LAST:event_botonRepartirActionPerformed
 
     private void totalvacunadosTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalvacunadosTextActionPerformed
         // TODO add your handling code here:
@@ -196,44 +217,46 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             new PantallaGestionSistemaSaludNacional().setVisible(true);
         });
     }
-    
     public void inicializarLista(){
-        lotelist.setModel(modelo);
-        LoteVacunasDAO lote = new LoteVacunasDAO();
-        LoteVacunas lotevac= new LoteVacunas();
+                lotelist.setModel(modelo);
+                LoteVacunasDAO lote = new LoteVacunasDAO();
+                LoteVacunas lotevac= new LoteVacunas();
        
         try {
             
             List<LoteVacunas> listalote = lote.seleccionarlotes();
-      
             for(int i = 0; i < listalote.size();i++){
                 lotevac = listalote.get(i);
-                modelo.addElement(lotevac.id+" / "+ lotevac.tipo.farmaceutica + " / " + lotevac.cantidad);
-                
-                
+                modelo.addElement(lotevac.id+" / "+ lotevac.farmaceutica + " / " + lotevac.cantidad);
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
         }
+		
     }
     
     
-    public void mostrarGestionNacional(){
-        inicializarLista();
+    public void mostrarGestionNacional() throws SQLException{
+
+        inicializarLista();      
+        long total = gestor.consultarTotalVacunados();
+        totalvacunadosText.setText(Long.toString(total));
+        double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
+        porcentajevacunadosText.setText(Double.toString(porcentaje));
         this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAltaLote;
     private javax.swing.JButton botonCalculo;
-    private javax.swing.JComboBox<String> comboBoxListaSitios;
-    private javax.swing.JLabel idLabel;
-    private javax.swing.JList<String> lotelist;
-    private javax.swing.JScrollPane panelScrollPane;
-    private javax.swing.JTextField porcentajeText;
-    private javax.swing.JLabel porcentajevacunadosLabel;
-    private javax.swing.JLabel totalvacunadosLabel;
-    private javax.swing.JTextField totalvacunadosText;
+    public javax.swing.JComboBox<String> comboBoxListaSitios;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
+    public javax.swing.JList<String> lotelist;
+    public javax.swing.JTextField porcentajevacunadosText;
+    private javax.swing.JScrollPane scrollPane1;
+    public javax.swing.JTextField totalvacunadosText;
     // End of variables declaration//GEN-END:variables
 }

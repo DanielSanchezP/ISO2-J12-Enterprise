@@ -9,5 +9,12 @@ public class EntregaVacunas {
 	EntregaDAO entregaDao;
 	public Date fecha;
 	public int cantidad;
-
+        public String nombreregion;
+        
+        public boolean equal(EntregaVacunas entrega){
+            return this.lote.equals(entrega.lote) && this.grupoPrioridad.equals(entrega.grupoPrioridad) 
+                    && this.fecha.equals(entrega.fecha) &&
+                    this.cantidad == entrega.cantidad &&
+                    this.nombreregion.equals(entrega.nombreregion);
+        }
 }

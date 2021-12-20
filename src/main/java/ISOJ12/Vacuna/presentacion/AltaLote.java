@@ -5,19 +5,21 @@
  */
 package ISOJ12.Vacuna.presentacion;
 
-import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
-import ISOJ12.Vacuna.dominio.entitymodel.TipoVacuna;
-import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
+import ISOJ12.Vacuna.dominio.controller.GestorRepartoVacunas;
+import java.sql.SQLException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author Daniel
  */
 public class AltaLote extends javax.swing.JFrame {
-    LoteVacunasDAO lotevacunas = new LoteVacunasDAO();
+    GestorRepartoVacunas gestor = new GestorRepartoVacunas();
     /**
      * Creates new form AltaLote
      */
@@ -36,26 +38,27 @@ public class AltaLote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        vacunasLabel = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
         textoNumVacunas = new javax.swing.JFormattedTextField();
-        proveedorLabel2 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
         labelFecha = new javax.swing.JLabel();
         textoFecha = new javax.swing.JFormattedTextField();
         botonAltaLote = new javax.swing.JButton();
         proveedortext = new javax.swing.JTextField();
         atrasButton = new javax.swing.JButton();
+        labelFecha1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        vacunasLabel.setText("Vacunas Recibidas: ");
+        label1.setText("Vacunas Recibidas: ");
 
         textoNumVacunas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        proveedorLabel2.setText("Proveedor: ");
+        label2.setText("Proveedor: ");
 
         labelFecha.setText("Fecha de Recepcion: ");
 
-        textoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        textoFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d.M.yyyy"))));
 
         botonAltaLote.setText("ALTA");
         botonAltaLote.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +74,8 @@ public class AltaLote extends javax.swing.JFrame {
             }
         });
 
+        labelFecha1.setText("Formato: dd.mm.aaaa");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,17 +86,19 @@ public class AltaLote extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(57, 57, 57)
-                                .addComponent(vacunasLabel))
+                                .addComponent(label1))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(proveedorLabel2)))
+                                .addComponent(label2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textoNumVacunas, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(proveedortext)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(labelFecha)
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelFecha1)
+                            .addComponent(labelFecha))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textoFecha)))
                 .addContainerGap(144, Short.MAX_VALUE))
@@ -107,23 +114,22 @@ public class AltaLote extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vacunasLabel)
+                    .addComponent(label1)
                     .addComponent(textoNumVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label2)
+                    .addComponent(proveedortext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelFecha)
+                    .addComponent(textoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelFecha1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(proveedorLabel2)
-                            .addComponent(proveedortext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelFecha)
-                            .addComponent(textoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                        .addComponent(botonAltaLote, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(atrasButton)))
+                    .addComponent(botonAltaLote, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atrasButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(31, 31, 31))
         );
 
@@ -133,31 +139,29 @@ public class AltaLote extends javax.swing.JFrame {
     
     
     private void botonAltaLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAltaLoteActionPerformed
-        LoteVacunas lote = new LoteVacunas();
-        TipoVacuna tipo = new TipoVacuna();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        
-        
-        int numero = (int)(Math.random()*1000000);
-        lote.id = Integer.toString(numero);
-        lote.cantidad = Integer.parseInt(textoNumVacunas.getText());
-        tipo.farmaceutica = proveedortext.getText();
-        lote.tipo = tipo;
-       
-        
+        Date fecha = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+ 
+        int cantidad = Integer.parseInt(textoNumVacunas.getText());
+        String farmaceutica = proveedortext.getText();   
         try {
-            lote.fecha = formatter.parse(textoFecha.getText());
+            fecha = formatter.parse(textoFecha.getText());
         } catch (ParseException ex) {
             Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        lotevacunas.insertarLoteVacunas(lote);
+        gestor.altaNuevoLoteVacunas(fecha, farmaceutica, cantidad);
+        
     }//GEN-LAST:event_botonAltaLoteActionPerformed
 
     private void atrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasButtonActionPerformed
-        PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
-        pantalla.mostrarGestionNacional();
-        this.dispose();
+        try {
+            PantallaGestionSistemaSaludNacional pantalla = new PantallaGestionSistemaSaludNacional();
+            pantalla.mostrarGestionNacional();
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(AltaLote.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_atrasButtonActionPerformed
 
     /**
@@ -196,11 +200,12 @@ public class AltaLote extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atrasButton;
     private javax.swing.JButton botonAltaLote;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
     private javax.swing.JLabel labelFecha;
-    private javax.swing.JLabel proveedorLabel2;
+    private javax.swing.JLabel labelFecha1;
     private javax.swing.JTextField proveedortext;
     private javax.swing.JFormattedTextField textoFecha;
     private javax.swing.JFormattedTextField textoNumVacunas;
-    private javax.swing.JLabel vacunasLabel;
     // End of variables declaration//GEN-END:variables
 }

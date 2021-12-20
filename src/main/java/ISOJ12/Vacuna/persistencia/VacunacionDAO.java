@@ -16,9 +16,9 @@ public class VacunacionDAO extends AgenteBD {
 	 * @param vacunacion
 	 */
 	public void insertarVacunacion(Vacunacion vacunacion){
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 
-		bd.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'asdfecy')");
+		bd.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'"+vacunacion.nombreregion+"')");
 		
 	}
 
@@ -40,6 +40,10 @@ public class VacunacionDAO extends AgenteBD {
 			 vacunacion.numeroDosis = (int) res.getObject(6);
                          listavacunacion.add(vacunacion);    
         }
+                if(listavacunacion.isEmpty()){
+                    return null;
+                }
+                
 		 return listavacunacion;
 	}
 
@@ -51,19 +55,21 @@ public class VacunacionDAO extends AgenteBD {
 	 */
 	@SuppressWarnings("null")
 	public List<Vacunacion> seleccionarVacunaciones(String region) throws SQLException{
-		List<Vacunacion> listavacunacion = null;
-		ResultSet res = bd.select("SELECT vacunacion * WHERE nombreregion = asdfecy ");
+		List<Vacunacion> listavacunacion = new ArrayList<>();
+		ResultSet res = bd.select("SELECT * FROM vacunacion WHERE nombreregion = '"+ region +"'");
 		 while (res.next()) {
 			 Vacunacion vacunacion = new Vacunacion();
-			 vacunacion.paciente.dni = res.getObject(1).toString();
-			 vacunacion.paciente.nombre = res.getObject(2).toString();
-			 vacunacion.paciente.apellidos = res.getObject(3).toString();
+                         Paciente pac=new Paciente();
+			 pac.dni = res.getObject(1).toString();
+			 pac.nombre = res.getObject(2).toString();
+			 pac.apellidos = res.getObject(3).toString();
+                         vacunacion.paciente=pac;
 			 vacunacion.nombrevacuna = res.getObject(4).toString();
 			 vacunacion.fecha = (Date) res.getObject(5);
 			 vacunacion.numeroDosis = (Integer) res.getObject(6);
              listavacunacion.add(vacunacion);
          }
-		 return listavacunacion;
+		return listavacunacion;
 	}
 
 }
