@@ -26,7 +26,9 @@ public class GestorVacunacion {
 	public boolean registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
 		VacunacionDAO vacunaciondao = new VacunacionDAO();
                 boolean vacuna = false;
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 Vacunacion vacunacion = new Vacunacion();
+                List<Vacunacion> listavac = new ArrayList<>();
                 Paciente pac=new Paciente();
                 pac.nombre = nombre;
                 pac.apellidos = apellidos;
@@ -37,11 +39,10 @@ public class GestorVacunacion {
                 vacunacion.numeroDosis = dosis;
                 vacunacion.fecha=fecha;
                 vacunacion.nombreregion=nombreregion;
-                if (dosis>0 || nombre.length()<=30 || apellidos.length() <= 30 || tipo.length()<=30){
-                    
-                    
-                List<Vacunacion> listavac = new ArrayList<>();
-                
+                if (dosis<=0 || nombre.length()>30 || apellidos.length() > 30 || tipo.length()>30){
+                    vacuna = false;
+                }
+                else{
                     try {
                 listavac = vacunaciondao.seleccionarVacunaciones();
                 if(listavac.isEmpty()){
@@ -51,16 +52,11 @@ public class GestorVacunacion {
                 
                 else{
                 for(int i = 0; i<listavac.size();i++){
-                    if(!vacunacion.equal(listavac.get(i))){
-                        
+                    if(vacunacion.equal(listavac.get(i))){
+                        break;
+                    }
                         vacunaciondao.insertarVacunacion(vacunacion);
                         vacuna = true;
-                        
-                    }
-                    else{
-                        
-                        break;
-                        }
                     }
                 }
                 
