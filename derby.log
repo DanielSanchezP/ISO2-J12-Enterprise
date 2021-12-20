@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sun Dec 19 20:32:18 CET 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017d-d42e-36d9-000002bf3128 
+Mon Dec 20 12:02:22 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017d-d781-ba0d-0000030145c0 
 on database directory C:\Users\Daniel\Documents\NetBeansProjects\ISO2-J12-Enterprise\BDVacuna with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
 Loaded from file:/C:/Users/Daniel/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation

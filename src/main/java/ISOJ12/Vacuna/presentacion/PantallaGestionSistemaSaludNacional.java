@@ -163,7 +163,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     private void comboBoxListaSitiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaSitiosActionPerformed
         try {
             if (comboBoxListaSitios.getSelectedItem().toString().equals("Nacional")){
-                long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
+                long total = gestor.consultarTotalVacunados();
                 totalvacunadosText.setText(Long.toString(total));
                 double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
                 porcentajevacunadosText.setText(Double.toString(porcentaje));
@@ -240,7 +240,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     public void mostrarGestionNacional() throws SQLException{
 
         inicializarLista();      
-        long total = gestor.consultarTotalVacunados(comboBoxListaSitios.getSelectedItem().toString());
+        long total = gestor.consultarTotalVacunados();
         totalvacunadosText.setText(Long.toString(total));
         double porcentaje = Math.round(gestor.consultarPorcentajeVacunadosSobreRecibidas()*100.0)/100.0;
         porcentajevacunadosText.setText(Double.toString(porcentaje));

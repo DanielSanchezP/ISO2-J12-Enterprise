@@ -23,8 +23,8 @@ public class GestorEstadisticas {
         
         
         
-	public long consultarTotalVacunados(String region) throws SQLException {
-            String[][] vacunados = consulta.comprobarEstadisticasNacional(region);
+	public long consultarTotalVacunados() throws SQLException {
+            String[][] vacunados = consulta.comprobarEstadisticasNacional("Nacional");
             long total = 0;
             for (int i = 0; i<19 ;i++){
                 total = total + Long.parseLong(vacunados[i][1]);
@@ -126,7 +126,6 @@ public class GestorEstadisticas {
                         totalvac++;
                     }
                 }
-                System.out.println(totalvac);
                 return (double)((double)totalvac/Integer.parseInt(est[3]));
                 
             }catch (SQLException ex) {
