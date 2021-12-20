@@ -6,6 +6,14 @@
 package ISOJ12.Vacuna.Dominio.controller;
 
 import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
+import ISOJ12.Vacuna.dominio.entitymodel.Paciente;
+import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
+import ISOJ12.Vacuna.persistencia.LoteVacunasDAOTest;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -270,101 +278,175 @@ public class GestorEstadisticasTest {
     @Test
     public void testConsultarVacunadosDeNVacuna() {
         System.out.println("consultarVacunadosDeNVacuna");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         GestorEstadisticas instance = new GestorEstadisticas();
+        VacunacionDAO vacdao = new VacunacionDAO();
+        Vacunacion vacuna = new Vacunacion();
+        Paciente pac = new Paciente();
+        pac.dni = "12345678X";
+        pac.nombre= "pepe";
+        pac.apellidos= "viyuela";
+        vacuna.paciente = pac;
+        vacuna.nombrevacuna = "Moderna";
+        vacuna.numeroDosis = -5;
+        vacuna.nombreregion = "Andalucia";
+        try {
+            vacuna.fecha=formatter.parse("19.12.2021");
+        } catch (ParseException ex) {
+            Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        vacdao.insertarVacunacion(vacuna);
+        
+        
+        
         int ndosis = -5;
         String region = "Andalucia";
         double result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 3;
+        vacuna.nombreregion = "Aragon";
+        vacdao.insertarVacunacion(vacuna);
         region = "Aragon";
         ndosis = 3;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = 0;
+        vacuna.nombreregion = "Asturias";
+        vacdao.insertarVacunacion(vacuna);
         region = "Asturias";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = -50;
+        vacuna.nombreregion = "Cantabria";
+        vacdao.insertarVacunacion(vacuna);
         region = "Cantabria";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 500;
+        vacuna.nombreregion = "Castilla La Mancha";
+        vacdao.insertarVacunacion(vacuna);
         region = "Castilla La Mancha";
         ndosis = 500;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = -5;
+        vacuna.nombreregion = "Castilla y Leon";
+        vacdao.insertarVacunacion(vacuna);
         region = "Castilla y Leon";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 3;
+        vacuna.nombreregion = "Cataluña";
+        vacdao.insertarVacunacion(vacuna);
         region = "Cataluña";
         ndosis = 3;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = 0;
+        vacuna.nombreregion = "Ceuta";
+        vacdao.insertarVacunacion(vacuna);
         region = "Ceuta";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = -50;
+        vacuna.nombreregion = "Comunidad Valenciana";
+        vacdao.insertarVacunacion(vacuna);
         region = "Comunidad Valenciana";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 500;
+        vacuna.nombreregion = "Aragon";
+        vacdao.insertarVacunacion(vacuna);
         region = "Extremadura";
         ndosis = 500;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = -5;
+        vacuna.nombreregion = "Galicia";
+        vacdao.insertarVacunacion(vacuna);
         region = "Galicia";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 3;
+        vacuna.nombreregion = "Islas Baleares";
+        vacdao.insertarVacunacion(vacuna);
         region = "Islas Baleares";
         ndosis = 3;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = 0;
+        vacuna.nombreregion = "Islas Canarias";
+        vacdao.insertarVacunacion(vacuna);
         region = "Islas Canarias";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = -50;
+        vacuna.nombreregion = "La Rioja";
+        vacdao.insertarVacunacion(vacuna);
         region = "La Rioja";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 500;
+        vacuna.nombreregion = "Madrid";
+        vacdao.insertarVacunacion(vacuna);
         region = "Madrid";
         ndosis = 500;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = -5;
+        vacuna.nombreregion = "Melilla";
+        vacdao.insertarVacunacion(vacuna);
         region = "Melilla";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = 3;
+        vacuna.nombreregion = "Murcia";
+        vacdao.insertarVacunacion(vacuna);
         region = "Murcia";
         ndosis = 3;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
         assertTrue(result>=0);
         
+        vacuna.numeroDosis = 0;
+        vacuna.nombreregion = "Navarra";
+        vacdao.insertarVacunacion(vacuna);
         region = "Navarra";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
         
+        vacuna.numeroDosis = -50;
+        vacuna.nombreregion = "Pais Vasco";
+        vacdao.insertarVacunacion(vacuna);
         region = "Pais Vasco";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result>=0);
+        assertTrue(result==0);
     }
     
 }

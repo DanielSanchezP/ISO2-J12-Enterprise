@@ -117,7 +117,8 @@ public class GestorEstadisticas {
             
             VacunacionDAO vacdao =new VacunacionDAO();
             int totalvac=0;
-            try{
+            if(ndosis>0){
+                try{
                 String[] est = consulta.comprobarEstadisticasRegional(region);
                 List<Vacunacion> listvac = vacdao.seleccionarVacunaciones(region);
                 for(int i = 0; i < listvac.size();i++){
@@ -130,8 +131,11 @@ public class GestorEstadisticas {
                 
             }catch (SQLException ex) {
                 Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
+            
             return 0.0;
+            
         }
         
 }
