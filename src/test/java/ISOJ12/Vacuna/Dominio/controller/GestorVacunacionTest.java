@@ -6,8 +6,11 @@
 package ISOJ12.Vacuna.Dominio.controller;
 
 import ISOJ12.Vacuna.dominio.controller.GestorVacunacion;
+import ISOJ12.Vacuna.dominio.entitymodel.EntregaVacunas;
+import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.Paciente;
 import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
+import ISOJ12.Vacuna.persistencia.EntregaDAO;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAOTest;
 import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.text.ParseException;
@@ -54,20 +57,72 @@ public class GestorVacunacionTest {
         System.out.println("registrarVacunacion");
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         Date fecha = null;
+        EntregaVacunas entrega = new EntregaVacunas();
+        LoteVacunas lote = new LoteVacunas();
         VacunacionDAO vacdao = new VacunacionDAO();
         Vacunacion vacuna = new Vacunacion();
         Paciente pac = new Paciente();
+        EntregaDAO entregadao = new EntregaDAO();
         
+        lote.id = "12345";
+        lote.farmaceutica = "Moderna";
+        entrega.lote = lote;
+        entrega.grupoPrioridad = "Abuelos";
+        entrega.cantidad = 10;
+        try {
+            entrega.fecha=formatter.parse("20.12.2021");
+        } catch (ParseException ex) {
+            Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        entrega.nombreregion = "Asturias";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Galicia";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Cantabria";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "La Rioja";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Pais Vasco";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Navarra";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Aragón";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Cataluña";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Castilla y Leon";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Madrid";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Castilla La Mancha";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Comunidad Valenciana";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Murcia";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Andalucia";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Extremadura";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Islas Baleares";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Islas Canarias";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Ceuta";
+        entregadao.entregarVacunas(entrega);
+        entrega.nombreregion = "Melilla";
+        entregadao.entregarVacunas(entrega);
         
         
         /*
-        pac.dni = nif;
-        pac.nombre=nombre;
-        pac.apellidos=apellidos;
+        pac.dni = "12345678X";
+        pac.nombre= "pepe";
+        pac.apellidos= "viyuela";
         vacuna.paciente = pac;
-        vacuna.nombrevacuna = tipo;
-        vacuna.numeroDosis = 1;
-        vacuna.nombreregion = nombreregion;
+        vacuna.nombrevacuna = "Moderna";
+        vacuna.numeroDosis = -5;
+        vacuna.nombreregion = "Asturias";
         try {
             vacuna.fecha=formatter.parse("19.12.2021");
         } catch (ParseException ex) {
@@ -91,6 +146,8 @@ public class GestorVacunacionTest {
         GestorVacunacion instance = new GestorVacunacion();
         boolean vac = instance.registrarVacunacion(fecha, nombre, apellidos, nif, tipo, dosis, nombreregion, grupo);
         assertFalse(vac);
+        
+        
         
         nombre = "unstringquecontiene30caractere";
         apellidos = "unstringquecontiene30caractere";

@@ -28,7 +28,7 @@ public class GestorVacunacion {
                 boolean vacuna = false;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 Vacunacion vacunacion = new Vacunacion();
-                List<Vacunacion> listavac = new ArrayList<>();
+                
                 Paciente pac=new Paciente();
                 pac.nombre = nombre;
                 pac.apellidos = apellidos;
@@ -39,26 +39,39 @@ public class GestorVacunacion {
                 vacunacion.numeroDosis = dosis;
                 vacunacion.fecha=fecha;
                 vacunacion.nombreregion=nombreregion;
+                
                 if (dosis<=0 || nombre.length()>30 || apellidos.length() > 30 || tipo.length()>30){
                     vacuna = false;
                 }
                 else{
+                    List<Vacunacion> listavac = new ArrayList<>();
+                    
                     try {
                 listavac = vacunaciondao.seleccionarVacunaciones();
-                if(listavac.isEmpty()){
+                if(listavac != null){
+                    if(listavac.isEmpty()){
                     vacunaciondao.insertarVacunacion(vacunacion);
                     vacuna = true;
                 }
                 
                 else{
                 for(int i = 0; i<listavac.size();i++){
-                    if(vacunacion.equal(listavac.get(i))){
+                    if(vacunacion.equals(listavac.get(i))){
                         break;
                     }
-                        vacunaciondao.insertarVacunacion(vacunacion);
                         vacuna = true;
                     }
                 }
+                    
+                }
+                else{
+                    vacuna = true;
+                }
+                
+                if(vacuna){
+                    vacunaciondao.insertarVacunacion(vacunacion);
+                }
+                
                 
             } catch (SQLException ex) {
                 Logger.getLogger(GestorVacunacion.class.getName()).log(Level.SEVERE, null, ex);
