@@ -20,7 +20,6 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
      */
     public PantallaGestionSistemaRegionalSalud(String region_) {
         this.region=region_;
-        System.out.println(this.region);
         initComponents();
     }
 
