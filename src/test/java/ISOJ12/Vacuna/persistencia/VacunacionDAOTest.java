@@ -108,9 +108,26 @@ public class VacunacionDAOTest {
     
     @Test
     public void testSeleccionarVacunaciones_String() throws Exception {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        Vacunacion vacunacion = new Vacunacion();
+        Paciente pac=new Paciente();
+        pac.nombre = "Agapito";
+        pac.apellidos = "Disousa";
+        pac.dni = "76543210Z";
+        vacunacion.paciente = pac;
+        vacunacion.nombrevacuna = "Pfizer";
+        vacunacion.numeroDosis = 9;
+        vacunacion.nombreregion="asdfecy";
+        try {
+            vacunacion.fecha=formatter.parse("2.02.2002");
+        } catch (ParseException ex) {
+            Logger.getLogger(VacunacionDAOTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        VacunacionDAO instance = new VacunacionDAO();
+        instance.insertarVacunacion(vacunacion);
         System.out.println("seleccionarVacunaciones");
         String region = "asdfecy";
-        VacunacionDAO instance = new VacunacionDAO();
         List<Vacunacion> expResult = null;
         List<Vacunacion> result = instance.seleccionarVacunaciones(region);
         assertFalse(result.isEmpty());
