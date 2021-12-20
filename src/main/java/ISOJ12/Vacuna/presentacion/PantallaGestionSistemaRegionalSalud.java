@@ -19,6 +19,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
      * Creates new form PantallaGestionSistemaRegionalSalud
      */
     public PantallaGestionSistemaRegionalSalud(String region_) {
+        this.region=region_;
         initComponents();
     }
 
