@@ -1,10 +1,8 @@
 package ISOJ12.Vacuna.dominio.controller;
 
 import ISOJ12.Vacuna.dominio.entitymodel.*;
-import ISOJ12.Vacuna.persistencia.EntregaDAO;
 import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Level;
@@ -28,9 +26,7 @@ public class GestorVacunacion {
 	public boolean registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
 		VacunacionDAO vacunaciondao = new VacunacionDAO();
                 boolean vacuna = false;
-		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 Vacunacion vacunacion = new Vacunacion();
-                List<Vacunacion> listavac = new ArrayList<>();
                 Paciente pac=new Paciente();
                 pac.nombre = nombre;
                 pac.apellidos = apellidos;
@@ -41,10 +37,11 @@ public class GestorVacunacion {
                 vacunacion.numeroDosis = dosis;
                 vacunacion.fecha=fecha;
                 vacunacion.nombreregion=nombreregion;
-                if (dosis<=0 || nombre.length()>30 || apellidos.length() > 30 || tipo.length()>30){
-                    vacuna = false;
-                }
-                else{
+                if (dosis>0 || nombre.length()<=30 || apellidos.length() <= 30 || tipo.length()<=30){
+                    
+                    
+                List<Vacunacion> listavac = new ArrayList<>();
+                
                     try {
                 listavac = vacunaciondao.seleccionarVacunaciones();
                 if(listavac.isEmpty()){
@@ -55,13 +52,13 @@ public class GestorVacunacion {
                 else{
                 for(int i = 0; i<listavac.size();i++){
                     if(!vacunacion.equal(listavac.get(i))){
-                        System.out.print("LO METO");
+                        
                         vacunaciondao.insertarVacunacion(vacunacion);
                         vacuna = true;
-                        break;
+                        
                     }
                     else{
-                        System.out.print("OYE TU COSA REPETIDA");
+                        
                         break;
                         }
                     }

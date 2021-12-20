@@ -6,7 +6,6 @@
 package ISOJ12.Vacuna.Dominio.controller;
 
 import ISOJ12.Vacuna.dominio.controller.GestorVacunacion;
-import ISOJ12.Vacuna.dominio.entitymodel.LoteVacunas;
 import ISOJ12.Vacuna.dominio.entitymodel.Paciente;
 import ISOJ12.Vacuna.dominio.entitymodel.Vacunacion;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAOTest;
@@ -14,7 +13,6 @@ import ISOJ12.Vacuna.persistencia.VacunacionDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;

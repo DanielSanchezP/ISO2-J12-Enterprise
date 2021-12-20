@@ -20,11 +20,12 @@ import javax.swing.DefaultListModel;
 public class GestorEstadisticas {
         DefaultListModel modelo = new DefaultListModel();
         ConsultarEstadisticasDAO consulta = new ConsultarEstadisticasDAO();
-        
+        String nacional = "Nacional";
         
         
 	public long consultarTotalVacunados() throws SQLException {
-            String[][] vacunados = consulta.comprobarEstadisticasNacional("Nacional");
+            
+            String[][] vacunados = consulta.comprobarEstadisticasNacional(nacional);
             long total = 0;
             for (int i = 0; i<19 ;i++){
                 total = total + Long.parseLong(vacunados[i][1]);
@@ -50,14 +51,14 @@ public class GestorEstadisticas {
             List<EntregaVacunas> entregavac= null;
             EntregaVacunas entrega = new EntregaVacunas();
             
-            String[][] vacunados = consulta.comprobarEstadisticasNacional("Nacional");
+            String[][] vacunados = consulta.comprobarEstadisticasNacional(nacional);
                  long totalvacunados = 0;
                  
                  for (int i = 0; i<19 ;i++){
                      totalvacunados = totalvacunados + Long.parseLong(vacunados[i][1]);
                  }
                  
-                 entregavac = consultaentrega.seleccionarVacunas("Nacional");
+                 entregavac = consultaentrega.seleccionarVacunas(nacional);
                  long totalcantidad = 0;
                  
                  for(int i = 0; i < entregavac.size();i++){
@@ -68,9 +69,8 @@ public class GestorEstadisticas {
                     return 0.0;
                 }
                 
-                double resultado = ((double)totalvacunados/totalcantidad)*100;
-                return resultado;
-		
+                return ((double)totalvacunados/totalcantidad)*100;
+	
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class GestorEstadisticas {
                         totalvac++;
                     }
                 }
-                return (double)((double)totalvac/Integer.parseInt(est[3]));
+                return ((double)totalvac/Integer.parseInt(est[3]));
                 
             }catch (SQLException ex) {
                 Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);

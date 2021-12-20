@@ -48,7 +48,7 @@ public class GestorRepartoVacunas {
             
             try {
                 
-                LoteVacunas lote = lotedao.cogerlote(id);
+                lote = lotedao.cogerlote(id);
                 String[][] estadisticas = consulta.comprobarEstadisticasNacional("Nacional");
                 String[][] prioridad  = new String[19][2];
             
@@ -72,7 +72,6 @@ public class GestorRepartoVacunas {
                 
                 
                 int totalcantidad = lote.cantidad;
-                
                 int totalcantidad2 = totalcantidad;
                 
                 for(int i=0;i<prioridad.length;i++){
@@ -80,7 +79,7 @@ public class GestorRepartoVacunas {
                     EntregaVacunas entrega = new EntregaVacunas();
                     reparto[i][0] = prioridad[i][0];
                     if(totalprioridad ==0){
-                        return null;
+                        break;
                     }
                     double porcentajecant = (Double.parseDouble(prioridad[i][1])/totalprioridad) *100;
                     int repartocant = (int)(totalcantidad*porcentajecant)/100;
@@ -110,6 +109,7 @@ public class GestorRepartoVacunas {
                     }
                 }           
             }catch (SQLException e) {
+                e.printStackTrace();
             }
             
             return reparto;   
