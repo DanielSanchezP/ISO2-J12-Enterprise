@@ -83,7 +83,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     }
     
     public void mostrarRV(String region1){
-        region=region1;
+        this.region=region1;
         this.setVisible(true);
     }
 
