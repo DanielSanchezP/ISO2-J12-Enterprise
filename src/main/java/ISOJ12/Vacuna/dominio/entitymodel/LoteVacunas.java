@@ -11,7 +11,7 @@ public class LoteVacunas {
 	public String farmaceutica;
 	public String region;
         
-        public boolean equals(LoteVacunas lote){
+        public boolean equal(LoteVacunas lote){
             return this.id.equals(lote.id) && this.fecha.equals(lote.fecha)&&
                     this.cantidad == lote.cantidad && this.farmaceutica.equals(lote.farmaceutica)
                     && this.region.equals(lote.region);

@@ -64,7 +64,10 @@ public class GestorEstadisticas {
                      entrega = entregavac.get(i);
                      totalcantidad += entrega.cantidad;
                  }
-                 
+                if (totalcantidad==0){
+                    return 0.0;
+                }
+                
                 double resultado = ((double)totalvacunados/totalcantidad)*100;
                 return resultado;
 		
@@ -93,11 +96,13 @@ public class GestorEstadisticas {
                     totalcantidad += entrega.cantidad;
                 }
                 double resultado = 0;
+                
                 if (totalcantidad != 0){
+                    if(vacunados[3]==null){
+                        return 0.0;
+                    }
                     resultado = (Double.parseDouble(vacunados[3])/totalcantidad)*100;
                 }
-                
-                
                 return resultado;
 	}
         public long consultarTotalVacunasEnRegion(String region){
@@ -109,8 +114,13 @@ public class GestorEstadisticas {
             } catch (SQLException ex) {
                 Logger.getLogger(GestorEstadisticas.class.getName()).log(Level.SEVERE, null, ex);
             }
-            totalcantidad = Long.parseLong(vacunasinoc[1]);
-            return totalcantidad;
+            if(vacunasinoc[1]==null){
+                return 0;
+            }
+            else{
+                totalcantidad = Long.parseLong(vacunasinoc[1]);
+                return totalcantidad;
+            }
         }
         
         public double consultarVacunadosDeNVacuna(String region, int ndosis){

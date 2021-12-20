@@ -78,7 +78,10 @@ public class GestorRepartoVacunas {
                 for(int i=0;i<prioridad.length;i++){
                     EntregaDAO entregadao = new EntregaDAO();
                     EntregaVacunas entrega = new EntregaVacunas();
-                    reparto[i][0] = prioridad[i][0]; 
+                    reparto[i][0] = prioridad[i][0];
+                    if(totalprioridad !=0){
+                        return null;
+                    }
                     double porcentajecant = (Double.parseDouble(prioridad[i][1])/totalprioridad) *100;
                     int repartocant = (int)(totalcantidad*porcentajecant)/100;
                     totalcantidad2 -= repartocant;
