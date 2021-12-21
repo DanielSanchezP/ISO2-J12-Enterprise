@@ -24,8 +24,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarVacunacion
      */
-    public RegistrarVacunacion(String region1) {
-        this.region=region1;
+    public RegistrarVacunacion() {
         initComponents();
     }
 
@@ -230,7 +229,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RegistrarVacunacion("").setVisible(true);
+            new RegistrarVacunacion().setVisible(true);
         });
     }
     

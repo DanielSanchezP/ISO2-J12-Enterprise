@@ -145,7 +145,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVacunasDispActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        RegistrarVacunacion regv = new RegistrarVacunacion(this.region);
+        RegistrarVacunacion regv = new RegistrarVacunacion();
         regv.mostrarRV();
         this.dispose();
     }//GEN-LAST:event_botonRegistroActionPerformed
