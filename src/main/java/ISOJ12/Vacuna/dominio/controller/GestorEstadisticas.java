@@ -131,13 +131,16 @@ public class GestorEstadisticas {
                 try{
                 String[] est = consulta.comprobarEstadisticasRegional(region);
                 List<Vacunacion> listvac = vacdao.seleccionarVacunaciones(region);
-                for(int i = 0; i < listvac.size();i++){
+                if (listvac!=null && est[3]!=null){
+                    for(int i = 0; i < listvac.size();i++){
                     Vacunacion vac=listvac.get(i);
                     if(vac.numeroDosis==ndosis){
                         totalvac++;
                     }
                 }
                 return ((double)totalvac/Integer.parseInt(est[3]));
+                }
+                
                 
             }catch (SQLException ex) {
                 Logger.getLogger(PantallaGestionSistemaSaludNacional.class.getName()).log(Level.SEVERE, null, ex);
