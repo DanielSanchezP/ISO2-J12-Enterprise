@@ -35,7 +35,7 @@
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="label5" min="-2" max="-2" attributes="0"/>
+                              <Component id="ndosisslider" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
                           <Component id="dosisSlider" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -48,12 +48,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="labelgrupo" min="-2" max="-2" attributes="0"/>
-                  <Component id="label4" min="-2" max="-2" attributes="0"/>
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label1" min="-2" max="-2" attributes="0"/>
-                  <Component id="label6" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="grupolabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="aplabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="fechalabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombrelabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="dnilabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipolabel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -74,37 +74,37 @@
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="dnitext" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dnilabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombrelabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nombrePacienteText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="aplabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="apellidopacientetext" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tipovacunatext" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipolabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fechaText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fechalabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelgrupo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="grupolabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="grupoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="label5" min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="ndosisslider" min="-2" pref="14" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dosisSlider" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -118,7 +118,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="nombrelabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre del Paciente:"/>
       </Properties>
@@ -128,7 +128,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label2">
+    <Component class="javax.swing.JLabel" name="tipolabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tipo de Vacuna:"/>
       </Properties>
@@ -138,7 +138,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label3">
+    <Component class="javax.swing.JLabel" name="fechalabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha (dd.mm.aaaa):"/>
       </Properties>
@@ -154,7 +154,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label4">
+    <Component class="javax.swing.JLabel" name="aplabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Apellidos del Paciente:"/>
       </Properties>
@@ -180,7 +180,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atr&#xe1;sButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="label5">
+    <Component class="javax.swing.JLabel" name="ndosisslider">
       <Properties>
         <Property name="text" type="java.lang.String" value="N&#xba; de dosis a recibir:"/>
       </Properties>
@@ -194,14 +194,14 @@
         <Property name="paintTicks" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label6">
+    <Component class="javax.swing.JLabel" name="dnilabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI del Paciente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="dnitext">
     </Component>
-    <Component class="javax.swing.JLabel" name="labelgrupo">
+    <Component class="javax.swing.JLabel" name="grupolabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Grupo de Prioridad:"/>
       </Properties>

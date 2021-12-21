@@ -279,7 +279,6 @@ public class Repartir extends javax.swing.JFrame {
     private void repartirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repartirButtonActionPerformed
         LoteVacunasDAO lotedao = new LoteVacunasDAO();
         String id = textid.getText();
-        System.out.println("Id: "+id);
         String[][] reparto = gestor.calcularEntregasRegion(id);
         textgalicia.setText(reparto[0][1]);
         textasturias.setText(reparto[1][1]);

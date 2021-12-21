@@ -302,7 +302,7 @@ public class GestorEstadisticasTest {
         int ndosis = -5;
         String region = "Andalucia";
         double result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 3;
         vacuna.nombreregion = "Aragon";
@@ -318,7 +318,7 @@ public class GestorEstadisticasTest {
         region = "Asturias";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = -50;
         vacuna.nombreregion = "Cantabria";
@@ -326,7 +326,7 @@ public class GestorEstadisticasTest {
         region = "Cantabria";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 500;
         vacuna.nombreregion = "Castilla La Mancha";
@@ -342,7 +342,7 @@ public class GestorEstadisticasTest {
         region = "Castilla y Leon";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 3;
         vacuna.nombreregion = "Cataluña";
@@ -358,7 +358,7 @@ public class GestorEstadisticasTest {
         region = "Ceuta";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = -50;
         vacuna.nombreregion = "Comunidad Valenciana";
@@ -366,7 +366,7 @@ public class GestorEstadisticasTest {
         region = "Comunidad Valenciana";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 500;
         vacuna.nombreregion = "Aragon";
@@ -382,7 +382,7 @@ public class GestorEstadisticasTest {
         region = "Galicia";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 3;
         vacuna.nombreregion = "Islas Baleares";
@@ -398,7 +398,7 @@ public class GestorEstadisticasTest {
         region = "Islas Canarias";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = -50;
         vacuna.nombreregion = "La Rioja";
@@ -406,7 +406,7 @@ public class GestorEstadisticasTest {
         region = "La Rioja";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 500;
         vacuna.nombreregion = "Madrid";
@@ -422,7 +422,7 @@ public class GestorEstadisticasTest {
         region = "Melilla";
         ndosis = -5;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = 3;
         vacuna.nombreregion = "Murcia";
@@ -438,7 +438,7 @@ public class GestorEstadisticasTest {
         region = "Navarra";
         ndosis = 0;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
         
         vacuna.numeroDosis = -50;
         vacuna.nombreregion = "Pais Vasco";
@@ -446,7 +446,7 @@ public class GestorEstadisticasTest {
         region = "Pais Vasco";
         ndosis = -50;
         result = instance.consultarVacunadosDeNVacuna(region,ndosis);
-        assertTrue(result==0);
+        assertEquals(result,0);
     }
     
 }

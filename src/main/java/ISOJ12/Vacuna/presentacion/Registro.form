@@ -27,13 +27,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="label6" min="-2" max="-2" attributes="0"/>
+                      <Component id="regionlabel" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tipolabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombrelabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="aplabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="dnilabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="contlabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="botonAtras" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -57,32 +57,32 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombrelabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="aplabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dnilabel" min="-2" max="-2" attributes="0"/>
                   <Component id="dnitext" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoContrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipolabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="regionlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="regionComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="61" max="32767" attributes="0"/>
@@ -96,22 +96,22 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="nombrelabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label2">
+    <Component class="javax.swing.JLabel" name="aplabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Apellidos: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label3">
+    <Component class="javax.swing.JLabel" name="dnilabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label4">
+    <Component class="javax.swing.JLabel" name="contlabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a: "/>
       </Properties>
@@ -129,7 +129,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label5">
+    <Component class="javax.swing.JLabel" name="tipolabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tipo de Usuario:"/>
       </Properties>
@@ -158,7 +158,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label6">
+    <Component class="javax.swing.JLabel" name="regionlabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Region (Solo para SRS):"/>
       </Properties>

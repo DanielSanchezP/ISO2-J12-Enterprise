@@ -35,8 +35,8 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         textoPrimeraDosis = new javax.swing.JTextField();
         textoSegundaDosis = new javax.swing.JTextField();
         totalLabel = new javax.swing.JLabel();
-        PDLabel = new javax.swing.JLabel();
-        SDLabel = new javax.swing.JLabel();
+        pdLabel = new javax.swing.JLabel();
+        sdLabel = new javax.swing.JLabel();
         buttonestvacunados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,9 +63,9 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
 
         totalLabel.setText("Total de Vacunas inoculadas:");
 
-        PDLabel.setText("Porcentaje de Primera Dosis:");
+        pdLabel.setText("Porcentaje de Primera Dosis:");
 
-        SDLabel.setText("Porcentaje de Segunda Dosis:");
+        sdLabel.setText("Porcentaje de Segunda Dosis:");
 
         buttonestvacunados.setText("Consultar Pacientes Vacunados");
         buttonestvacunados.addActionListener(new java.awt.event.ActionListener() {
@@ -87,12 +87,12 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PDLabel)
+                    .addComponent(pdLabel)
                     .addComponent(totalLabel)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(textoSegundaDosis, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SDLabel)
+                            .addComponent(sdLabel)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(textoVacunaTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -114,11 +114,11 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoVacunaTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(PDLabel)
+                .addComponent(pdLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(SDLabel)
+                .addComponent(sdLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoSegundaDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
@@ -185,11 +185,11 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PDLabel;
-    private javax.swing.JLabel SDLabel;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonVacunasDisp;
     private javax.swing.JButton buttonestvacunados;
+    private javax.swing.JLabel pdLabel;
+    private javax.swing.JLabel sdLabel;
     private javax.swing.JTextField textoPrimeraDosis;
     private javax.swing.JTextField textoSegundaDosis;
     private javax.swing.JTextField textoVacunaTotal;

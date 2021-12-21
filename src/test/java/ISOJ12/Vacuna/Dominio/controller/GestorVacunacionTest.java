@@ -114,22 +114,6 @@ public class GestorVacunacionTest {
         entrega.nombreregion = "Melilla";
         entregadao.entregarVacunas(entrega);
         
-        
-        /*
-        pac.dni = "12345678X";
-        pac.nombre= "pepe";
-        pac.apellidos= "viyuela";
-        vacuna.paciente = pac;
-        vacuna.nombrevacuna = "Moderna";
-        vacuna.numeroDosis = -5;
-        vacuna.nombreregion = "Asturias";
-        try {
-            vacuna.fecha=formatter.parse("19.12.2021");
-        } catch (ParseException ex) {
-            Logger.getLogger(LoteVacunasDAOTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        vacdao.insertarVacunacion(vacuna);
-        */
         try {
             fecha=formatter.parse("19.12.2021");
         } catch (ParseException ex) {

@@ -33,12 +33,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="PDLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="pdLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="totalLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Component id="textoSegundaDosis" alignment="0" max="32767" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="SDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sdLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="textoPrimeraDosis" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoVacunaTotal" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
@@ -68,11 +68,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="textoVacunaTotal" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="PDLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="pdLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="textoPrimeraDosis" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="SDLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="sdLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="textoSegundaDosis" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -119,12 +119,12 @@
         <Property name="text" type="java.lang.String" value="Total de Vacunas inoculadas:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="PDLabel">
+    <Component class="javax.swing.JLabel" name="pdLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Primera Dosis:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="SDLabel">
+    <Component class="javax.swing.JLabel" name="sdLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Segunda Dosis:"/>
       </Properties>

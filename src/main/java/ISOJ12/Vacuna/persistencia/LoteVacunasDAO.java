@@ -17,8 +17,8 @@ public class LoteVacunasDAO extends AgenteBD {
 	 */
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         static String id;
-	public void insertarLoteVacunas(LoteVacunas lote){
-		bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
+	public int insertarLoteVacunas(LoteVacunas lote){
+		return bd.insert("INSERT INTO lotevacunas VALUES ('"+lote.id+"','"+ lote.farmaceutica +"', "+lote.cantidad+",'"+formatter.format(lote.fecha)+"')");
 		
 	}
         

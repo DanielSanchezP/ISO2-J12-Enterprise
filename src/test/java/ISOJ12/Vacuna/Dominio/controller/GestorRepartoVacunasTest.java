@@ -11,7 +11,6 @@ import ISOJ12.Vacuna.persistencia.LoteVacunasDAO;
 import ISOJ12.Vacuna.persistencia.LoteVacunasDAOTest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -137,7 +136,7 @@ public class GestorRepartoVacunasTest {
         
         String[][] reparto = new String[19][2];
         reparto = instance.calcularEntregasRegion(id);
-        assertFalse(reparto == null);
+        assertNotNull(reparto);
         
         String id2 = "0";
         lote.id = id2;
@@ -152,7 +151,7 @@ public class GestorRepartoVacunasTest {
         
         
         reparto = instance.calcularEntregasRegion(id);
-        assertFalse(reparto == null);
+        assertNotNull(reparto);
         
         String id3 = "1000000";
         lote.id = id3;
@@ -167,7 +166,7 @@ public class GestorRepartoVacunasTest {
         
         
         reparto = instance.calcularEntregasRegion(id);
-        assertFalse(reparto == null);
+        assertNotNull(reparto);
     }
     
     

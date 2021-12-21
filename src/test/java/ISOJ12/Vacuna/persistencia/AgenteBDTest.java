@@ -44,7 +44,7 @@ public class AgenteBDTest {
      * Test of crearBaseDatos method, of class AgenteBD.
      */
     @Test
-    void testCrearBaseDatos() {
+    public void testCrearBaseDatos() {
         System.out.println("crearBaseDatos");
         abd.crearBaseDatos();
     }
@@ -53,7 +53,7 @@ public class AgenteBDTest {
      * Test of getAgente method, of class AgenteBD.
      */
     @Test
-    void testGetAgente() {
+    public void testGetAgente() {
         System.out.println("getAgente");
         AgenteBD result = AgenteBD.getAgente();
         assertEquals(result, abd);
@@ -63,7 +63,7 @@ public class AgenteBDTest {
      * Test of conectarBD method, of class AgenteBD.
      */
     @Test
-    void testConectarBD() {
+    public void testConectarBD() {
         System.out.println("conectarBD");
         abd.conectarBD();
     }
@@ -72,7 +72,7 @@ public class AgenteBDTest {
      * Test of desconectarBD method, of class AgenteBD.
      */
     @Test
-    void testDesconectarBD() {
+    public void testDesconectarBD() {
         System.out.println("desconectarBD");
         abd.desconectarBD();
     }
@@ -81,7 +81,7 @@ public class AgenteBDTest {
      * Test of insert method, of class AgenteBD.
      */
     @Test
-    void testInsert() {
+    public void testInsert() {
         System.out.println("insert");
         String sql = "INSERT INTO trabajadores VALUES ('01234567B','Pepe', 'Viyuela', '1234', 'SNS', '')";
         int expResult = 1;
@@ -94,7 +94,7 @@ public class AgenteBDTest {
      * Test of select method, of class AgenteBD.
      */
     @Test
-    void testSelect() {
+    public void testSelect() {
         System.out.println("select");
         String sql1 = "INSERT INTO trabajadores VALUES ('01234567A','Pepe', 'Viyuela', '1234', 'SNS', '')";
         abd.insert(sql1);
@@ -110,8 +110,10 @@ public class AgenteBDTest {
             assertNotNull(str2);
             
         } catch (SQLException ex) {
-            fail("No existe ningún elemento.");
+            fail("Error de BD.");
         }
+        str1=null;
+        str2=null;
         sql = "SELECT dni, contrasena FROM trabajadores WHERE dni ='fregtg54534rf' AND contrasena ='12ertgetg' ";
         result = abd.select(sql);
         try {
@@ -123,7 +125,7 @@ public class AgenteBDTest {
             assertNull(str2);
             
         } catch (SQLException ex) {
-            fail("Existe ningún elemento.");
+            fail("Error de BD.");
         }
     }
 
@@ -131,7 +133,7 @@ public class AgenteBDTest {
      * Test of update method, of class AgenteBD.
      */
     @Test
-    void testUpdate() {
+    public void testUpdate() {
         System.out.println("update");
         String sql1 = "INSERT INTO trabajadores VALUES ('01234567A','Pepe', 'Viyuela', '1234', 'SNS', '')";
         abd.insert(sql1);
@@ -144,7 +146,7 @@ public class AgenteBDTest {
      * Test of delete method, of class AgenteBD.
      */
     @Test
-    void testDelete() {
+    public void testDelete() {
         System.out.println("delete");
         String sql = "DELETE FROM trabajadores WHERE dni = '01234567B' OR dni = '01234567A'";
         int result = abd.delete(sql);

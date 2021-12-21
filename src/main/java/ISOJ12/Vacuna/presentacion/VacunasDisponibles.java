@@ -38,8 +38,8 @@ public class VacunasDisponibles extends javax.swing.JFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         atrasButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        vaclabel = new javax.swing.JLabel();
+        vacsp = new javax.swing.JScrollPane();
         listVacunas = new javax.swing.JList();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -53,9 +53,9 @@ public class VacunasDisponibles extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Vacunas disponibles (id / Farmaceutica / Cantidad /  Grupo de Prioridad / Fecha de asignación):");
+        vaclabel.setText("Vacunas disponibles (id / Farmaceutica / Cantidad /  Grupo de Prioridad / Fecha de asignación):");
 
-        jScrollPane1.setViewportView(listVacunas);
+        vacsp.setViewportView(listVacunas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,11 +65,11 @@ public class VacunasDisponibles extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                        .addComponent(vacsp)
                         .addGap(18, 18, 18)
                         .addComponent(atrasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(vaclabel)
                         .addGap(0, 86, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -77,11 +77,11 @@ public class VacunasDisponibles extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(vaclabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(atrasButton)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vacsp, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -136,16 +136,16 @@ public class VacunasDisponibles extends javax.swing.JFrame {
         
     }
     
-    public static void mostrarVD(String region_){
-        new VacunasDisponibles(region_).setVisible(true);
+    public static void mostrarVD(String region1){
+        new VacunasDisponibles(region1).setVisible(true);
     }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atrasButton;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listVacunas;
+    private javax.swing.JLabel vaclabel;
+    private javax.swing.JScrollPane vacsp;
     // End of variables declaration//GEN-END:variables
 }

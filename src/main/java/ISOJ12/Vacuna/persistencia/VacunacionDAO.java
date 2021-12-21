@@ -14,10 +14,10 @@ public class VacunacionDAO extends AgenteBD {
 	/**
 	 * @param vacunacion
 	 */
-	public void insertarVacunacion(Vacunacion vacunacion){
+	public int insertarVacunacion(Vacunacion vacunacion){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                 
-		bd.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'"+vacunacion.nombreregion+"')");
+		return bd.insert("INSERT INTO vacunacion VALUES ('"+vacunacion.paciente.dni+"','"+ vacunacion.paciente.nombre +"', '"+vacunacion.paciente.apellidos+"','"+vacunacion.nombrevacuna+"', '"+formatter.format(vacunacion.fecha)+"',"+vacunacion.numeroDosis+",'"+vacunacion.nombreregion+"')");
 		
 	}
 

@@ -34,14 +34,14 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VacunadosScrollPanel = new javax.swing.JScrollPane();
+        vacunadosScrollPanel = new javax.swing.JScrollPane();
         listaPaciente = new javax.swing.JList<>();
         pacientesLabel = new javax.swing.JLabel();
         atrasButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        VacunadosScrollPanel.setViewportView(listaPaciente);
+        vacunadosScrollPanel.setViewportView(listaPaciente);
 
         pacientesLabel.setText("Pacientes Vacunados:");
 
@@ -61,7 +61,7 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pacientesLabel)
                     .addComponent(atrasButton)
-                    .addComponent(VacunadosScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vacunadosScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -70,7 +70,7 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(pacientesLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VacunadosScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                .addComponent(vacunadosScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(atrasButton)
                 .addContainerGap())
@@ -144,9 +144,9 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane VacunadosScrollPanel;
     private javax.swing.JButton atrasButton;
     private javax.swing.JList<String> listaPaciente;
     private javax.swing.JLabel pacientesLabel;
+    private javax.swing.JScrollPane vacunadosScrollPanel;
     // End of variables declaration//GEN-END:variables
 }

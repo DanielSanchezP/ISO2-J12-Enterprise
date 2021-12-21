@@ -47,7 +47,8 @@ public class LoteVacunasDAOTest {
         lote1.farmaceutica="Pfizer";
         
         LoteVacunasDAO instance = new LoteVacunasDAO();
-        instance.insertarLoteVacunas(lote1);
+        int res=instance.insertarLoteVacunas(lote1);
+        assertEquals(res, 1);
     }
     
     @AfterAll

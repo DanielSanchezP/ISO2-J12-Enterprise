@@ -17,10 +17,10 @@ public class EntregaDAO extends AgenteBD {
 	 * 
 	 * @param entrega
 	 */
-	public void entregarVacunas(EntregaVacunas entrega) {
+	public int entregarVacunas(EntregaVacunas entrega) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		String str="Insert into vacunas values('"+ entrega.lote.id +"','"+ entrega.lote.farmaceutica +"','"+ entrega.grupoPrioridad +"',"+ entrega.cantidad +",'"+formatter.format(entrega.fecha)+"','"+ entrega.nombreregion +"')";
-		bd.insert(str);
+		return bd.insert(str);
 	}
 
 	/**

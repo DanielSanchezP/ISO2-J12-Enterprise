@@ -30,24 +30,6 @@ public class EntregaDAOTest {
     
     @BeforeAll
     public static void setUpClass() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-        System.out.println("insertarEntrega");
-        EntregaVacunas entrega = new EntregaVacunas();
-        LoteVacunas lote = new LoteVacunas();
-        lote.id="sfget5dgrgd";
-        lote.farmaceutica="Pfizer";
-        entrega.lote=lote;
-        entrega.grupoPrioridad="3";
-        entrega.cantidad=232555;
-        entrega.nombreregion="abcd";
-        
-        try {
-            entrega.fecha=formatter.parse("2.02.2002");
-        } catch (ParseException ex) {
-            Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        EntregaDAO instance = new EntregaDAO();
-        instance.entregarVacunas(entrega);
     }
     
     @AfterAll
@@ -84,16 +66,35 @@ public class EntregaDAOTest {
             Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
         }
         EntregaDAO instance = new EntregaDAO();
-        instance.entregarVacunas(entrega);
+        int res=instance.entregarVacunas(entrega);
+        assertEquals(res, 1);
     }
     /**
      * Test of seleccionarEntregas method, of class EntregaDAO.
      */
     @Test
     public void testSeleccionarEntregas() throws Exception {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        System.out.println("insertarEntrega");
+        EntregaVacunas entrega = new EntregaVacunas();
+        LoteVacunas lote = new LoteVacunas();
+        lote.id="sfget5dgrgd";
+        lote.farmaceutica="Pfizer";
+        entrega.lote=lote;
+        entrega.grupoPrioridad="3";
+        entrega.cantidad=232555;
+        entrega.nombreregion="abcd";
+        
+        try {
+            entrega.fecha=formatter.parse("2.02.2002");
+        } catch (ParseException ex) {
+            Logger.getLogger(EntregaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        EntregaDAO instance = new EntregaDAO();
+        instance.entregarVacunas(entrega);
+        
         System.out.println("seleccionarEntregas");
         String region = "abcd";
-        EntregaDAO instance = new EntregaDAO();
         List<EntregaVacunas> result = instance.seleccionarVacunas(region);
         assertFalse(result.isEmpty());
     }

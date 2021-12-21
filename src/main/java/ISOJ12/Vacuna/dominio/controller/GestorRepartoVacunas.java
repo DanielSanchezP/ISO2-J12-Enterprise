@@ -109,7 +109,7 @@ public class GestorRepartoVacunas {
                     }
                 }           
             }catch (SQLException e) {
-                e.printStackTrace();
+                System.out.println("Error: "+e);;
             }
             
             return reparto;   

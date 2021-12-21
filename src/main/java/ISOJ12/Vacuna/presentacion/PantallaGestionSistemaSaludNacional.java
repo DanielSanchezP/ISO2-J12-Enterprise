@@ -45,7 +45,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         totalvacunadosText = new javax.swing.JTextField();
         porcentajevacunadosText = new javax.swing.JTextField();
         totalLabel = new javax.swing.JLabel();
-        PorcLaber = new javax.swing.JLabel();
+        porcLaber = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
         loteScroll = new javax.swing.JScrollPane();
         lotelist = new javax.swing.JList<>();
@@ -86,7 +86,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
 
         totalLabel.setText("Total de Vacunados:");
 
-        PorcLaber.setText("Porcentaje de Vacunados:");
+        porcLaber.setText("Porcentaje de Vacunados:");
 
         idLabel.setText("IDLote/Marca/Vacunas:");
 
@@ -112,7 +112,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(idLabel)
-                    .addComponent(PorcLaber)
+                    .addComponent(porcLaber)
                     .addComponent(totalLabel)
                     .addComponent(totalvacunadosText)
                     .addComponent(porcentajevacunadosText)
@@ -133,7 +133,7 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalvacunadosText)
                 .addGap(14, 14, 14)
-                .addComponent(PorcLaber)
+                .addComponent(porcLaber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(porcentajevacunadosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -243,13 +243,13 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PorcLaber;
     private javax.swing.JButton botonAltaLote;
     private javax.swing.JButton botonCalculo;
     public javax.swing.JComboBox<String> comboBoxListaSitios;
     private javax.swing.JLabel idLabel;
     private javax.swing.JScrollPane loteScroll;
     public javax.swing.JList<String> lotelist;
+    private javax.swing.JLabel porcLaber;
     public javax.swing.JTextField porcentajevacunadosText;
     private javax.swing.JLabel totalLabel;
     public javax.swing.JTextField totalvacunadosText;
