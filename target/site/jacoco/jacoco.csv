@@ -1,0 +1,44 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Vacuna,ISOJ12.Vacuna.dominio.controller,GestorEstadisticas,31,265,5,21,10,60,5,15,0,7
+Vacuna,ISOJ12.Vacuna.dominio.controller,GestorRepartoVacunas,6,303,2,12,3,59,2,10,0,4
+Vacuna,ISOJ12.Vacuna.dominio.controller,GestorLogin,0,12,0,0,0,3,0,2,0,2
+Vacuna,ISOJ12.Vacuna.dominio.controller,GestorVacunacion,18,99,6,12,6,27,6,5,0,2
+Vacuna,ISOJ12.Vacuna.presentacion,Registro.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Registro.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaConsultaVacunados,240,0,6,0,67,0,10,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Registro,582,0,6,0,128,0,10,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,VacunasDisponibles.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaRegionalSalud.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaSaludNacional.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaRegionalSalud.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaSaludNacional.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaRegionalSalud.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaSaludNacional.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Repartir.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,RegistrarVacunacion.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Repartir.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Repartir,1124,0,4,0,263,0,8,0,6,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaSaludNacional.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,RegistrarVacunacion.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Repartir.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,Login,361,0,12,0,92,0,13,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,AltaLote,423,0,4,0,110,0,9,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaSaludNacional,610,0,8,0,131,0,14,0,10,0
+Vacuna,ISOJ12.Vacuna.presentacion,AltaLote.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaConsultaVacunados.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,VacunasDisponibles,289,0,6,0,71,0,10,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,AltaLote.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+Vacuna,ISOJ12.Vacuna.presentacion,RegistrarVacunacion,739,0,4,0,163,0,9,0,7,0
+Vacuna,ISOJ12.Vacuna.presentacion,PantallaGestionSistemaRegionalSalud,410,0,4,0,106,0,10,0,8,0
+Vacuna,ISOJ12.Vacuna.dominio.entitymodel,EntregaVacunas,33,3,10,0,3,1,6,1,1,1
+Vacuna,ISOJ12.Vacuna.dominio.entitymodel,LoteVacunas,33,3,10,0,3,1,6,1,1,1
+Vacuna,ISOJ12.Vacuna.dominio.entitymodel,Paciente,2,29,2,6,0,4,2,4,0,2
+Vacuna,ISOJ12.Vacuna.dominio.entitymodel,Vacunacion,19,11,7,1,0,3,4,2,0,2
+Vacuna,ISOJ12.Vacuna.persistencia,LoginDAO,1,102,2,4,1,20,2,4,0,3
+Vacuna,ISOJ12.Vacuna.persistencia,AgenteBD,120,127,2,4,37,51,2,11,0,10
+Vacuna,ISOJ12.Vacuna.persistencia,EntregaDAO,8,115,0,4,2,24,0,5,0,3
+Vacuna,ISOJ12.Vacuna.persistencia,VacunacionDAO,0,170,0,4,0,34,0,6,0,4
+Vacuna,ISOJ12.Vacuna.persistencia,LoteVacunasDAO,7,117,0,4,2,23,1,6,1,4
+Vacuna,ISOJ12.Vacuna.persistencia,ConsultarEstadisticasDAO,0,110,0,6,0,26,0,6,0,3
