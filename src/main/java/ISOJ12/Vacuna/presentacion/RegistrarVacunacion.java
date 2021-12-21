@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class RegistrarVacunacion extends javax.swing.JFrame {
     GestorVacunacion gestor = new GestorVacunacion();
-    public String region="";
+    public String region=null;
     //Esto es para probar solo
 
     /**
