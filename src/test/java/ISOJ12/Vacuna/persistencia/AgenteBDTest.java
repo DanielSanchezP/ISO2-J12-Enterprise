@@ -56,7 +56,7 @@ public class AgenteBDTest {
     public void testGetAgente() {
         System.out.println("getAgente");
         AgenteBD result = AgenteBD.getAgente();
-        assertEquals(result, abd);
+        assertEquals(abd, result);
     }
 
     /**

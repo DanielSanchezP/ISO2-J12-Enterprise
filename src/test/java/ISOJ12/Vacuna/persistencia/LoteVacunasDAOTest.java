@@ -48,7 +48,7 @@ public class LoteVacunasDAOTest {
         
         LoteVacunasDAO instance = new LoteVacunasDAO();
         int res=instance.insertarLoteVacunas(lote1);
-        assertEquals(res, 1);
+        assertEquals(1, res);
     }
     
     @AfterAll

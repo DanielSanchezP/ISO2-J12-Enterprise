@@ -67,7 +67,7 @@ public class EntregaDAOTest {
         }
         EntregaDAO instance = new EntregaDAO();
         int res=instance.entregarVacunas(entrega);
-        assertEquals(res, 1);
+        assertEquals(1, res);
     }
     /**
      * Test of seleccionarEntregas method, of class EntregaDAO.

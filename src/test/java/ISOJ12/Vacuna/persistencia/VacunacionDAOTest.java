@@ -89,7 +89,7 @@ public class VacunacionDAOTest {
 
         VacunacionDAO instance = new VacunacionDAO();
         int res=instance.insertarVacunacion(vacunacion);
-        assertEquals(res, 1);
+        assertEquals(1, res);
     }
 
     /**
