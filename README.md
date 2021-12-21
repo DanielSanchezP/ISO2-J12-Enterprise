@@ -1,6 +1,6 @@
 # Manual de Usuario.
 
-Desde el punto de vista de usuario, nuestra programa funciona de la siguiente forma.
+Para que funcione el programa debemos compilar el código, y una vez hecho, desde el punto de vista del usuario, funciona de la siguiente forma.
 Para empezar tendremos la ventana "Login", donde el usuario podrá introducir sus datos para logearse, y en caso de que no esté registrado
 se le da la posibilidad con el botón "Registrarse".
 
