@@ -196,6 +196,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         this.textoPrimeraDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,1)));
         this.textoSegundaDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,2)));
         this.setVisible(true);
+        System.gc();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

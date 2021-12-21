@@ -1,13 +1,19 @@
 ----------------------------------------------------------------
-Tue Dec 21 10:03:11 CET 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017d-dc3a-f72c-000005cd9400 
-on database directory C:\Users\julia\Documents\NetBeansProjects\ISO2-J12-Enterprise\BDVacuna with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
-Loaded from file:/C:/Users/julia/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Tue Dec 21 15:09:59 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017d-dd53-d891-00000161aba8 
+on database directory E:\Proyectos Netbeans\ISO2-J12-Enterprise\BDVacuna with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
+Loaded from file:/C:/Users/Juli%c3%a1n%20M/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=17.0.1+12-LTS-39
-user.dir=C:\Users\julia\Documents\NetBeansProjects\ISO2-J12-Enterprise
+java.runtime.version=15.0.1+9-18
+user.dir=E:\Proyectos Netbeans\ISO2-J12-Enterprise
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Dec 21 15:09:59 CET 2021: Shutting down Derby engine
+----------------------------------------------------------------
+Tue Dec 21 15:09:59 CET 2021:
+Shutting down instance a816c00e-017d-dd53-d891-00000161aba8 on database directory E:\Proyectos Netbeans\ISO2-J12-Enterprise\BDVacuna with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
+----------------------------------------------------------------

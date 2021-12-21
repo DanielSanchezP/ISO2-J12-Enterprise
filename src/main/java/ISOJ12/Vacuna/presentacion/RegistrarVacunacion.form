@@ -57,12 +57,12 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="nombrePacienteText" pref="119" max="32767" attributes="0"/>
+                  <Component id="nombrePacienteText" max="32767" attributes="0"/>
                   <Component id="tipovacunatext" max="32767" attributes="0"/>
                   <Component id="fechaText" max="32767" attributes="0"/>
                   <Component id="apellidopacientetext" max="32767" attributes="0"/>
                   <Component id="dnitext" max="32767" attributes="0"/>
-                  <Component id="textgrupo" max="32767" attributes="0"/>
+                  <Component id="grupoComboBox" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -96,12 +96,12 @@
                   <Component id="fechaText" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="label3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="labelgrupo" min="-2" max="-2" attributes="0"/>
-                  <Component id="textgrupo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelgrupo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="grupoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="label5" min="-2" pref="14" max="-2" attributes="0"/>
@@ -206,7 +206,19 @@
         <Property name="text" type="java.lang.String" value="Grupo de Prioridad:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textgrupo">
+    <Component class="javax.swing.JComboBox" name="grupoComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Ancianos"/>
+            <StringItem index="1" value="Adultos/Adolescentes"/>
+            <StringItem index="2" value="Ni&#xf1;os"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
