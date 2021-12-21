@@ -32,8 +32,8 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="label2" min="-2" max="-2" attributes="0"/>
-                          <Component id="label1" min="-2" max="-2" attributes="0"/>
+                          <Component id="contrasenaLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDNI" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -51,13 +51,13 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="141" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDNI" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dnitext" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textoContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contrasenaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botonLogin" min="-2" pref="49" max="-2" attributes="0"/>
@@ -69,14 +69,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="labelDNI">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="textoContrasena">
     </Component>
-    <Component class="javax.swing.JLabel" name="label2">
+    <Component class="javax.swing.JLabel" name="contrasenaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
       </Properties>

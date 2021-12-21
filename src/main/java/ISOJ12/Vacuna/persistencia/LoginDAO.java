@@ -22,7 +22,6 @@ public class LoginDAO extends AgenteBD {
 	public String[] comprobarLogin(String dni, String contrasena) {
         String[] trabajador=new String[4];
         String[] result=new String[3];
-        System.out.println(contrasena);
         ResultSet res = bd.select("SELECT dni, contrasena, tipousuario, nombreregion FROM trabajadores WHERE dni ='"+dni+"' AND contrasena ='"+contrasena+"' ");
         try {
             while (res.next()) {

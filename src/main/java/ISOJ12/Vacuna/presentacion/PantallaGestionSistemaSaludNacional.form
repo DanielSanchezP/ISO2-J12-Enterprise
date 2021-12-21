@@ -42,12 +42,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" min="-2" max="-2" attributes="0"/>
-                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <Component id="idLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="PorcLaber" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="totalvacunadosText" max="32767" attributes="0"/>
                   <Component id="porcentajevacunadosText" max="32767" attributes="0"/>
-                  <Component id="scrollPane1" max="32767" attributes="0"/>
+                  <Component id="loteScroll" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
           </Group>
@@ -64,17 +64,17 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="comboBoxListaSitios" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="label1" min="-2" max="-2" attributes="0"/>
+              <Component id="totalLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="totalvacunadosText" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="label2" min="-2" max="-2" attributes="0"/>
+              <Component id="PorcLaber" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="porcentajevacunadosText" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="label3" min="-2" max="-2" attributes="0"/>
+              <Component id="idLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="scrollPane1" min="-2" max="-2" attributes="0"/>
+              <Component id="loteScroll" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -158,22 +158,22 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="totalLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Total de Vacunados:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label2">
+    <Component class="javax.swing.JLabel" name="PorcLaber">
       <Properties>
         <Property name="text" type="java.lang.String" value="Porcentaje de Vacunados:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label3">
+    <Component class="javax.swing.JLabel" name="idLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="IDLote/Marca/Vacunas:"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="scrollPane1">
+    <Container class="javax.swing.JScrollPane" name="loteScroll">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>

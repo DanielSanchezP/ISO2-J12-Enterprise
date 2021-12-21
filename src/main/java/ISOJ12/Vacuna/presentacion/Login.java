@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.persistencia.LoginDAO;
@@ -33,18 +28,18 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label1 = new javax.swing.JLabel();
+        labelDNI = new javax.swing.JLabel();
         textoContrasena = new javax.swing.JPasswordField();
-        label2 = new javax.swing.JLabel();
+        contrasenaLabel = new javax.swing.JLabel();
         botonLogin = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         dnitext = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("DNI:");
+        labelDNI.setText("DNI:");
 
-        label2.setText("Contraseña:");
+        contrasenaLabel.setText("Contraseña:");
 
         botonLogin.setText("Iniciar Sesión");
         botonLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -78,8 +73,8 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(botonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(label2)
-                            .addComponent(label1))
+                            .addComponent(contrasenaLabel)
+                            .addComponent(labelDNI))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textoContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
@@ -91,12 +86,12 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label1)
+                    .addComponent(labelDNI)
                     .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2))
+                    .addComponent(contrasenaLabel))
                 .addGap(18, 18, 18)
                 .addComponent(botonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -124,7 +119,6 @@ public class Login extends javax.swing.JFrame {
          
         if(comp[0].equals("true") && comp[1].equals("SRS")){ 
             //Si el que se logea es trabajador regional, se abre PantallaRegional
-            System.out.println(comp[2]);
             PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud(comp[2]);
             pantalla.mostrarGestionRegional();
             this.dispose();
@@ -183,9 +177,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JLabel contrasenaLabel;
     private javax.swing.JFormattedTextField dnitext;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
+    private javax.swing.JLabel labelDNI;
     private javax.swing.JPasswordField textoContrasena;
     // End of variables declaration//GEN-END:variables
 }

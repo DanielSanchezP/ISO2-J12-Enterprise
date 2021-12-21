@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
@@ -49,10 +44,10 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
         comboBoxListaSitios = new javax.swing.JComboBox<>();
         totalvacunadosText = new javax.swing.JTextField();
         porcentajevacunadosText = new javax.swing.JTextField();
-        label1 = new javax.swing.JLabel();
-        label2 = new javax.swing.JLabel();
-        label3 = new javax.swing.JLabel();
-        scrollPane1 = new javax.swing.JScrollPane();
+        totalLabel = new javax.swing.JLabel();
+        PorcLaber = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
+        loteScroll = new javax.swing.JScrollPane();
         lotelist = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,13 +84,13 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
 
         porcentajevacunadosText.setEditable(false);
 
-        label1.setText("Total de Vacunados:");
+        totalLabel.setText("Total de Vacunados:");
 
-        label2.setText("Porcentaje de Vacunados:");
+        PorcLaber.setText("Porcentaje de Vacunados:");
 
-        label3.setText("IDLote/Marca/Vacunas:");
+        idLabel.setText("IDLote/Marca/Vacunas:");
 
-        scrollPane1.setViewportView(lotelist);
+        loteScroll.setViewportView(lotelist);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,12 +111,12 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label3)
-                    .addComponent(label2)
-                    .addComponent(label1)
+                    .addComponent(idLabel)
+                    .addComponent(PorcLaber)
+                    .addComponent(totalLabel)
                     .addComponent(totalvacunadosText)
                     .addComponent(porcentajevacunadosText)
-                    .addComponent(scrollPane1))
+                    .addComponent(loteScroll))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -134,17 +129,17 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(comboBoxListaSitios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(label1)
+                .addComponent(totalLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalvacunadosText)
                 .addGap(14, 14, 14)
-                .addComponent(label2)
+                .addComponent(PorcLaber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(porcentajevacunadosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(label3)
+                .addComponent(idLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -248,15 +243,15 @@ public class PantallaGestionSistemaSaludNacional extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PorcLaber;
     private javax.swing.JButton botonAltaLote;
     private javax.swing.JButton botonCalculo;
     public javax.swing.JComboBox<String> comboBoxListaSitios;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
-    private javax.swing.JLabel label3;
+    private javax.swing.JLabel idLabel;
+    private javax.swing.JScrollPane loteScroll;
     public javax.swing.JList<String> lotelist;
     public javax.swing.JTextField porcentajevacunadosText;
-    private javax.swing.JScrollPane scrollPane1;
+    private javax.swing.JLabel totalLabel;
     public javax.swing.JTextField totalvacunadosText;
     // End of variables declaration//GEN-END:variables
 }

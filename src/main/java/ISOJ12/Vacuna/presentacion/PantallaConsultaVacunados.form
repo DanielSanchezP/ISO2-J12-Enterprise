@@ -26,9 +26,9 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="pacientesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="atrasButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="scrollPane1" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
+                  <Component id="VacunadosScrollPanel" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
@@ -38,9 +38,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="label1" min="-2" max="-2" attributes="0"/>
+              <Component id="pacientesLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="scrollPane1" pref="251" max="32767" attributes="0"/>
+              <Component id="VacunadosScrollPanel" pref="251" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="atrasButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -49,7 +49,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="scrollPane1">
+    <Container class="javax.swing.JScrollPane" name="VacunadosScrollPanel">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -68,7 +68,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="pacientesLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pacientes Vacunados:"/>
       </Properties>
