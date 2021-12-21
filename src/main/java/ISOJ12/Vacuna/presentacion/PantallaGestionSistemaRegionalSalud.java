@@ -13,7 +13,7 @@ import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
  */
 public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     GestorEstadisticas gestor = new GestorEstadisticas();
-    String region=null;
+    String region="";
 	
     /**
      * Creates new form PantallaGestionSistemaRegionalSalud
