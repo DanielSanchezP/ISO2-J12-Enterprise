@@ -13,13 +13,14 @@ import java.util.logging.Logger;
  */
 public class RegistrarVacunacion extends javax.swing.JFrame {
     GestorVacunacion gestor = new GestorVacunacion();
-    String region="";
+    String region=null;
     //Esto es para probar solo
 
     /**
      * Creates new form RegistrarVacunacion
      */
-    public RegistrarVacunacion() {
+    public RegistrarVacunacion(String region_) {
+        this.region=region_;
         initComponents();
     }
 
@@ -195,9 +196,7 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
             Logger.getLogger(RegistrarVacunacion.class.getName()).log(Level.SEVERE, null, ex);
         }
         gestor.registrarVacunacion(fecha, nombre, apellidos, dni, nombrevacuna, numeroDosis, this.region, grupo);
-        this.dispose();
-        PantallaGestionSistemaRegionalSalud pantalla=new PantallaGestionSistemaRegionalSalud(region);
-        pantalla.mostrarGestionRegional();
+        
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     private void atrásButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrásButtonActionPerformed
@@ -233,12 +232,12 @@ public class RegistrarVacunacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RegistrarVacunacion().setVisible(true);
+            new RegistrarVacunacion("").setVisible(true);
         });
     }
     
-    public void mostrarRV(){
-        this.setVisible(true);
+    public static void mostrarRV(String region1){
+        new RegistrarVacunacion(region1).setVisible(true);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
