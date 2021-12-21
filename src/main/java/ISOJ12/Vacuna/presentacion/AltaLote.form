@@ -29,11 +29,11 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="label1" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelVacunas" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="label2" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelProv" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -45,7 +45,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelFecha1" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFormato" min="-2" max="-2" attributes="0"/>
                           <Component id="labelFecha" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -68,12 +68,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelVacunas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textoNumVacunas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelProv" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="proveedortext" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
                   <Component id="textoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="labelFecha1" min="-2" max="-2" attributes="0"/>
+              <Component id="labelFormato" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="38" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="botonAltaLote" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
@@ -94,7 +94,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="label1">
+    <Component class="javax.swing.JLabel" name="labelVacunas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vacunas Recibidas: "/>
       </Properties>
@@ -109,7 +109,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="label2">
+    <Component class="javax.swing.JLabel" name="labelProv">
       <Properties>
         <Property name="text" type="java.lang.String" value="Proveedor: "/>
       </Properties>
@@ -150,7 +150,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelFecha1">
+    <Component class="javax.swing.JLabel" name="labelFormato">
       <Properties>
         <Property name="text" type="java.lang.String" value="Formato: dd.mm.aaaa"/>
       </Properties>

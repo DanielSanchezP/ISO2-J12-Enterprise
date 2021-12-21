@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.persistencia.LoginDAO;
@@ -12,7 +7,7 @@ import ISOJ12.Vacuna.persistencia.LoginDAO;
  * @author Daniel
  */
 public class Registro extends javax.swing.JFrame {
-
+    Login login=new Login();
     /**
      * Creates new form Registro
      */
@@ -31,34 +26,34 @@ public class Registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label1 = new javax.swing.JLabel();
-        label2 = new javax.swing.JLabel();
-        label3 = new javax.swing.JLabel();
-        label4 = new javax.swing.JLabel();
+        nombrelabel = new javax.swing.JLabel();
+        aplabel = new javax.swing.JLabel();
+        dnilabel = new javax.swing.JLabel();
+        contlabel = new javax.swing.JLabel();
         comboBoxTipo = new javax.swing.JComboBox<>();
-        label5 = new javax.swing.JLabel();
+        tipolabel = new javax.swing.JLabel();
         textoNombre = new javax.swing.JTextField();
         textoApellidos = new javax.swing.JTextField();
         textoContrasenia = new javax.swing.JPasswordField();
         botonRegistro = new javax.swing.JButton();
         dnitext = new javax.swing.JFormattedTextField();
-        label6 = new javax.swing.JLabel();
+        regionlabel = new javax.swing.JLabel();
         regionComboBox = new javax.swing.JComboBox<>();
         botonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("Nombre: ");
+        nombrelabel.setText("Nombre: ");
 
-        label2.setText("Apellidos: ");
+        aplabel.setText("Apellidos: ");
 
-        label3.setText("DNI: ");
+        dnilabel.setText("DNI: ");
 
-        label4.setText("Contraseña: ");
+        contlabel.setText("Contraseña: ");
 
         comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SNS", "SRS" }));
 
-        label5.setText("Tipo de Usuario:");
+        tipolabel.setText("Tipo de Usuario:");
 
         botonRegistro.setText("Registrarse");
         botonRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +71,9 @@ public class Registro extends javax.swing.JFrame {
         dnitext.setText("");
         dnitext.setToolTipText("");
 
-        label6.setText("Region (Solo para SRS):");
+        regionlabel.setText("Region (Solo para SRS):");
 
-        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asturias", "Galicia" }));
+        regionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asturias", "Galicia", "Cantabria", "La Rioja", "Pais Vasco", "Navarra", "Aragon", "Cataluña", "Castilla y Leon", "Madrid", "Castilla La Mancha", "Comunidad Valenciana", "Murcia", "Andalucia", "Extremadura", "Islas Baleares", "Islas Canarias", "Ceuta", "Melilla" }));
 
         botonAtras.setText("Atrás");
         botonAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -95,13 +90,13 @@ public class Registro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(label6)
+                        .addComponent(regionlabel)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label5)
-                            .addComponent(label1)
-                            .addComponent(label2)
-                            .addComponent(label3)
-                            .addComponent(label4)))
+                            .addComponent(tipolabel)
+                            .addComponent(nombrelabel)
+                            .addComponent(aplabel)
+                            .addComponent(dnilabel)
+                            .addComponent(contlabel)))
                     .addComponent(botonAtras))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -119,27 +114,27 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label1)
+                    .addComponent(nombrelabel)
                     .addComponent(textoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label2)
+                    .addComponent(aplabel)
                     .addComponent(textoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label3)
+                    .addComponent(dnilabel)
                     .addComponent(dnitext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label4)
+                    .addComponent(contlabel)
                     .addComponent(textoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label5))
+                    .addComponent(tipolabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label6)
+                    .addComponent(regionlabel)
                     .addComponent(regionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -153,6 +148,8 @@ public class Registro extends javax.swing.JFrame {
     //No modificar
     
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        
+        
         String nombre=textoNombre.getText();
         String apellidos=textoApellidos.getText();
         String DNI=dnitext.getText();
@@ -167,12 +164,12 @@ public class Registro extends javax.swing.JFrame {
         LoginDAO log=new LoginDAO();
         log.insertarTrabajador(DNI, nombre, apellidos, contrasena, tipo, nombreregion);
         
-        Login.mostrarLogin();
+        login.mostrarLogin();
         this.dispose(); 
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
-        Login.mostrarLogin();
+        login.mostrarLogin();
         this.dispose();
     }//GEN-LAST:event_botonAtrasActionPerformed
 
@@ -205,26 +202,24 @@ public class Registro extends javax.swing.JFrame {
         });
     }
     
-    public static void mostrarRegistro(){
-        
-        
-        new Registro().setVisible(true);
+    public void mostrarRegistro(){
+        this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aplabel;
     private javax.swing.JButton botonAtras;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JComboBox<String> comboBoxTipo;
+    private javax.swing.JLabel contlabel;
+    private javax.swing.JLabel dnilabel;
     private javax.swing.JFormattedTextField dnitext;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
-    private javax.swing.JLabel label3;
-    private javax.swing.JLabel label4;
-    private javax.swing.JLabel label5;
-    private javax.swing.JLabel label6;
+    private javax.swing.JLabel nombrelabel;
     private javax.swing.JComboBox<String> regionComboBox;
+    private javax.swing.JLabel regionlabel;
     private javax.swing.JTextField textoApellidos;
     private javax.swing.JPasswordField textoContrasenia;
     private javax.swing.JTextField textoNombre;
+    private javax.swing.JLabel tipolabel;
     // End of variables declaration//GEN-END:variables
 }

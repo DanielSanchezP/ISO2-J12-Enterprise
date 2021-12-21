@@ -14,7 +14,6 @@ public class ConsultarEstadisticasDAO extends AgenteBD {
 	public String[][] comprobarEstadisticasNacional(String region) throws SQLException {
 		String[][] estadisticas=new String[19][3];
                 int cont=0;
-                System.out.println("Region: "+region);
 		ResultSet res = null;
 		if(region.equals("Nacional")) {
 			res = bd.select("SELECT nombreregion, vacunados, poblacion FROM estadisticas");

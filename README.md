@@ -1,30 +1,57 @@
-# Memoria Práctica ISO2
-[Enunciado del Proyecto](docs/Enunciado.pdf)
-## 1. Análisis de Requisitos
+# Manual de Usuario.
 
-El proyecto que nos han encargado, consiste en realizar un programa de gestión de vacunas para el COVID-19, donde hay que gestionar como se recogen lotes provenientes de las farmaceúticas, junto con el reparto entre las diferentes comunidades autónomas dependiendo del grado de prioridad, que se calcula a partir de los grupos prioritarios, la incidencia acumulada y la población de dicha comunidad. Finalmente, se tienen que registrar las vacunaciones a cada paciente.
+Para que funcione el programa debemos compilar el código, y una vez hecho, desde el punto de vista del usuario, funciona de la siguiente forma.
+Para empezar tendremos la ventana "Login", donde el usuario podrá introducir sus datos para logearse, y en caso de que no esté registrado
+se le da la posibilidad con el botón "Registrarse".
 
-Para empezar, observamos que la aplicación va a ser usada por dos tipos de usuarios: los que trabajarán en el Sistema Nacional de Salud  (SNS) y los que trabajan en los sistemas regionales de salud (SRS), cuyas funciones serán distintas.
+![image](https://user-images.githubusercontent.com/90713138/146956793-aa1710aa-3101-441a-8f37-4c58c3b9e704.png)
 
-En el caso del SNS, el trabajador deberá primero poder dar de alta un lote de vacunas que reciba procedente de una farmaceútica, donde se debe conocer: su ID, que es obligatoria y única; el número de vacunas recibidas; el tipo de vacuna, que está formado por nombre y proveedor; y la fecha en la que se reciben. Una vez que se da de alta el lote, hay que repartir las vacunas entre las comunidades autónomas, pero cada una tendrá un grado de prioridad que previamente hemos definido. Por último, el trabajador podrá observar unas estadísticas a nivel nacional, o si se diese el caso a nivel de comunidades autónomas, donde se mostrarán: el número total de vacunados y el porcentaje de vacunados respecto a las vacunas entregadas.
 
-En el caso del SRS, el trabajador debe dar de alta una entrega de vacunas procedente del SNS, cuyos datos son: su ID, la fecha en la que se recibe, el tipo de vacuna, la ID del lote del que procede, la cantidad de vacunas y el grupo prioritario para el que se hará la entrega. Además, se encargará de administrar las vacunas a sus respectivos pacientes, donde habrá que registrar los datos de este, la fecha de la vacunación, el tipo de vacuna y el número de la dosis que se le administra. Por último, podrá consultar las estadísticas de su comunidad autónoma, pudiendo revisar el número total de vacunas inoculadas, junto con el porcentaje de las vacunas recibidas.
+En caso de que el usuario se registre, se le mostrará un formulario donde deberá introducir los siguientes datos:
 
-## 2. Diseño del Programa
-[Diseño](docs/AnálisisyDiseñoparcialdelsistema.vpp)
+![image](https://user-images.githubusercontent.com/90713138/146956960-98d22de4-049a-485d-af84-830ea886a596.png)
 
-Una vez recogidos los requisitos, nos encargamos de construir la arquitectura del proyecto. Para ello, obtuvimos el diagrama UML que nos proporcionó nuestro cliente, y con el cual generamos el esqueleto del código que implementaríamos.  
+Dependiendo del tipo de usuario que sea, se le mostrará el menú del Sistema Nacional de Salud o el Sistema Regional. Además, si fuese de este último, debe indicar
+la comunidad autónoma a la que pertenece. 
 
-## 3. Construcción del Programa 
-Una vez creado el esqueleto, lo transformamos en un proyecto Maven con el objetivo de gestionar el proyecto en su totalidad, ya fuera las dependencias, manejar las "build", etc.
+En el caso del SNS se nos mostrará un menú donde aparecerán las estadísticas de población total y el porcentaje de vacunados, ya sea nacional o de 
+alguna comunidad autónoma, y una lista con los lotes disponibles. 
 
-A continuación, para poder trabajar de forma independiente en el proyecto, se creó un repositorio en GitHub, desde donde se suben las modificaciones relacionadas con el proyecto, donde participan tanto los desarrolladores, como nuestro cliente. El proyecto se realizará en codigo Java, usando Eclipse y Apache Netbeans.
+![image](https://user-images.githubusercontent.com/90713138/146982530-21cf380c-47d4-43e7-b472-d3cd40fcd17b.png)
 
-La primera tarea que se realizó fue diseñar una presentación provisional, a partir de los requisitos y el diseño. Tras un primer contacto con el cliente, llegamos a la conclusión de que el esquema que nos daba no había que seguirlo totalmente, dándonos un margen de libertad, con lo cual empezamos a añadir ventanas y un sistema de login para los trabajadores, debido a los requisitos pedidos. 
 
-La primera ventana que se mostrará al ejecutar la aplicación es "Login", donde el trabajador podrá iniciar sesión aportando su identificación y contraseña, o en su defecto, registrarse, donde deberá introducir sus datos personales y donde trabaja. Una vez que el trabajador inicia sesión, dependiendo de donde trabaje, se abrirá un menú de gestión nacional o regional. Ambos menús contendrán las estadísticas que nos piden en los requisitos, además de las funcionalidades para cada tipo de trabajador. En el caso del SNS, podremos tanto dar de alta un lote de vacunas, como repartir las vacunas entre las diferentes comunidades. Por otro lado, en el caso del SRS, se podrá dar de alta las vacunas que lleguen a dicha comunidad y realizar las respectivas vacunaciones a los pacientes que haya registrados.
 
-Para poder conectar la persistencia del proyecto con la base de datos, construimos los elementos DAO. Lo primero que hacemos, es construir la propia base de datos, que será embebida (con Apache Derby), teniendo 5 tablas de datos. Con "ConsultarEstadísticasDAO", obtendremos los datos que el cliente nos pide, tanto para el ámbito nacional como para el regional, pudiendo observar el porcentaje de las personas vacunadas y las vacunas inoculadas. "EntregaDAO" tiene como función insertar en la base de datos un número determinado de vacunas procedentes del SNS, indicando dicha cantidad, la farmacéutica y la región entre otros datos, además de poder seleccionarlas. Por otro lado, para poder insertar usuarios o comprobar si existen con su respectiva identificación y contraseña, tenemos "LoginDAO". Como el SNS se encarga de dar de alta lotes de vacunas, se usa "LoteVacunasDAO", donde se insertarán dichos lotes en la base de datos, además de poder modificar las cantidades de vacunas para el reparto de las regiones o incluso seleccionar los lotes para que nos lo muestre en la pantalla de las estadisticas del SNS. Como último elemento, tenemos "VacunaciónDAO", donde se insertan las vacunaciones a los pacientes además de seleccionar los datos de dichos pacientes para poder mostrarlos en la ventana "PantallaConsultaEstadísticas".
+Si damos al botón "Alta de Lote", se nos mostrará una ventana donde introduciremos los datos importantes de ese lote, ya sea el número de
+vacunas que contenga, la farmacéutica y la fecha de recepción. Una vez introducidos los datos, se da al botón "Alta" y volvemos al menú "SNS"
+con el botón "Atrás".
+
+![image](https://user-images.githubusercontent.com/90713138/146957964-91146658-a862-434b-ab9c-8250a0ddf0b1.png)
+
+Por otro lado, si damos al botón de "Repartir", nos aparecerá una ventana con todas las comunidades autónomas. En la parte de arriba, introduciremos
+el id del lote que queremos repartir y cuando le demos al botón "Repartir", repartirá las vacunas entre las comunidades en base a su prioridad.
+
+![image](https://user-images.githubusercontent.com/90713138/146958266-4d19087b-3f0c-433f-b337-335682bdcff6.png)
+
+En caso de que el trabajador sea del tipo regional, al logearse se nos abrirá el menú del SRS, donde se nos mostrará el nº de las vacunas inoculadas de 
+esa comunidad en cuestión, junto con el porcentaje de cuales han sido la primera y la segunda dosis, aunque se pueda aumentar el nº de dosis.
+
+![image](https://user-images.githubusercontent.com/90713138/146982629-7679f39e-dc5e-4ba4-b054-5c160cfd9a74.png)
+
+
+En el caso de que seleccionemos la opción de "Vacunas Disponibles", se nos mostrará una lista con el nº de vacunas que se han repartido a esa comunidad, junto con
+el id del lote del que provienen, la marca, el grupo para el que están destinados y la fecha en la que se hizo el reparto.
+
+![image](https://user-images.githubusercontent.com/90713138/146959590-09038add-6f6e-4d00-960d-23f6638a912d.png)
+
+También tenemos la opción de vacunar a un paciente mediante la opción "Registrar Vacunación", donde se introducirán los datos de dicho paciente, el tipo de vacuna,
+la fecha, el grupo de prioridad al que pertenece y el número de la dosis que se le administrará.
+
+![image](https://user-images.githubusercontent.com/90713138/146960753-062abd76-a95b-47d7-a0a3-17fbfc4ac814.png)
+
+Por último, tenemos una opción en la que podemos observar los pacientes vacunados con "Consultar Pacientes Vacunados", donde se nos mostrará una lista 
+con todas las vacunaciones realizadas.
+
+![image](https://user-images.githubusercontent.com/90713138/146961000-e383db83-f919-4f08-9f8c-1350b4c741f7.png)
 
 
 

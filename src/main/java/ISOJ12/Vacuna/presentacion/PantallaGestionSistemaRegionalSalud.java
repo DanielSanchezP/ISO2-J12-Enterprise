@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
@@ -13,14 +8,13 @@ import ISOJ12.Vacuna.dominio.controller.GestorEstadisticas;
  */
 public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     GestorEstadisticas gestor = new GestorEstadisticas();
-    String region=null;
+    String region="";
 	
     /**
      * Creates new form PantallaGestionSistemaRegionalSalud
      */
-    public PantallaGestionSistemaRegionalSalud(String region_) {
-        this.region=region_;
-        System.out.println(this.region);
+    public PantallaGestionSistemaRegionalSalud(String region1) {
+        this.region=region1;
         initComponents();
     }
 
@@ -40,9 +34,9 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         textoVacunaTotal = new javax.swing.JTextField();
         textoPrimeraDosis = new javax.swing.JTextField();
         textoSegundaDosis = new javax.swing.JTextField();
-        label1 = new javax.swing.JLabel();
-        label2 = new javax.swing.JLabel();
-        label3 = new javax.swing.JLabel();
+        totalLabel = new javax.swing.JLabel();
+        pdLabel = new javax.swing.JLabel();
+        sdLabel = new javax.swing.JLabel();
         buttonestvacunados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,17 +60,12 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         textoPrimeraDosis.setEditable(false);
 
         textoSegundaDosis.setEditable(false);
-        textoSegundaDosis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoSegundaDosisActionPerformed(evt);
-            }
-        });
 
-        label1.setText("Total de Vacunas inoculadas:");
+        totalLabel.setText("Total de Vacunas inoculadas:");
 
-        label2.setText("Porcentaje de Primera Dosis:");
+        pdLabel.setText("Porcentaje de Primera Dosis:");
 
-        label3.setText("Porcentaje de Segunda Dosis:");
+        sdLabel.setText("Porcentaje de Segunda Dosis:");
 
         buttonestvacunados.setText("Consultar Pacientes Vacunados");
         buttonestvacunados.addActionListener(new java.awt.event.ActionListener() {
@@ -90,20 +79,20 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(botonVacunasDisp)
+                .addContainerGap()
+                .addComponent(botonVacunasDisp, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label2)
-                    .addComponent(label1)
+                    .addComponent(pdLabel)
+                    .addComponent(totalLabel)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(textoSegundaDosis, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label3)
+                            .addComponent(sdLabel)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(textoVacunaTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -121,15 +110,15 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
                     .addComponent(botonVacunasDisp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(label1)
+                .addComponent(totalLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoVacunaTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(label2)
+                .addComponent(pdLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoPrimeraDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(label3)
+                .addComponent(sdLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoSegundaDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
@@ -146,21 +135,18 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVacunasDispActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        RegistrarVacunacion.mostrarRV(this.region);
+        RegistrarVacunacion reg=new RegistrarVacunacion();
+        reg.mostrarRV();
         this.dispose();
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void buttonestvacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonestvacunadosActionPerformed
         
-        PantallaConsultaEstadisticas est = new PantallaConsultaEstadisticas();
+        PantallaConsultaVacunados est = new PantallaConsultaVacunados();
         est.mostrarVentanaEstadisticas(this.region);
         
         this.dispose();
     }//GEN-LAST:event_buttonestvacunadosActionPerformed
-
-    private void textoSegundaDosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoSegundaDosisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoSegundaDosisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +179,7 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     
     public void mostrarGestionRegional(){
         this.textoVacunaTotal.setText(Long.toString(gestor.consultarTotalVacunasEnRegion(this.region)));
+        
         this.textoPrimeraDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,1)));
         this.textoSegundaDosis.setText(Double.toString(gestor.consultarVacunadosDeNVacuna(this.region,2)));
         this.setVisible(true);
@@ -202,11 +189,11 @@ public class PantallaGestionSistemaRegionalSalud extends javax.swing.JFrame {
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonVacunasDisp;
     private javax.swing.JButton buttonestvacunados;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
-    private javax.swing.JLabel label3;
+    private javax.swing.JLabel pdLabel;
+    private javax.swing.JLabel sdLabel;
     private javax.swing.JTextField textoPrimeraDosis;
     private javax.swing.JTextField textoSegundaDosis;
     private javax.swing.JTextField textoVacunaTotal;
+    private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
 }

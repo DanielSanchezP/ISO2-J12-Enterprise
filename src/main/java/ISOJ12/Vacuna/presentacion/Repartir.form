@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="label9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelgalicia" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label19" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="atrasbutton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="textasturias" alignment="0" pref="115" max="32767" attributes="0"/>
+                          <Component id="textlarioja" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textpaisvasco" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textcantabria" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textnavarra" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textaragon" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textcatalunia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textcastillayleon" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textextremadura" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textgalicia" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="label11" min="-2" max="-2" attributes="0"/>
+                          <Component id="label10" min="-2" max="-2" attributes="0"/>
+                          <Component id="label12" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label13" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label15" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label16" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label17" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label18" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="textcomunidadvalenciana" max="32767" attributes="0"/>
+                          <Component id="textmadrid" max="32767" attributes="0"/>
+                          <Component id="textcastillalamancha" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textmurcia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textandalucia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textislasbaleares" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textislascanarias" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textceuta" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textmelilla" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textid" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="repartirButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="labeledad" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textid" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="repartirButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labeledad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelgalicia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textgalicia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textmadrid" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textasturias" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textcastillalamancha" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textlarioja" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textcomunidadvalenciana" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textpaisvasco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textmurcia" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textcantabria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textandalucia" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textnavarra" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textislasbaleares" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label16" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textaragon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textislascanarias" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label17" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textcatalunia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textceuta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textcastillayleon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textmelilla" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textextremadura" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <Component id="atrasbutton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="label1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID del lote:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textid">
+    </Component>
+    <Component class="javax.swing.JButton" name="repartirButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repartir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="repartirButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelgalicia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Galicia:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Asturias:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="La Rioja:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pais Vasco:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cantabria:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Navarra:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Arag&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Catalu&#xf1;a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Castilla y Le&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Madrid:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Castilla-La Mancha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comunidad Valenciana:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Andaluc&#xed;a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel15">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Murcia:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label15">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Islas Baleares:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label16">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Islas Canarias:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label17">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ceuta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label18">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Melilla:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label19">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Extremadura:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="atrasbutton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasbuttonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textgalicia">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textasturias">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textlarioja">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textpaisvasco">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textcantabria">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textnavarra">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textaragon">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textcatalunia">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textcastillayleon">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textextremadura">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textcomunidadvalenciana">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textmadrid">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textcastillalamancha">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textmurcia">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textandalucia">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textislasbaleares">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textislascanarias">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textceuta">
+    </Component>
+    <Component class="javax.swing.JTextField" name="textmelilla">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labeledad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="50% para mayores de 65 a&#xf1;os, 30% para gente de entre 15-64 a&#xf1;os y 20% para ni&#xf1;os de entre 0-14 a&#xf1;os"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
