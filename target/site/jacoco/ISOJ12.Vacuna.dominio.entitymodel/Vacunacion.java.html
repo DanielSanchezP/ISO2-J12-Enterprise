@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Vacunacion.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Vacuna</a> &gt; <a href="index.source.html" class="el_package">ISOJ12.Vacuna.dominio.entitymodel</a> &gt; <span class="el_source">Vacunacion.java</span></div><h1>Vacunacion.java</h1><pre class="source lang-java linenums">package ISOJ12.Vacuna.dominio.entitymodel;
+
+import ISOJ12.Vacuna.persistencia.*;
+import java.util.*;
+
+<span class="fc" id="L6">public class Vacunacion {</span>
+
+	
+	public Paciente paciente;
+	public String nombrevacuna;
+	VacunacionDAO vacunacionDao;
+	public Date fecha;
+	public int numeroDosis;
+        public String nombreregion;
+        
+        public boolean equals(Vacunacion vac){
+<span class="pc bpc" id="L17" title="5 of 6 branches missed.">            return this.paciente.equals(vac.paciente) &amp;&amp; this.nombrevacuna.equals(vac.nombrevacuna)</span>
+                     &amp;&amp; this.numeroDosis == vac.numeroDosis
+<span class="pc bnc" id="L19" title="All 2 branches missed.">                    &amp;&amp; this.nombreregion.equals(vac.nombreregion);</span>
+        }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

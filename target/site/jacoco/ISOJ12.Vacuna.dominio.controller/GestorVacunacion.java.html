@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GestorVacunacion.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Vacuna</a> &gt; <a href="index.source.html" class="el_package">ISOJ12.Vacuna.dominio.controller</a> &gt; <span class="el_source">GestorVacunacion.java</span></div><h1>GestorVacunacion.java</h1><pre class="source lang-java linenums">package ISOJ12.Vacuna.dominio.controller;
+
+import ISOJ12.Vacuna.dominio.entitymodel.*;
+import ISOJ12.Vacuna.persistencia.VacunacionDAO;
+import java.sql.SQLException;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+<span class="fc" id="L10">public class GestorVacunacion {</span>
+	
+
+	/**
+	 * 
+	 * @param fecha
+	 * @param nombre
+	 * @param apellidos
+	 * @param nif
+	 * @param tipo
+     * @param dosis
+     * @param nombreregion
+     * @param grupo
+     * @return 
+	 */
+	public boolean registrarVacunacion(Date fecha, String nombre, String apellidos, String nif, String tipo, int dosis, String nombreregion, String grupo) {
+<span class="fc" id="L26">            VacunacionDAO vacunaciondao = new VacunacionDAO();</span>
+<span class="fc" id="L27">            boolean vacuna = false;</span>
+<span class="fc" id="L28">            Vacunacion vacunacion = new Vacunacion();</span>
+<span class="fc" id="L29">            Paciente pac=new Paciente();</span>
+<span class="fc" id="L30">            pac.nombre = nombre;</span>
+<span class="fc" id="L31">            pac.apellidos = apellidos;</span>
+<span class="fc" id="L32">            pac.dni = nif;</span>
+<span class="fc" id="L33">            pac.grupo = grupo;</span>
+<span class="fc" id="L34">            vacunacion.paciente = pac;</span>
+<span class="fc" id="L35">            vacunacion.nombrevacuna = tipo;</span>
+<span class="fc" id="L36">            vacunacion.numeroDosis = dosis;</span>
+<span class="fc" id="L37">            vacunacion.fecha=fecha;</span>
+<span class="fc" id="L38">            vacunacion.nombreregion=nombreregion;</span>
+            
+<span class="pc bpc" id="L40" title="2 of 8 branches missed.">            if (dosis&lt;=0 || nombre.length()&gt;30 || apellidos.length() &gt; 30 || tipo.length()&gt;30){</span>
+<span class="fc" id="L41">                return vacuna;</span>
+            }else{
+<span class="fc" id="L43">                List&lt;Vacunacion&gt; listavac = new ArrayList&lt;&gt;();</span>
+                try {
+<span class="fc" id="L45">                    listavac = vacunaciondao.seleccionarVacunaciones();</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">                    if(listavac != null){</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">                        if(listavac.isEmpty()){</span>
+<span class="nc" id="L48">                            vacunaciondao.insertarVacunacion(vacunacion);</span>
+<span class="nc" id="L49">                            vacuna = true;</span>
+                        }else{
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                            for(int i = 0; i&lt;listavac.size();i++){</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">                                if(vacunacion.equals(listavac.get(i))){</span>
+<span class="nc" id="L53">                                    break;</span>
+                                }
+<span class="fc" id="L55">                                    vacuna = true;</span>
+                                }
+                        }
+                    }else{
+<span class="nc" id="L59">                        vacuna = true;</span>
+                    }
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">                    if(vacuna){</span>
+<span class="fc" id="L62">                        vacunaciondao.insertarVacunacion(vacunacion);</span>
+                    }
+<span class="nc" id="L64">                } catch (SQLException ex) {</span>
+<span class="nc" id="L65">                    Logger.getLogger(GestorVacunacion.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="fc" id="L66">                }</span>
+            }
+<span class="fc" id="L68">        return vacuna;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AgenteBD.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Vacuna</a> &gt; <a href="index.source.html" class="el_package">ISOJ12.Vacuna.persistencia</a> &gt; <span class="el_source">AgenteBD.java</span></div><h1>AgenteBD.java</h1><pre class="source lang-java linenums">package ISOJ12.Vacuna.persistencia;
+
+
+import org.apache.derby.jdbc.*;
+
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+
+
+public class AgenteBD {
+	
+	
+	private Statement stmt;
+	private static  Connection mBD;
+<span class="fc" id="L23">	protected static AgenteBD instancia = null;</span>
+	
+<span class="fc" id="L25">	protected AgenteBD(){</span>
+<span class="fc" id="L26">		crearBaseDatos();</span>
+<span class="fc" id="L27">	}</span>
+	
+	public static AgenteBD getAgente(){
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (instancia == null) {</span>
+<span class="fc" id="L31">            instancia = new AgenteBD();</span>
+        }
+<span class="fc" id="L33">        return instancia;</span>
+    }
+
+	public static void conectarBD() {
+<span class="fc" id="L37">		Driver derbyEmbeddedDriver = new EmbeddedDriver();</span>
+<span class="fc" id="L38">                String admin = &quot;admin&quot;;</span>
+		try {
+<span class="fc" id="L40">			DriverManager.registerDriver(derbyEmbeddedDriver);</span>
+<span class="fc" id="L41">			mBD = DriverManager.getConnection(&quot;&quot;+&quot;jdbc:derby&quot;+&quot;:&quot;+&quot;BDVacuna&quot;+&quot;;create=false&quot;, admin, admin);</span>
+<span class="nc" id="L42">		} catch (SQLException e) {</span>
+<span class="nc" id="L43">			e.printStackTrace();</span>
+<span class="fc" id="L44">		}</span>
+<span class="fc" id="L45">	}</span>
+
+	public void desconectarBD() {
+		try {
+<span class="fc" id="L49">			mBD.close();</span>
+<span class="nc" id="L50">		} catch (SQLException e) {</span>
+<span class="nc" id="L51">			e.printStackTrace();</span>
+<span class="fc" id="L52">		}</span>
+<span class="fc" id="L53">	}</span>
+	public ResultSet select(String sql) {
+<span class="fc" id="L55">		ResultSet res = null;</span>
+		try {
+<span class="fc" id="L57">			conectarBD();</span>
+<span class="fc" id="L58">			stmt = mBD.createStatement();</span>
+<span class="fc" id="L59">			res = stmt.executeQuery(sql);</span>
+<span class="nc" id="L60">		} catch (SQLException e) {</span>
+<span class="nc" id="L61">			e.printStackTrace();</span>
+<span class="fc" id="L62">		}</span>
+<span class="fc" id="L63">		return res;</span>
+	}
+
+	public int insert(String sql) {
+<span class="fc" id="L67">            int res = 0;</span>
+		try {
+<span class="fc" id="L69">                    conectarBD();</span>
+<span class="fc" id="L70">		try( PreparedStatement pstmt = mBD.prepareStatement(sql)){</span>
+<span class="fc" id="L71">                    res = pstmt.executeUpdate();</span>
+                }
+<span class="fc" id="L73">                desconectarBD();</span>
+			
+<span class="fc" id="L75">		} catch (SQLException e) {</span>
+<span class="fc" id="L76">			e.printStackTrace();</span>
+<span class="fc" id="L77">		}</span>
+<span class="fc" id="L78">		return res;</span>
+	}
+	
+	public int update(String sql) {
+<span class="fc" id="L82">		int res = 0;</span>
+		try {
+<span class="fc" id="L84">			conectarBD();</span>
+<span class="fc" id="L85">			stmt = mBD.createStatement();</span>
+<span class="fc" id="L86">			res=stmt.executeUpdate(sql);</span>
+<span class="fc" id="L87">                        stmt.close();</span>
+<span class="fc" id="L88">			desconectarBD();</span>
+<span class="nc" id="L89">		} catch (SQLException e) {</span>
+<span class="nc" id="L90">			e.printStackTrace();</span>
+<span class="fc" id="L91">		}</span>
+<span class="fc" id="L92">		return res;</span>
+	}
+
+	public int delete(String sql) {
+<span class="fc" id="L96">		return update(sql);</span>
+	}
+	
+	public static void crearBaseDatos() {
+<span class="fc" id="L100">		String admin = &quot;admin&quot;;                </span>
+		try {
+<span class="fc" id="L102">			Driver derbyEmbeddedDriver = new EmbeddedDriver();</span>
+<span class="fc" id="L103">			DriverManager.registerDriver(derbyEmbeddedDriver);</span>
+<span class="fc" id="L104">			mBD = DriverManager.getConnection(&quot;&quot;+&quot;jdbc:derby&quot;+&quot;:&quot;+&quot;BDVacuna&quot;+&quot;;create=true&quot;, admin, admin);</span>
+<span class="fc" id="L105">                    try (Statement stmt = mBD.createStatement()) {</span>
+<span class="nc" id="L106">                        stmt.execute(&quot;create table trabajadores (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, contrasena varchar(30) not null, tipousuario varchar(3) not null, nombreregion varchar(30))&quot;);</span>
+<span class="nc" id="L107">                        stmt.execute(&quot;create table vacunacion (dni varchar(30) not null, nombre varchar(30) not null, apellido varchar(30) not null, vacuna varchar(30) not null, fecha Date not null, dosis int not null, nombreregion varchar(30) not null)&quot;);</span>
+<span class="nc" id="L108">                        stmt.execute(&quot;create table lotevacunas (id varchar(30) not null, tipo varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null)&quot;);</span>
+<span class="nc" id="L109">                        stmt.execute(&quot;create table vacunas (id varchar(30) not null, farmaceutica varchar(30) not null, grupoprioridad varchar(30) not null, numVacunas int not null, fechaRecepcion Date not null, nombreregion varchar(30) not null)&quot;);</span>
+<span class="nc" id="L110">                        stmt.execute(&quot;create table estadisticas (nombreregion varchar(30) not null, vacunados bigint not null, vacunasInoculadas bigint not null, poblacion bigint not null)&quot;);</span>
+                        
+<span class="nc" id="L112">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Galicia', 500, 1000, 1200356)&quot;);</span>
+<span class="nc" id="L113">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Asturias', 400, 800, 1000000)&quot;);</span>
+<span class="nc" id="L114">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('La Rioja', 600, 1200, 980750)&quot;);</span>
+<span class="nc" id="L115">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Pais Vasco', 450, 900, 1500000)&quot;);</span>
+<span class="nc" id="L116">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Cantabria', 550, 1100, 800000)&quot;);</span>
+<span class="nc" id="L117">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Navarra', 800, 1600, 1600000)&quot;);</span>
+<span class="nc" id="L118">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Aragon', 1000, 2000, 8000000)&quot;);</span>
+<span class="nc" id="L119">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Cataluña', 12000, 24000, 20585690)&quot;);</span>
+<span class="nc" id="L120">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Castilla y Leon', 9000, 18000, 1000000)&quot;);</span>
+<span class="nc" id="L121">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Madrid', 50000, 100000, 24000000)&quot;);</span>
+<span class="nc" id="L122">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Castilla La Mancha', 8500, 17000, 9500400)&quot;);</span>
+<span class="nc" id="L123">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Comunidad Valenciana', 11000, 22000, 15680320)&quot;);</span>
+<span class="nc" id="L124">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Murcia', 10, 20, 3500000)&quot;);</span>
+<span class="nc" id="L125">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Andalucia', 24000, 48000, 30000000)&quot;);</span>
+<span class="nc" id="L126">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Islas Baleares', 650, 1300, 8000000)&quot;);</span>
+<span class="nc" id="L127">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Islas Canarias', 750, 1400, 5500000)&quot;);</span>
+<span class="nc" id="L128">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Ceuta', 200, 400, 1250000)&quot;);</span>
+<span class="nc" id="L129">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Melilla', 150, 300, 980000)&quot;);</span>
+<span class="nc" id="L130">                        stmt.execute(&quot;INSERT INTO estadisticas VALUES('Extremadura', 25000, 50000, 15350000)&quot;);</span>
+                    }
+<span class="fc" id="L132">		} catch (SQLException ex) {</span>
+<span class="fc" id="L133">			System.out.println(&quot;in connection&quot; + ex);</span>
+<span class="nc" id="L134">		}</span>
+
+		try {
+<span class="nc" id="L137">			DriverManager.getConnection(&quot;jdbc:derby:;shutdown=true&quot;);</span>
+<span class="fc" id="L138">		} catch (SQLException ex) {</span>
+<span class="pc bpc" id="L139" title="2 of 4 branches missed.">			if (((ex.getErrorCode() == 50000) &amp;&amp; (&quot;XJ015&quot;.equals(ex.getSQLState())))) {</span>
+<span class="fc" id="L140">				System.out.println(&quot;Derby shut down normally&quot;);</span>
+			} else {
+<span class="nc" id="L142">				System.err.println(&quot;Derby did not shut down normally&quot;);</span>
+<span class="nc" id="L143">				System.err.println(ex.getMessage());</span>
+			}
+<span class="nc" id="L145">		}</span>
+<span class="fc" id="L146">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
