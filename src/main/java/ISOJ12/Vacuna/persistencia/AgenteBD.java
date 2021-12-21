@@ -128,8 +128,6 @@ public class AgenteBD {
                         stmt.execute("INSERT INTO estadisticas VALUES('Ceuta', 200, 400, 1250000)");
                         stmt.execute("INSERT INTO estadisticas VALUES('Melilla', 150, 300, 980000)");
                         stmt.execute("INSERT INTO estadisticas VALUES('Extremadura', 25000, 50000, 15350000)");
-                        
-                        stmt.execute("INSERT INTO vacunas VALUES('12345', 'Moderna', 'Grupo 1', 200000, '3/12/2021', 'Asturias')");
                     }
 		} catch (SQLException ex) {
 			System.out.println("in connection" + ex);

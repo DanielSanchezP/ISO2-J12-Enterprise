@@ -134,7 +134,7 @@ public class GestorEstadisticasTest {
         System.out.println("consultarPorcentajeVacunadosSobreRecibidas");
         GestorEstadisticas instance = new GestorEstadisticas();
         double result = instance.consultarPorcentajeVacunadosSobreRecibidas();
-        assertTrue(result>0);
+        assertTrue(result>=0);
         
     }
 

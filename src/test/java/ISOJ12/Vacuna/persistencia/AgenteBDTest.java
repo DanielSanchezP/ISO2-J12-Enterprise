@@ -147,8 +147,10 @@ public class AgenteBDTest {
      */
     @Test
     public void testDelete() {
+        String sql1 = "INSERT INTO trabajadores VALUES ('01234567A','Pepe', 'Viyuela', '1234', 'SNS', '')";
+        abd.insert(sql1);
         System.out.println("delete");
-        String sql = "DELETE FROM trabajadores WHERE dni = '01234567B' OR dni = '01234567A'";
+        String sql = "DELETE FROM trabajadores WHERE dni = '01234567A'";
         int result = abd.delete(sql);
         assertTrue(result>0);
     }
