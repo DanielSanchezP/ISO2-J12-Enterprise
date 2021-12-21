@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 
@@ -39,16 +34,16 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        scrollPane1 = new javax.swing.JScrollPane();
+        vacunadosScrollPanel = new javax.swing.JScrollPane();
         listaPaciente = new javax.swing.JList<>();
-        label1 = new javax.swing.JLabel();
+        pacientesLabel = new javax.swing.JLabel();
         atrasButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        scrollPane1.setViewportView(listaPaciente);
+        vacunadosScrollPanel.setViewportView(listaPaciente);
 
-        label1.setText("Pacientes Vacunados:");
+        pacientesLabel.setText("Pacientes Vacunados:");
 
         atrasButton.setText("Atrás");
         atrasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,18 +59,18 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1)
+                    .addComponent(pacientesLabel)
                     .addComponent(atrasButton)
-                    .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vacunadosScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(label1)
+                .addComponent(pacientesLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                .addComponent(vacunadosScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(atrasButton)
                 .addContainerGap())
@@ -142,16 +137,16 @@ public class PantallaConsultaVacunados extends javax.swing.JFrame {
         }
     }
     
-    public void mostrarVentanaEstadisticas(String region_){
-        this.region= region_;
+    public void mostrarVentanaEstadisticas(String region1){
+        this.region= region1;
         mostrarEstadisticas();
         this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atrasButton;
-    private javax.swing.JLabel label1;
     private javax.swing.JList<String> listaPaciente;
-    private javax.swing.JScrollPane scrollPane1;
+    private javax.swing.JLabel pacientesLabel;
+    private javax.swing.JScrollPane vacunadosScrollPanel;
     // End of variables declaration//GEN-END:variables
 }

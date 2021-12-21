@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ISOJ12.Vacuna.presentacion;
 
 import ISOJ12.Vacuna.dominio.controller.GestorRepartoVacunas;
@@ -38,23 +33,23 @@ public class AltaLote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label1 = new javax.swing.JLabel();
+        labelVacunas = new javax.swing.JLabel();
         textoNumVacunas = new javax.swing.JFormattedTextField();
-        label2 = new javax.swing.JLabel();
+        labelProv = new javax.swing.JLabel();
         labelFecha = new javax.swing.JLabel();
         textoFecha = new javax.swing.JFormattedTextField();
         botonAltaLote = new javax.swing.JButton();
         proveedortext = new javax.swing.JTextField();
         atrasButton = new javax.swing.JButton();
-        labelFecha1 = new javax.swing.JLabel();
+        labelFormato = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("Vacunas Recibidas: ");
+        labelVacunas.setText("Vacunas Recibidas: ");
 
         textoNumVacunas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        label2.setText("Proveedor: ");
+        labelProv.setText("Proveedor: ");
 
         labelFecha.setText("Fecha de Recepcion: ");
 
@@ -74,7 +69,7 @@ public class AltaLote extends javax.swing.JFrame {
             }
         });
 
-        labelFecha1.setText("Formato: dd.mm.aaaa");
+        labelFormato.setText("Formato: dd.mm.aaaa");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,10 +81,10 @@ public class AltaLote extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(57, 57, 57)
-                                .addComponent(label1))
+                                .addComponent(labelVacunas))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(label2)))
+                                .addComponent(labelProv)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textoNumVacunas, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
@@ -97,7 +92,7 @@ public class AltaLote extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelFecha1)
+                            .addComponent(labelFormato)
                             .addComponent(labelFecha))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textoFecha)))
@@ -114,18 +109,18 @@ public class AltaLote extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label1)
+                    .addComponent(labelVacunas)
                     .addComponent(textoNumVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label2)
+                    .addComponent(labelProv)
                     .addComponent(proveedortext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFecha)
                     .addComponent(textoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelFecha1)
+                .addComponent(labelFormato)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonAltaLote, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,10 +195,10 @@ public class AltaLote extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atrasButton;
     private javax.swing.JButton botonAltaLote;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
     private javax.swing.JLabel labelFecha;
-    private javax.swing.JLabel labelFecha1;
+    private javax.swing.JLabel labelFormato;
+    private javax.swing.JLabel labelProv;
+    private javax.swing.JLabel labelVacunas;
     private javax.swing.JTextField proveedortext;
     private javax.swing.JFormattedTextField textoFecha;
     private javax.swing.JFormattedTextField textoNumVacunas;
