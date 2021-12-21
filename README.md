@@ -17,7 +17,8 @@ la comunidad autónoma a la que pertenece.
 En el caso del SNS se nos mostrará un menú donde aparecerán las estadísticas de población total y el porcentaje de vacunados, ya sea nacional o de 
 alguna comunidad autónoma, y una lista con los lotes disponibles. 
 
-![image](https://user-images.githubusercontent.com/90713138/146957644-c672731e-2ede-47a5-b7fa-1e02a518c512.png)
+![image](https://user-images.githubusercontent.com/90713138/146982530-21cf380c-47d4-43e7-b472-d3cd40fcd17b.png)
+
 
 
 Si damos al botón "Alta de Lote", se nos mostrará una ventana donde introduciremos los datos importantes de ese lote, ya sea el número de
@@ -34,7 +35,8 @@ el id del lote que queremos repartir y cuando le demos al botón "Repartir", rep
 En caso de que el trabajador sea del tipo regional, al logearse se nos abrirá el menú del SRS, donde se nos mostrará el nº de las vacunas inoculadas de 
 esa comunidad en cuestión, junto con el porcentaje de cuales han sido la primera y la segunda dosis, aunque se pueda aumentar el nº de dosis.
 
-![image](https://user-images.githubusercontent.com/90713138/146959181-f8cbc321-d150-4fc7-b1cf-8bb113f5313e.png)
+![image](https://user-images.githubusercontent.com/90713138/146982629-7679f39e-dc5e-4ba4-b054-5c160cfd9a74.png)
+
 
 En el caso de que seleccionemos la opción de "Vacunas Disponibles", se nos mostrará una lista con el nº de vacunas que se han repartido a esa comunidad, junto con
 el id del lote del que provienen, la marca, el grupo para el que están destinados y la fecha en la que se hizo el reparto.
